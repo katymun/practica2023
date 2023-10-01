@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="iucosoft">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/internDBdata.zip!/" />
+      <root url="jar://$PROJECT_DIR$/internDBstruct.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
