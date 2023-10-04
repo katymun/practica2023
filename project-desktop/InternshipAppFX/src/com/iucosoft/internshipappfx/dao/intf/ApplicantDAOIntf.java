@@ -2,16 +2,13 @@ package com.iucosoft.internshipappfx.dao.intf;
 
 import com.iucosoft.internshipappfx.entities.Applicant;
 import com.iucosoft.internshipappfx.entities.Company;
+import com.iucosoft.internshipappfx.entities.User;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public interface ApplicantDAOIntf {
-    boolean save(Applicant applicant) throws SQLException;
-    boolean update(Applicant applicant) throws SQLException;
-    void delete(Applicant applicant) throws SQLException;
-    List<Applicant> findAllApplicants() throws SQLException;
-    Applicant findById(int idApplicant) throws SQLException;
+public interface ApplicantDAOIntf extends GenericDAOIntf<Applicant> {
     Applicant findByName(String applicantName) throws SQLException;
+    boolean save(User user, Applicant applicant) throws SQLException;
 
 }
