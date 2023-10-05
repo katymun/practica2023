@@ -4,6 +4,7 @@ import com.iucosoft.internshipappfx.dao.intf.ApplicantDAOIntf;
 import com.iucosoft.internshipappfx.db.DataSource;
 import com.iucosoft.internshipappfx.entities.Applicant;
 import com.iucosoft.internshipappfx.entities.User;
+import com.iucosoft.internshipappfx.sql.SQLS;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -20,28 +21,8 @@ public class ApplicantDAOImpl implements ApplicantDAOIntf {
 
     @Override
     public boolean save(Applicant applicant) throws SQLException {
-        String sql = "INSERT INTO useri (login, password, data_conexiunii, id_curs, id_persoana) VALUES(?, ?, ?, ?, ?)";
+        return false;
 
-        try (Connection conn = ds.getConnection();
-             PreparedStatement pstat = conn.prepareStatement(sql);) {
-            conn.setAutoCommit(true);
-            pstat.setString(1, applicant.getaName());
-            pstat.setString(2, applicant.getaSurname());
-            pstat.setInt(3, applicant.getAge());
-            pstat.setString(4, applicant.getStatus().toString());
-            pstat.setInt(5, applicant.getId_persoana());
-
-            int modificari = pstat.executeUpdate();
-            System.out.println("Save done " + applicant.getUsername());
-            if (modificari > 0) {
-                return true;
-            } else {
-                return false;
-            }
-        } catch (Exception ex) {
-            LOG.severe(ex.toString());
-            return false;
-        }
     }
 
     @Override
@@ -71,27 +52,31 @@ public class ApplicantDAOImpl implements ApplicantDAOIntf {
 
     @Override
     public boolean save(User user, Applicant applicant) throws SQLException {
-        String sqlUserInsert = "INSERT INTO users VALUES (NULL, ?, ?, ?)";
+        System.out.println("Am intrat in SAVE!");
         String sqlSelectLastUserId = "SELECT MAX(id) FROM users";
-        String sqlApplicantInsert = "INSERT INTO applicants VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         
         Connection conn = null;
         PreparedStatement pstat = null;
              
         try {
             conn = ds.getConnection();
-            pstat = conn.prepareStatement(sqlUserInsert);
+            pstat = conn.prepareStatement(SQLS.USER_INSERT);
+            System.out.println("CRAzy");
             conn.setAutoCommit(false);
-            pstat.setString(1, applicant.getaName());
-            pstat.setString(2, applicant.getaSurname());
-            pstat.setInt(3, applicant.getAge());
-            pstat.setString(4, applicant.getStatus().toString());
+            System.out.println("CRAzy");
+            pstat.setString(1, user.getUsername());
+                        System.out.println("CRAzy");
+            pstat.setString(2, user.getPassword());
+                        System.out.println("CRAzy");
+            pstat.setDate(3, java.sql.Date.valueOf("2023-12-12"));
+                        System.out.println("CRAzy");
 
             int modificari = pstat.executeUpdate();
+            
             conn.commit();
             
             int modificari2 = 0; // la salvarea aplicantului
-            System.out.println("Save done " + applicant.getUsername());
+            System.out.println("Save done " + applicant.getaName());
             
             if (modificari > 0) {
                 //aici vom optine id-ul userului si il vom adauga la applicant
@@ -103,8 +88,17 @@ public class ApplicantDAOImpl implements ApplicantDAOIntf {
                     
                     applicant.setIdUser(userId);
                     
-                    PreparedStatement pstat2 = conn.prepareStatement(sqlApplicantInsert);
+                    PreparedStatement pstat2 = conn.prepareStatement(SQLS.APPLICANT_INSERT);
                     pstat2.setString(1, applicant.getaName());
+                    pstat2.setString(2, applicant.getaSurname());
+                    pstat2.setInt(3, applicant.getAge());
+                    pstat2.setString(4, applicant.getStatus().toString());
+                    pstat2.setString(5, applicant.getDomain().toString());
+                    pstat2.setString(6, applicant.getCvFile());
+                    pstat2.setInt(7, applicant.getIdUser());
+                    pstat2.setString(8, applicant.getEmail());
+                    pstat2.setString(9, applicant.getPhoneNumber());
+                    
                     // asa le scrii pe toate
                     modificari2 = pstat2.executeUpdate();
                     

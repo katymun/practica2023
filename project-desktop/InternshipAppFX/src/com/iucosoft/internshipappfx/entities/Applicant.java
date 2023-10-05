@@ -5,6 +5,7 @@
  */
 package com.iucosoft.internshipappfx.entities;
 
+import com.iucosoft.internshipappfx.utility.Domain;
 import com.iucosoft.internshipappfx.utility.Role;
 import com.iucosoft.internshipappfx.utility.Status;
 
@@ -14,13 +15,13 @@ import java.util.Objects;
  *
  * @author munka
  */
-public class Applicant extends User {
+public class Applicant {
     private int id;
     private String aName;
     private String aSurname;
     private int age;
-    private String status;  //din enum
-    private String domain;  //din enum
+    private Status status;  //din enum
+    private Domain domain;  //din enum
     private String cvFile;
     private int idUser;
     private String email;
@@ -29,9 +30,8 @@ public class Applicant extends User {
     public Applicant() {
     }
 
-    public Applicant(int id, String aName, String aSurname, int age, String status, String domain, String cvFile,
+    public Applicant(String aName, String aSurname, int age, Status status, Domain domain, String cvFile,
                      int idUser, String email, String phoneNumber) {
-        this.id = id;
         this.aName = aName;
         this.aSurname = aSurname;
         this.age = age;
@@ -41,7 +41,7 @@ public class Applicant extends User {
         this.idUser = idUser;
         this.email = email;
         this.phoneNumber = phoneNumber;
-        role = Role.APPLICANT;
+        Role role = Role.APPLICANT;
     }
 
     public int getId() {
@@ -84,11 +84,11 @@ public class Applicant extends User {
         this.status = status;
     }
 
-    public String getDomain() {
+    public Domain getDomain() {
         return domain;
     }
 
-    public void setDomain(String domain) {
+    public void setDomain(Domain domain) {
         this.domain = domain;
     }
 

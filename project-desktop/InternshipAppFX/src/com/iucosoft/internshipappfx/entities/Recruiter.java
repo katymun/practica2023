@@ -13,7 +13,7 @@ import java.util.Objects;
  *
  * @author munka
  */
-public class Recruiter extends User {
+public class Recruiter {
     private int id;
     private String rName;
     private String rSurname;
@@ -31,7 +31,7 @@ public class Recruiter extends User {
         this.company = company;
         this.idUser = idUser;
         this.email = email;
-        role = Role.RECRUITER;
+        Role role = Role.RECRUITER;
     }
 
     
