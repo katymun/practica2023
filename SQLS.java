@@ -23,4 +23,17 @@ public class SQLS {
     //sql pentru entitatea applications
     public static String applicationsInsertDemo = "INSERT INTO `applications` VALUES (NULL,'applicant1_id','programme1_id','2023-01-01','cv1.pdf','068123123','nume.prenume@isa.utm.md','UTM')";
     public static final String applicationsInsert = "INSERT INTO applications VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)";
+
+    //search-uri
+    String searchApplicant = "SELECT * FROM applicants WHERE nume LIKE ? OR prenume LIKE ? OR age = ? OR statut = ? OR domain = ? OR email like ?";
+
+    String searchApplication = "SELECT * FROM applications WHERE application_date = ? OR email LIKE ?";
+
+    String searchCompany = "SELECT * FROM companies WHERE title LIKE ? OR domain = ? OR email like ?";
+
+    String searchProgramme = "SELECT * FROM programmes WHERE tilte LIKE ? OR domain = ? OR start_data = ? OR duration LIKE ?";
+
+    String searchRecruiter = "SELECT * FROM recruiters WHERE nume LIKE ? OR prenume LIKE ? OR email LIKE ?";
+
+    String searchUser = "SELECT * FROM users WHERE username LIKE ? OR register_date = ?";
 }
