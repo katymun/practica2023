@@ -1,14 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.iucosoft.internshipappfx.entities;
+package com.iucosoft.stagiimdweb.entities;
 
-import com.iucosoft.internshipappfx.utility.Domain;
-import com.iucosoft.internshipappfx.utility.Role;
-import com.iucosoft.internshipappfx.utility.Status;
-
+import com.iucosoft.stagiimdweb.utility.Domain;
+import com.iucosoft.stagiimdweb.utility.Role;
+import com.iucosoft.stagiimdweb.utility.Status;
 import java.util.Objects;
 
 /**

@@ -1,12 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.iucosoft.internshipappfx.entities;
+package com.iucosoft.stagiimdweb.entities;
 
-import com.iucosoft.internshipappfx.utility.Role;
-
+import com.iucosoft.stagiimdweb.utility.Role;
 import java.util.Objects;
 
 /**
@@ -17,36 +11,24 @@ public class Recruiter extends User {
     private int id;
     private String rName;
     private String rSurname;
-    private int idCompany;
+    private String company;
     private int idUser;
     private String email;
 
     public Recruiter() {
     }
 
-    public Recruiter(String rName, String rSurname, String email) {
-        this.rName = rName;
-        this.rSurname = rSurname;
-        this.email = email;
-    }
-    
-    public Recruiter(int id, String name, String surname, int idCompany, int idUser, String email) {
+    public Recruiter(int id, String name, String surname, String company, int idUser, String email) {
         this.id = id;
         this.rName = rName;
         this.rSurname = rSurname;
-        this.idCompany = idCompany;
+        this.company = company;
         this.idUser = idUser;
         this.email = email;
         Role role = Role.RECRUITER;
     }
 
-    public Recruiter(String rName, String rSurname, int idCompany, int idUser, String email) {
-        this.rName = rName;
-        this.rSurname = rSurname;
-        this.idCompany = idCompany;
-        this.idUser = idUser;
-        this.email = email;
-    }
+    
     
     public int getId() {
         return id;
@@ -72,12 +54,12 @@ public class Recruiter extends User {
         this.rSurname = rSurname;
     }
 
-    public int getIdCompany() {
-        return idCompany;
+    public String getCompany() {
+        return company;
     }
 
-    public void setIdCompany(int idCompany) {
-        this.idCompany = idCompany;
+    public void setCompany(String company) {
+        this.company = company;
     }
 
     public int getIdUser() {
@@ -102,7 +84,7 @@ public class Recruiter extends User {
         hash = 89 * hash + this.id;
         hash = 89 * hash + Objects.hashCode(this.rName);
         hash = 89 * hash + Objects.hashCode(this.rSurname);
-        hash = 89 * hash + Objects.hashCode(this.idCompany);
+        hash = 89 * hash + Objects.hashCode(this.company);
         hash = 89 * hash + this.idUser;
         hash = 89 * hash + Objects.hashCode(this.email);
         return hash;
@@ -132,7 +114,7 @@ public class Recruiter extends User {
         if (!Objects.equals(this.rSurname, other.rSurname)) {
             return false;
         }
-        if (!Objects.equals(this.idCompany, other.idCompany)) {
+        if (!Objects.equals(this.company, other.company)) {
             return false;
         }
         if (!Objects.equals(this.email, other.email)) {
@@ -140,10 +122,6 @@ public class Recruiter extends User {
         }
         return true;
     }
-
-    @Override
-    public String toString() {
-        return "Recruiter{" + "id=" + id + ", rName=" + rName + ", rSurname=" + rSurname + ", idCompany=" + idCompany + ", idUser=" + idUser + ", email=" + email + '}';
-    }
+    
     
 }

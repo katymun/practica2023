@@ -1,12 +1,13 @@
-package com.iucosoft.internshipappfx.entities;
+package com.iucosoft.stagiimdweb.entities;
 
-import com.iucosoft.internshipappfx.utility.Role;
-import java.time.LocalDate;
-import java.time.ZoneId;
-
+import com.iucosoft.stagiimdweb.utility.Role;
 import java.util.Date;
 import java.util.Objects;
 
+/**
+ *
+ * @author munka
+ */
 public class User {
     private int id;
     private String username;
@@ -25,10 +26,10 @@ public class User {
         this.role = role;
     }
 
-    public User(String username, String password, Role role) {
+    public User(String username, String password, Date registDate, Role role) {
         this.username = username;
         this.password = password;
-        this.registDate = Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant());
+        this.registDate = registDate;
         this.role = role;
     }
 
