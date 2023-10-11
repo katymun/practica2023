@@ -6,6 +6,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface CompanyDAOIntf extends GenericDAOIntf<Company> {
-    List<Company> findByName(String companyTitle) throws SQLException;
+    Company findByName(String companyTitle) throws SQLException;
     
 }

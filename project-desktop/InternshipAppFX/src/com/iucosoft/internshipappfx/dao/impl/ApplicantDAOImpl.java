@@ -3,14 +3,20 @@ package com.iucosoft.internshipappfx.dao.impl;
 import com.iucosoft.internshipappfx.dao.intf.ApplicantDAOIntf;
 import com.iucosoft.internshipappfx.db.DataSource;
 import com.iucosoft.internshipappfx.entities.Applicant;
+import com.iucosoft.internshipappfx.entities.Company;
 import com.iucosoft.internshipappfx.entities.User;
 import com.iucosoft.internshipappfx.sql.SQLS;
+import com.iucosoft.internshipappfx.utility.Domain;
+import com.iucosoft.internshipappfx.utility.Status;
+import com.iucosoft.internshipappfx.utility.exceptions.ApplicantNotFoundException;
+import com.iucosoft.internshipappfx.utility.exceptions.CompanyNotFoundException;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -80,12 +86,59 @@ public class ApplicantDAOImpl implements ApplicantDAOIntf {
 
     @Override
     public Applicant findById(int idApplicant) throws SQLException {
-        return null;
+        try (Connection conn = ds.getConnection();
+                Statement stat = conn.createStatement();
+                ResultSet rs = stat.executeQuery(SQLS.FIND_APPLICANT_BY_ID);) {
+
+            if (rs.next()) {
+                int id = rs.getInt(1);
+                String aName = rs.getString(2);
+                String aSurname = rs.getString(3);
+                int age = rs.getInt(4);
+                Status status = Status.valueOf(rs.getString(5));
+                Domain domain = Domain.valueOf(rs.getString(6));
+                String cvFile = rs.getString(7);
+                int idUser = rs.getInt(8);
+                String email = rs.getString(9);
+                String phoneNumber = rs.getString(10);
+
+                Applicant applicant = new Applicant(aName, aSurname, age, status, domain, cvFile, idUser, email, phoneNumber);
+                return applicant;
+            }
+            throw new ApplicantNotFoundException("Find by id = " + idApplicant + " failed!");
+        } catch (SQLException ex) {
+            LOG.severe(ex.toString());
+            throw ex;
+        }   
     }
 
     @Override
     public List<Applicant> findAll() throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Applicant> applicants = new ArrayList<>();
+        try (Connection conn = ds.getConnection();
+                Statement stat = conn.createStatement();
+                ResultSet rs = stat.executeQuery(SQLS.FIND_ALL_APPLICANTS);) {
+
+            while (rs.next()) {
+                int id = rs.getInt(1);
+                String aName = rs.getString(2);
+                String aSurname = rs.getString(3);
+                int age = rs.getInt(4);
+                Status status = Status.valueOf(rs.getString(5));
+                Domain domain = Domain.valueOf(rs.getString(6));
+                String cvFile = rs.getString(7);
+                int idUser = rs.getInt(8);
+                String email = rs.getString(9);
+                String phoneNumber = rs.getString(10);
+
+                Applicant applicant = new Applicant(aName, aSurname, age, status, domain, cvFile, idUser, email, phoneNumber);
+                applicants.add(applicant);
+            }
+            return applicants;
+        } catch (SQLException ex) {
+            LOG.severe(ex.toString());
+            throw ex;
+        }
     }
 
     @Override
@@ -147,6 +200,32 @@ public class ApplicantDAOImpl implements ApplicantDAOIntf {
 
     @Override
     public List<Applicant> findByName(String applicantName) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Applicant> applicants = new ArrayList<>();
+        try (Connection conn = ds.getConnection();
+                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_APPLICANT_BY_NAME);
+                ResultSet rs = pstat.executeQuery();) {
+
+            pstat.setString(1, applicantName);
+
+            while (rs.next()) {
+                int id = rs.getInt(1);
+                String aName = rs.getString(2);
+                String aSurname = rs.getString(3);
+                int age = rs.getInt(4);
+                Status status = Status.valueOf(rs.getString(5));
+                Domain domain = Domain.valueOf(rs.getString(6));
+                String cvFile = rs.getString(7);
+                int idUser = rs.getInt(8);
+                String email = rs.getString(9);
+                String phoneNumber = rs.getString(10);
+
+                Applicant applicant = new Applicant(aName, aSurname, age, status, domain, cvFile, idUser, email, phoneNumber);
+                applicants.add(applicant);
+            }
+        } catch (SQLException ex) {
+            LOG.severe(ex.toString());
+            throw ex;
+        }
+        return applicants;
     }
 }

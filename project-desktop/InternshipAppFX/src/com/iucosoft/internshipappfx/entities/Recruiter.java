@@ -37,7 +37,7 @@ public class Recruiter extends User {
         this.idCompany = idCompany;
         this.idUser = idUser;
         this.email = email;
-        Role role = Role.RECRUITER;
+        this.role = Role.RECRUITER;
     }
 
     public Recruiter(String rName, String rSurname, int idCompany, int idUser, String email) {

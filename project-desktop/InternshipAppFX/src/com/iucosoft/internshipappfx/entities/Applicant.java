@@ -41,7 +41,7 @@ public class Applicant extends User {
         this.idUser = idUser;
         this.email = email;
         this.phoneNumber = phoneNumber;
-        Role role = Role.APPLICANT;
+        this.role = Role.APPLICANT;
     }
 
     public int getId() {

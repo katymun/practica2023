@@ -1,12 +1,13 @@
 package com.iucosoft.internshipappfx.entities;
 
+import com.iucosoft.internshipappfx.utility.Domain;
 import java.util.Date;
 import java.util.Objects;
 
 public class InternshipProgram {
     private int id;
     private String iName;
-    private String domain;
+    private Domain domain;
     private Date startDate;
     private String duration;
     private String description;
@@ -15,7 +16,7 @@ public class InternshipProgram {
     public InternshipProgram() {
     }
 
-    public InternshipProgram(String iName, String domain, Date startDate, String duration, String description) {
+    public InternshipProgram(String iName, Domain domain, Date startDate, String duration, String description) {
         this.iName = iName;
         this.domain = domain;
         this.startDate = startDate;
@@ -23,7 +24,7 @@ public class InternshipProgram {
         this.description = description;
     }
 
-    public InternshipProgram(int id, String iName, String domain, Date startDate, String duration, String description, int idCompany) {
+    public InternshipProgram(int id, String iName, Domain domain, Date startDate, String duration, String description, int idCompany) {
         this.id = id;
         this.iName = iName;
         this.domain = domain;
@@ -57,11 +58,11 @@ public class InternshipProgram {
         this.iName = iName;
     }
 
-    public String getDomain() {
+    public Domain getDomain() {
         return domain;
     }
 
-    public void setDomain(String domain) {
+    public void setDomain(Domain domain) {
         this.domain = domain;
     }
 

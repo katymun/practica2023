@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 public class CompanyDAOImpl implements CompanyDAOIntf {
-    
+
     DataSource ds = DataSource.getInstance();
     private static final Logger LOG = Logger.getLogger(ApplicantDAOImpl.class.getName());
 
@@ -30,7 +30,6 @@ public class CompanyDAOImpl implements CompanyDAOIntf {
 //    public CompanyDAOImpl(DataSource ds) {
 //        this.ds = ds;
 //    }
-    
     @Override
     public boolean save(Company company) throws SQLException {
         Connection conn = null;
@@ -113,10 +112,9 @@ public class CompanyDAOImpl implements CompanyDAOIntf {
     @Override
     public List<Company> findAll() throws SQLException {
         List<Company> companies = new ArrayList<>();
-//    public static final String FIND_COMPANY_BY_NAME = "SELECT * FROM companies WHERE TITLE=?";
         try (Connection conn = ds.getConnection();
-                Statement stat = conn.createStatement();) {
-            ResultSet rs = stat.executeQuery(SQLS.FIND_ALL_COMPANIES);
+                Statement stat = conn.createStatement();
+                ResultSet rs = stat.executeQuery(SQLS.FIND_ALL_COMPANIES);) {
 
             while (rs.next()) {
                 int id = rs.getInt(1);
@@ -133,14 +131,14 @@ public class CompanyDAOImpl implements CompanyDAOIntf {
         } catch (SQLException ex) {
             LOG.severe(ex.toString());
             throw ex;
-        }   
+        }
     }
 
     @Override
     public Company findById(int idCompany) throws SQLException {
         try (Connection conn = ds.getConnection();
-                Statement stat = conn.createStatement();) {
-            ResultSet rs = stat.executeQuery(SQLS.FIND_ALL_COMPANIES);
+                Statement stat = conn.createStatement();
+                ResultSet rs = stat.executeQuery(SQLS.FIND_COMPANY_BY_ID)) {
 
             if (rs.next()) {
                 int id = rs.getInt(1);
@@ -157,42 +155,33 @@ public class CompanyDAOImpl implements CompanyDAOIntf {
         } catch (SQLException ex) {
             LOG.severe(ex.toString());
             throw ex;
-        }   
+        }
     }
 
     @Override
-    public List<Company> findByName(String companyTitle) throws SQLException {
-        List<Company> companies = new ArrayList<>();
-        Connection conn = null;
-        PreparedStatement pstat = null;
-        ResultSet rs = null;
-//    public static final String FIND_COMPANY_BY_NAME = "SELECT * FROM companies WHERE TITLE=?";
-        try {
-            conn = ds.getConnection();
-            pstat = conn.prepareStatement(SQLS.FIND_COMPANY_BY_NAME);
+    public Company findByName(String companyTitle) throws SQLException {
+        try (Connection conn = ds.getConnection();
+                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_COMPANY_BY_NAME);
+                ResultSet rs = pstat.executeQuery();) {
+
             pstat.setString(1, companyTitle);
 
-            rs = pstat.executeQuery();
-
-            while (rs.next()) {
+            if (rs.next()) {
                 int id = rs.getInt(1);
+                String title = rs.getString(2);
                 Domain domain = Domain.valueOf(rs.getString(3));
                 String about = rs.getString(4);
                 String phoneNumber = rs.getString(5);
                 String email = rs.getString(6);
 
-                Company comp = new Company(id, companyTitle, domain, about, phoneNumber, email);
-                companies.add(comp);
+                Company company = new Company(id, title, domain, about, phoneNumber, email);
+                return company;
             }
-
+            throw new CompanyNotFoundException("Find by name = " + companyTitle + " failed!");
         } catch (SQLException ex) {
             LOG.severe(ex.toString());
-        } finally {
-            if (rs != null) {
-                rs.close();
-            }
+            throw ex;
         }
-        return companies;
     }
 
 }

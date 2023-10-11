@@ -35,7 +35,31 @@ public class ApplicationDAOImpl implements ApplicationDAOIntf {
 
     @Override
     public boolean update(Application application) throws SQLException {
-        return false;
+        Connection conn = null;
+        PreparedStatement pstat = null;
+        try {
+            conn = ds.getConnection();
+            pstat = conn.prepareStatement(SQLS.APPLICATIONS_UPDATE);
+            pstat.setString(1, application.getApplicationDate().toString());
+            pstat.setString(2, application.getCvFile());
+            pstat.setString(3, application.getPhoneNumber());
+            pstat.setString(4, application.getEmail());
+            pstat.setInt(5, application.getId());
+
+            pstat.executeUpdate();
+            return true;
+        } catch (Exception ex) {
+            LOG.severe(ex.toString());
+            //throw ex;
+            return false;
+        } finally {
+            if (pstat != null) {
+                pstat.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+        }
     }
 
     @Override
@@ -61,7 +85,34 @@ public class ApplicationDAOImpl implements ApplicationDAOIntf {
     }
 
     @Override
-    public List<Application> findAllApplications() throws SQLException {
+    public Application findById(int idApplication) throws SQLException {
+        try (Connection conn = ds.getConnection();
+                Statement stat = conn.createStatement();
+                ResultSet rs = stat.executeQuery(SQLS.FIND_APPLICATION_BY_ID)) {
+
+            if (rs.next()) {
+                int id = rs.getInt(1);
+                int idApplicant = rs.getInt(2);
+                int idInternship = rs.getInt(3);
+                LocalDate ld = LocalDate.parse(rs.getString(4));
+                Date applicationDate = Date.from(ld.atStartOfDay(ZoneId.systemDefault()).toInstant());
+                String cvFile = rs.getString(5);
+                String phoneNumber = rs.getString(6);
+                String email = rs.getString(7);
+
+                Application application = new Application(id, idApplicant, idInternship, applicationDate, cvFile, phoneNumber, email);
+                return application;
+            }
+            throw new ApplicationNotFoundException("Find by id = " + idApplication + " failed!");
+        } catch (SQLException ex) {
+            LOG.severe(ex.toString());
+            throw ex;
+        }
+
+    }
+
+    @Override
+    public List<Application> findAll() throws SQLException {
         List<Application> applications = new ArrayList<>();
         try (Connection conn = ds.getConnection();
                 Statement stat = conn.createStatement();) {
@@ -75,48 +126,20 @@ public class ApplicationDAOImpl implements ApplicationDAOIntf {
                 Date applicationDate = Date.from(ld.atStartOfDay(ZoneId.systemDefault()).toInstant());
                 String cvFile = rs.getString(5);
                 String phoneNumber = rs.getString(6);
-                String institution = rs.getString(7);
-                String email = rs.getString(8);
+                String email = rs.getString(7);
 
-                Application application = new Application(id, idApplicant, idInternship, applicationDate, cvFile, phoneNumber, institution, email);
+                Application application = new Application(id, idApplicant, idInternship, applicationDate, cvFile, phoneNumber, email);
                 applications.add(application);
             }
             return applications;
         } catch (SQLException ex) {
             LOG.severe(ex.toString());
             throw ex;
-        }   
+        }
     }
 
     @Override
-    public Application findById(int idApplication) throws SQLException {
-        try (Connection conn = ds.getConnection();
-                Statement stat = conn.createStatement();) {
-            ResultSet rs = stat.executeQuery(SQLS.FIND_ALL_APPLICATIONS);
-
-            if (rs.next()) {
-                int id = rs.getInt(1);
-                int idApplicant = rs.getInt(2);
-                int idInternship = rs.getInt(3);
-                LocalDate ld = LocalDate.parse(rs.getString(4));
-                Date applicationDate = Date.from(ld.atStartOfDay(ZoneId.systemDefault()).toInstant());
-                String cvFile = rs.getString(5);
-                String phoneNumber = rs.getString(6);
-                String institution = rs.getString(7);
-                String email = rs.getString(8);
-
-                Application application = new Application(id, idApplicant, idInternship, applicationDate, cvFile, phoneNumber, institution, email);
-                return application;
-            }
-            throw new ApplicationNotFoundException("Find by id = " + idApplication + " failed!");
-        } catch (SQLException ex) {
-            LOG.severe(ex.toString());
-            throw ex;
-        }   
-    }
-
-    @Override
-    public Application findByName(String applicationName) throws SQLException {
-        return null;
+    public boolean save(Application application, int idApplicant, int idInternship) {
+        return false;
     }
 }
