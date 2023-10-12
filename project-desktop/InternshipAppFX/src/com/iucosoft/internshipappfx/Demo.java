@@ -6,11 +6,17 @@
 package com.iucosoft.internshipappfx;
 
 import com.iucosoft.internshipappfx.dao.impl.ApplicantDAOImpl;
+import com.iucosoft.internshipappfx.dao.impl.ApplicationDAOImpl;
 import com.iucosoft.internshipappfx.dao.impl.CompanyDAOImpl;
+import com.iucosoft.internshipappfx.dao.impl.InternshipProgramDAOImpl;
 import com.iucosoft.internshipappfx.dao.impl.RecruiterDAOImpl;
+import com.iucosoft.internshipappfx.dao.impl.UserDAOImpl;
 import com.iucosoft.internshipappfx.dao.intf.ApplicantDAOIntf;
+import com.iucosoft.internshipappfx.dao.intf.ApplicationDAOIntf;
 import com.iucosoft.internshipappfx.dao.intf.CompanyDAOIntf;
+import com.iucosoft.internshipappfx.dao.intf.InternshipProgramDAOIntf;
 import com.iucosoft.internshipappfx.dao.intf.RecruiterDAOIntf;
+import com.iucosoft.internshipappfx.dao.intf.UserDAOIntf;
 import com.iucosoft.internshipappfx.entities.Applicant;
 import com.iucosoft.internshipappfx.entities.Company;
 import com.iucosoft.internshipappfx.entities.Recruiter;
@@ -29,10 +35,13 @@ import java.util.List;
  */
 public class Demo {
     public static void main(String[] args) throws SQLException {
+        CompanyDAOIntf companyDao = new CompanyDAOImpl();
+        ApplicationDAOIntf applicationDao = new ApplicationDAOImpl();
+        RecruiterDAOIntf recruiterDao = new RecruiterDAOImpl();
+        UserDAOIntf userDao = new UserDAOImpl();
+        InternshipProgramDAOIntf programDao = new InternshipProgramDAOImpl();
         ApplicantDAOIntf applicantDao = new ApplicantDAOImpl();
-        User user = new User("user15", "p1", DateConverter.getNowTime(), Role.APPLICANT);
-        Applicant applicant = new Applicant("applicant1", "surname1", 20, Status.STUDENT, Domain.DESIGN, "cvFile1", "a1@gmail.com", "94376-2983");
-        applicantDao.save(user, applicant);
+        
 
         
     }

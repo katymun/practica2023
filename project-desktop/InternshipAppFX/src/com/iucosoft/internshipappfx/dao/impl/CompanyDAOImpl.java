@@ -43,6 +43,7 @@ public class CompanyDAOImpl implements CompanyDAOIntf {
             pstat.setString(3, company.getAbout());
             pstat.setString(4, company.getPhoneNumber());
             pstat.setString(5, company.getEmail());
+            pstat.setString(6, company.getImagePath());
 
             int modificari = pstat.executeUpdate();
 
@@ -69,6 +70,7 @@ public class CompanyDAOImpl implements CompanyDAOIntf {
             pstat.setString(3, company.getAbout());
             pstat.setString(4, company.getPhoneNumber());
             pstat.setString(5, company.getEmail());
+            pstat.setString(6, company.getImagePath());
             pstat.setInt(6, company.getId());
 
             pstat.executeUpdate();
@@ -123,8 +125,9 @@ public class CompanyDAOImpl implements CompanyDAOIntf {
                 String about = rs.getString(4);
                 String phoneNumber = rs.getString(5);
                 String email = rs.getString(6);
+                String imagePath = rs.getString(7);
 
-                Company company = new Company(id, title, domain, about, phoneNumber, email);
+                Company company = new Company(id, title, domain, about, phoneNumber, email, imagePath);
                 companies.add(company);
             }
             return companies;
@@ -147,8 +150,9 @@ public class CompanyDAOImpl implements CompanyDAOIntf {
                 String about = rs.getString(4);
                 String phoneNumber = rs.getString(5);
                 String email = rs.getString(6);
+                String imagePath = rs.getString(7);
 
-                Company company = new Company(id, title, domain, about, phoneNumber, email);
+                Company company = new Company(id, title, domain, about, phoneNumber, email, imagePath);
                 return company;
             }
             throw new CompanyNotFoundException("Find by id = " + idCompany + " failed!");
@@ -173,8 +177,9 @@ public class CompanyDAOImpl implements CompanyDAOIntf {
                 String about = rs.getString(4);
                 String phoneNumber = rs.getString(5);
                 String email = rs.getString(6);
+                String imagePath = rs.getString(7);
 
-                Company company = new Company(id, title, domain, about, phoneNumber, email);
+                Company company = new Company(id, title, domain, about, phoneNumber, email, imagePath);
                 return company;
             }
             throw new CompanyNotFoundException("Find by name = " + companyTitle + " failed!");

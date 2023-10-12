@@ -41,8 +41,12 @@ public class InternshipProgramDAOImpl implements InternshipProgramDAOIntf {
             pstat.setString(2, internshipProgram.getDomain().toString());
             pstat.setDate(3, DateConverter.convert(internshipProgram.getStartDate()));
             pstat.setString(4, internshipProgram.getDuration());
-            pstat.setString(5, internshipProgram.getDescription());
-            pstat.setInt(6, internshipProgram.getIdCompany());
+            pstat.setInt(5, internshipProgram.getIdCompany());
+            pstat.setString(6, internshipProgram.getDuties());
+            pstat.setString(7, internshipProgram.getQualifications());
+            pstat.setString(8, internshipProgram.getBenefits());
+            pstat.setString(9, internshipProgram.getLocation());
+            pstat.setBoolean(10, internshipProgram.isPaid());
 
             int modificari = pstat.executeUpdate();
 
@@ -68,8 +72,13 @@ public class InternshipProgramDAOImpl implements InternshipProgramDAOIntf {
             pstat.setString(2, internshipProgram.getDomain().toString());
             pstat.setDate(3, DateConverter.convert(internshipProgram.getStartDate()));
             pstat.setString(4, internshipProgram.getDuration());
-            pstat.setString(5, internshipProgram.getDescription());
-            pstat.setInt(6, internshipProgram.getId());
+            pstat.setInt(5, internshipProgram.getIdCompany());
+            pstat.setString(6, internshipProgram.getDuties());
+            pstat.setString(7, internshipProgram.getQualifications());
+            pstat.setString(8, internshipProgram.getBenefits());
+            pstat.setString(9, internshipProgram.getLocation());
+            pstat.setBoolean(10, internshipProgram.isPaid());
+            pstat.setInt(11, internshipProgram.getId());
 
             pstat.executeUpdate();
             return true;
@@ -121,11 +130,17 @@ public class InternshipProgramDAOImpl implements InternshipProgramDAOIntf {
                 String iName = rs.getString(2);
                 Domain domain = Domain.valueOf(rs.getString(3));
                 Date startDate = DateConverter.convert(rs.getDate(4));
-                String duration = rs.getString(5);
-                String description = rs.getString(6);
-                int idCompany = rs.getInt(7);
+                int idCompany = rs.getInt(5);
+                String duration = rs.getString(6);
+                String duties = rs.getString(7);
+                String qualifications = rs.getString(8);
+                String benefits = rs.getString(9);
+                String location = rs.getString(10);
+                boolean paid = rs.getBoolean(11);
 
-                InternshipProgram program = new InternshipProgram(id, iName, domain, startDate, duration, description, idCompany);
+                InternshipProgram program = new InternshipProgram(id, iName, 
+                        domain, startDate, duration, idCompany, duties, qualifications, 
+                        benefits, location, paid);
                 programs.add(program);
             }
             return programs;
@@ -146,14 +161,22 @@ public class InternshipProgramDAOImpl implements InternshipProgramDAOIntf {
                 String iName = rs.getString(2);
                 Domain domain = Domain.valueOf(rs.getString(3));
                 Date startDate = DateConverter.convert(rs.getDate(4));
-                String duration = rs.getString(5);
-                String description = rs.getString(6);
-                int idCompany = rs.getInt(7);
+                int idCompany = rs.getInt(5);
+                String duration = rs.getString(6);
+                String duties = rs.getString(7);
+                String qualifications = rs.getString(8);
+                String benefits = rs.getString(9);
+                String location = rs.getString(10);
+                boolean paid = rs.getBoolean(11);
 
-                InternshipProgram program = new InternshipProgram(id, iName, domain, startDate, duration, description, idCompany);
+
+                InternshipProgram program = new InternshipProgram(id, iName, 
+                        domain, startDate, duration, idCompany, duties, 
+                        qualifications, benefits, location, paid);
                 return program;
             }
-            throw new InternshipProgramNotFoundException("Find by id = " + idInternshipProgram + " failed!");
+            throw new InternshipProgramNotFoundException("Find by id = " + 
+                    idInternshipProgram + " failed!");
         } catch (SQLException ex) {
             LOG.severe(ex.toString());
             throw ex;
