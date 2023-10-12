@@ -30,8 +30,8 @@ public class Applicant extends User {
     public Applicant() {
     }
 
-    public Applicant(String aName, String aSurname, int age, Status status, Domain domain, String cvFile,
-                     int idUser, String email, String phoneNumber) {
+    public Applicant(int id, String aName, String aSurname, int age, Status status, Domain domain, String cvFile, int idUser, String email, String phoneNumber) {
+        this.id = id;
         this.aName = aName;
         this.aSurname = aSurname;
         this.age = age;
@@ -39,6 +39,20 @@ public class Applicant extends User {
         this.domain = domain;
         this.cvFile = cvFile;
         this.idUser = idUser;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+    }
+
+    
+    
+    public Applicant(String aName, String aSurname, int age, Status status, Domain domain, String cvFile,
+                     String email, String phoneNumber) {
+        this.aName = aName;
+        this.aSurname = aSurname;
+        this.age = age;
+        this.status = status;
+        this.domain = domain;
+        this.cvFile = cvFile;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.role = Role.APPLICANT;

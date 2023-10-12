@@ -1,5 +1,9 @@
 package com.iucosoft.stagiimdweb.utility;
 
+/**
+ *
+ * @author munka
+ */
 public enum Domain {
     IT,
     DESIGN,

@@ -7,9 +7,11 @@ package com.iucosoft.internshipappfx.dao.impl;
 
 import com.iucosoft.internshipappfx.dao.intf.UserDAOIntf;
 import com.iucosoft.internshipappfx.db.DataSource;
+import com.iucosoft.internshipappfx.entities.Application;
 import com.iucosoft.internshipappfx.entities.InternshipProgram;
 import com.iucosoft.internshipappfx.entities.User;
 import com.iucosoft.internshipappfx.sql.SQLS;
+import com.iucosoft.internshipappfx.utility.DateConverter;
 import com.iucosoft.internshipappfx.utility.Domain;
 import com.iucosoft.internshipappfx.utility.Role;
 import com.iucosoft.internshipappfx.utility.exceptions.InternshipProgramNotFoundException;
@@ -21,6 +23,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Logger;
@@ -88,7 +91,26 @@ public class UserDAOImpl implements UserDAOIntf {
 
     @Override
     public List<User> findAll() throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<User> users = new ArrayList<>();
+        try (Connection conn = ds.getConnection();
+                Statement stat = conn.createStatement();) {
+            ResultSet rs = stat.executeQuery(SQLS.FIND_ALL_USERS);
+
+            while (rs.next()) {
+                int id = rs.getInt(1);
+                String username = rs.getString(2);
+                String password = rs.getString(3);
+                Date registerDate = DateConverter.convert(rs.getDate(4));
+                Role role = Role.valueOf(rs.getString(5));
+
+                User user = new User(id, username, password, registerDate, role);
+                users.add(user);
+            }
+            return users;
+        } catch (SQLException ex) {
+            LOG.severe(ex.toString());
+            throw ex;
+        }
     }
 
     @Override
@@ -101,8 +123,7 @@ public class UserDAOImpl implements UserDAOIntf {
                 int id = rs.getInt(1);
                 String username = rs.getString(2);
                 String password = rs.getString(3);
-                LocalDate ld = LocalDate.parse(rs.getString(4));
-                Date registerDate = Date.from(ld.atStartOfDay(ZoneId.systemDefault()).toInstant());
+                Date registerDate = DateConverter.convert(rs.getDate(4));
                 Role role = Role.valueOf(rs.getString(5));
 
                 User user = new User(id, username, password, registerDate, role);

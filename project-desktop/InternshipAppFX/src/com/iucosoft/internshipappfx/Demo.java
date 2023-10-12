@@ -15,6 +15,7 @@ import com.iucosoft.internshipappfx.entities.Applicant;
 import com.iucosoft.internshipappfx.entities.Company;
 import com.iucosoft.internshipappfx.entities.Recruiter;
 import com.iucosoft.internshipappfx.entities.User;
+import com.iucosoft.internshipappfx.utility.DateConverter;
 import com.iucosoft.internshipappfx.utility.Domain;
 import com.iucosoft.internshipappfx.utility.Role;
 import com.iucosoft.internshipappfx.utility.Status;
@@ -28,18 +29,11 @@ import java.util.List;
  */
 public class Demo {
     public static void main(String[] args) throws SQLException {
+        ApplicantDAOIntf applicantDao = new ApplicantDAOImpl();
+        User user = new User("user15", "p1", DateConverter.getNowTime(), Role.APPLICANT);
+        Applicant applicant = new Applicant("applicant1", "surname1", 20, Status.STUDENT, Domain.DESIGN, "cvFile1", "a1@gmail.com", "94376-2983");
+        applicantDao.save(user, applicant);
 
-        CompanyDAOIntf compDao = new CompanyDAOImpl();
-        RecruiterDAOIntf recruiterDao = new RecruiterDAOImpl();
-        Recruiter recruiter = new Recruiter("Vasile1", "Rotaru1", "vr@example.com");
-        User user = new User("user13", "passw5", Role.RECRUITER);
-        Company comp = new Company("comp13", Domain.DESIGN, "good company", "129348765", "comp1@example.com");
-        recruiterDao.save(user, recruiter, comp);
-        
-        
-                
-        
-        
         
     }
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.iucosoft.internshipappfx.entities;
+package com.iucosoft.stagiimdweb.entities;
 
 import java.util.Date;
 import java.util.Objects;
@@ -20,20 +20,18 @@ public class Application {
     private Date applicationDate;
     private String cvFile;
     private String phoneNumber;
-    private String institution;
     private String email;
 
     public Application() {
     }
 
-    public Application(int id, int idApplicant, int idInternship, Date applicationDate, String cvFile, String phoneNumber, String institution, String email) {
+    public Application(int id, int idApplicant, int idInternship, Date applicationDate, String cvFile, String phoneNumber, String email) {
         this.id = id;
         this.idApplicant = idApplicant;
         this.idInternship = idInternship;
         this.applicationDate = applicationDate;
         this.cvFile = cvFile;
         this.phoneNumber = phoneNumber;
-        this.institution = institution;
         this.email = email;
     }
 
@@ -93,14 +91,6 @@ public class Application {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getInstitution() {
-        return institution;
-    }
-
-    public void setInstitution(String institution) {
-        this.institution = institution;
-    }
-
     @Override
     public int hashCode() {
         int hash = 3;
@@ -110,7 +100,6 @@ public class Application {
         hash = 89 * hash + Objects.hashCode(this.applicationDate);
         hash = 89 * hash + Objects.hashCode(this.cvFile);
         hash = 89 * hash + Objects.hashCode(this.phoneNumber);
-        hash = 89 * hash + Objects.hashCode(this.institution);
         hash = 89 * hash + Objects.hashCode(this.email);
         return hash;
     }
@@ -140,9 +129,6 @@ public class Application {
             return false;
         }
         if (!Objects.equals(this.phoneNumber, other.phoneNumber)) {
-            return false;
-        }
-        if (!Objects.equals(this.institution, other.institution)) {
             return false;
         }
         if (!Objects.equals(this.email, other.email)) {

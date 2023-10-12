@@ -6,6 +6,7 @@ import com.iucosoft.internshipappfx.entities.Applicant;
 import com.iucosoft.internshipappfx.entities.Company;
 import com.iucosoft.internshipappfx.entities.User;
 import com.iucosoft.internshipappfx.sql.SQLS;
+import com.iucosoft.internshipappfx.utility.DateConverter;
 import com.iucosoft.internshipappfx.utility.Domain;
 import com.iucosoft.internshipappfx.utility.Status;
 import com.iucosoft.internshipappfx.utility.exceptions.ApplicantNotFoundException;
@@ -17,6 +18,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -102,7 +104,7 @@ public class ApplicantDAOImpl implements ApplicantDAOIntf {
                 String email = rs.getString(9);
                 String phoneNumber = rs.getString(10);
 
-                Applicant applicant = new Applicant(aName, aSurname, age, status, domain, cvFile, idUser, email, phoneNumber);
+                Applicant applicant = new Applicant(id, aName, aSurname, age, status, domain, cvFile, idUser, email, phoneNumber);
                 return applicant;
             }
             throw new ApplicantNotFoundException("Find by id = " + idApplicant + " failed!");
@@ -131,7 +133,7 @@ public class ApplicantDAOImpl implements ApplicantDAOIntf {
                 String email = rs.getString(9);
                 String phoneNumber = rs.getString(10);
 
-                Applicant applicant = new Applicant(aName, aSurname, age, status, domain, cvFile, idUser, email, phoneNumber);
+                Applicant applicant = new Applicant(id, aName, aSurname, age, status, domain, cvFile, idUser, email, phoneNumber);
                 applicants.add(applicant);
             }
             return applicants;
@@ -152,9 +154,12 @@ public class ApplicantDAOImpl implements ApplicantDAOIntf {
             conn.setAutoCommit(false);
             pstat.setString(1, user.getUsername());
             pstat.setString(2, user.getPassword());
-            pstat.setDate(3, java.sql.Date.valueOf("2023-12-12"));
-
+            pstat.setDate(3, DateConverter.convert(user.getRegistDate()));
+            pstat.setString(4, user.getRole().toString());
+            System.out.println("rolul userului - " + user.getRole().toString());
+            
             int modificari = pstat.executeUpdate();
+            System.out.println("Modificari = " + modificari);
             int modificari2 = 0; // la salvarea aplicantului
 
             if (modificari > 0) {
@@ -193,6 +198,7 @@ public class ApplicantDAOImpl implements ApplicantDAOIntf {
             }
         } catch (Exception ex) {
             LOG.severe(ex.toString());
+            ex.getStackTrace();
             conn.rollback();
             return false;
         }
@@ -219,7 +225,7 @@ public class ApplicantDAOImpl implements ApplicantDAOIntf {
                 String email = rs.getString(9);
                 String phoneNumber = rs.getString(10);
 
-                Applicant applicant = new Applicant(aName, aSurname, age, status, domain, cvFile, idUser, email, phoneNumber);
+                Applicant applicant = new Applicant(id, aName, aSurname, age, status, domain, cvFile, idUser, email, phoneNumber);
                 applicants.add(applicant);
             }
         } catch (SQLException ex) {

@@ -1,13 +1,12 @@
 package com.iucosoft.stagiimdweb.entities;
 
 import com.iucosoft.stagiimdweb.utility.Role;
+import java.time.LocalDate;
+import java.time.ZoneId;
+
 import java.util.Date;
 import java.util.Objects;
 
-/**
- *
- * @author munka
- */
 public class User {
     private int id;
     private String username;
@@ -106,6 +105,11 @@ public class User {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" + "id=" + id + ", username=" + username + ", password=" + password + ", registDate=" + registDate + ", role=" + role + '}';
     }
     
     

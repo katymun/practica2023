@@ -8,6 +8,7 @@ import com.iucosoft.internshipappfx.entities.Company;
 import com.iucosoft.internshipappfx.entities.Recruiter;
 import com.iucosoft.internshipappfx.entities.User;
 import com.iucosoft.internshipappfx.sql.SQLS;
+import com.iucosoft.internshipappfx.utility.DateConverter;
 import com.iucosoft.internshipappfx.utility.Domain;
 import com.iucosoft.internshipappfx.utility.exceptions.CompanyNotFoundException;
 import com.iucosoft.internshipappfx.utility.exceptions.RecruiterNotFoundException;
@@ -113,15 +114,14 @@ public class RecruiterDAOImpl implements RecruiterDAOIntf {
             conn.setAutoCommit(false);
             pstat.setString(1, user.getUsername());
             pstat.setString(2, user.getPassword());
-            pstat.setDate(3, java.sql.Date.valueOf("2023-12-24"));
+            pstat.setDate(3, DateConverter.convert(user.getRegistDate()));
+            pstat.setString(4, user.getRole().toString());
             pstat.executeUpdate();
             //conn.commit();
-            //user.getRegistDate().toString()
             int modificari = 0; // la salvarea recruiterului
             Statement stat = conn.createStatement();
             ResultSet rs = stat.executeQuery(SQLS.SELECT_LAST_USER_ID);
             if (rs.next()) {
-                System.out.println("rs");
                 int userId = rs.getInt(1);
                 recruiter.setIdUser(userId);
                 //De adaugat company id !!!

@@ -5,6 +5,7 @@ import com.iucosoft.internshipappfx.db.DataSource;
 import com.iucosoft.internshipappfx.entities.Application;
 import com.iucosoft.internshipappfx.entities.InternshipProgram;
 import com.iucosoft.internshipappfx.sql.SQLS;
+import com.iucosoft.internshipappfx.utility.DateConverter;
 import com.iucosoft.internshipappfx.utility.Domain;
 import com.iucosoft.internshipappfx.utility.exceptions.ApplicationNotFoundException;
 import com.iucosoft.internshipappfx.utility.exceptions.InternshipProgramNotFoundException;
@@ -28,7 +29,30 @@ public class InternshipProgramDAOImpl implements InternshipProgramDAOIntf {
 
     @Override
     public boolean save(InternshipProgram internshipProgram) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Connection conn = null;
+        PreparedStatement pstat = null;
+
+        try {
+            conn = ds.getConnection();
+            pstat = conn.prepareStatement(SQLS.PROGRAMMES_INSERT);
+            pstat.setString(1, internshipProgram.getiName());
+            pstat.setString(2, internshipProgram.getDomain().toString());
+            pstat.setDate(3, DateConverter.convert(internshipProgram.getStartDate()));
+            pstat.setString(4, internshipProgram.getDuration());
+            pstat.setString(5, internshipProgram.getDescription());
+            pstat.setInt(6, internshipProgram.getIdCompany());
+
+            int modificari = pstat.executeUpdate();
+
+            if (modificari > 0) {
+                return true;
+            } else {
+                throw new SQLException("Eroare la crearea programei!");
+            }
+        } catch (Exception ex) {
+            LOG.severe(ex.toString());
+            return false;
+        }
     }
 
     @Override
@@ -40,7 +64,7 @@ public class InternshipProgramDAOImpl implements InternshipProgramDAOIntf {
             pstat = conn.prepareStatement(SQLS.PROGRAMMES_UPDATE);
             pstat.setString(1, internshipProgram.getiName());
             pstat.setString(2, internshipProgram.getDomain().toString());
-            pstat.setString(3, internshipProgram.getStartDate().toString());
+            pstat.setDate(3, DateConverter.convert(internshipProgram.getStartDate()));
             pstat.setString(4, internshipProgram.getDuration());
             pstat.setString(5, internshipProgram.getDescription());
             pstat.setInt(6, internshipProgram.getId());
@@ -94,8 +118,7 @@ public class InternshipProgramDAOImpl implements InternshipProgramDAOIntf {
                 int id = rs.getInt(1);
                 String iName = rs.getString(2);
                 Domain domain = Domain.valueOf(rs.getString(3));
-                LocalDate ld = LocalDate.parse(rs.getString(4));
-                Date startDate = Date.from(ld.atStartOfDay(ZoneId.systemDefault()).toInstant());
+                Date startDate = DateConverter.convert(rs.getDate(4));
                 String duration = rs.getString(5);
                 String description = rs.getString(6);
                 int idCompany = rs.getInt(7);
@@ -120,8 +143,7 @@ public class InternshipProgramDAOImpl implements InternshipProgramDAOIntf {
                 int id = rs.getInt(1);
                 String iName = rs.getString(2);
                 Domain domain = Domain.valueOf(rs.getString(3));
-                LocalDate ld = LocalDate.parse(rs.getString(4));
-                Date startDate = Date.from(ld.atStartOfDay(ZoneId.systemDefault()).toInstant());
+                Date startDate = DateConverter.convert(rs.getDate(4));
                 String duration = rs.getString(5);
                 String description = rs.getString(6);
                 int idCompany = rs.getInt(7);

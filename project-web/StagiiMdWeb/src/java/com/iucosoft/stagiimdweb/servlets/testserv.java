@@ -36,8 +36,8 @@ public class testserv extends HttpServlet {
         
         request.setAttribute("orase", orase);
         
-        Applicant a1 = new Applicant("name1", "surname1", 20, Status.STUDENT, Domain.DESIGN, "cvFile", 3, "email1", "293750292");
-        Applicant a2 = new Applicant("name2", "surname2", 20, Status.UNEMPLOYED, Domain.DESIGN, "cvFile2", 7, "email2", "09723292");
+        Applicant a1 = new Applicant("name1", "surname1", 20, Status.STUDENT, Domain.DESIGN, "cvFile", "email1", "293750292");
+        Applicant a2 = new Applicant("name2", "surname2", 20, Status.UNEMPLOYED, Domain.DESIGN, "cvFile2", "email2", "09723292");
         
         List<Applicant> applicantList = new ArrayList<>();
 //        List<Applicant> applicantList = applicantDAO.findByName("name");

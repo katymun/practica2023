@@ -25,10 +25,10 @@ public class User {
         this.role = role;
     }
 
-    public User(String username, String password, Role role) {
+    public User(String username, String password, Date registDate, Role role) {
         this.username = username;
         this.password = password;
-        this.registDate = Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant());
+        this.registDate = registDate;
         this.role = role;
     }
 
@@ -106,6 +106,12 @@ public class User {
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "User{" + "id=" + id + ", username=" + username + ", password=" + password + ", registDate=" + registDate + ", role=" + role + '}';
+    }
+    
     
     
 }

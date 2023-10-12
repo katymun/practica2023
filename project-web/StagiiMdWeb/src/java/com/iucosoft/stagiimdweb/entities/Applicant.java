@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.iucosoft.stagiimdweb.entities;
 
 import com.iucosoft.stagiimdweb.utility.Domain;
@@ -23,9 +28,9 @@ public class Applicant extends User {
 
     public Applicant() {
     }
-
-    public Applicant(String aName, String aSurname, int age, Status status, Domain domain, String cvFile,
-                     int idUser, String email, String phoneNumber) {
+    
+    public Applicant(int id, String aName, String aSurname, int age, Status status, Domain domain, String cvFile, int idUser, String email, String phoneNumber) {
+        this.id = id;
         this.aName = aName;
         this.aSurname = aSurname;
         this.age = age;
@@ -35,7 +40,19 @@ public class Applicant extends User {
         this.idUser = idUser;
         this.email = email;
         this.phoneNumber = phoneNumber;
-        Role role = Role.APPLICANT;
+    }
+
+    public Applicant(String aName, String aSurname, int age, Status status, Domain domain, String cvFile,
+                     String email, String phoneNumber) {
+        this.aName = aName;
+        this.aSurname = aSurname;
+        this.age = age;
+        this.status = status;
+        this.domain = domain;
+        this.cvFile = cvFile;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.role = Role.APPLICANT;
     }
 
     public int getId() {

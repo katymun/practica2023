@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context antiJARLocking="true" path="/StagiiMdWeb">
-  <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver"
+  <Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver"
             maxActive="100" maxIdle="30" maxWait="10000"
             name="jdbc/practica" password="Userdb1!"
             type="javax.sql.DataSource"

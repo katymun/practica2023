@@ -1,4 +1,4 @@
-/*
+/**
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -12,8 +12,8 @@ package com.iucosoft.internshipappfx.sql;
 public class SQLS {
 
     // SQL for the 'users' entity
-    public static String USERS_INSERT_DEMO = "INSERT INTO `users` VALUES (NULL,'username1','pword123','2023-01-01')";
-    public static final String USERS_INSERT = "INSERT INTO users VALUES (NULL, ?, ?, ?)";
+    public static String USERS_INSERT_DEMO = "INSERT INTO `users` VALUES (NULL,'username1','pword123','2023-01-01', 'RECRUITER')";
+    public static final String USERS_INSERT = "INSERT INTO users VALUES (NULL, ?, ?, ?, ?)";
 
     // SQL for the 'recruiters' entity
     public static String RECRUITERS_INSERT_DEMO = "INSERT INTO `recruiters` VALUES (NULL,'nume1','prenume1','company1_id','user1_id','nume.prenume@gmail.com')";
@@ -32,8 +32,8 @@ public class SQLS {
     public static final String PROGRAMMES_INSERT = "INSERT INTO programmes VALUES (NULL, ?, ?, ?, ?, ?, ?)";
 
     // SQL for the 'applications' entity
-    public static String APPLICATIONS_INSERT_DEMO = "INSERT INTO `applications` VALUES (NULL,'applicant1_id','programme1_id','2023-01-01','cv1.pdf','068123123','nume.prenume@isa.utm.md','UTM')";
-    public static final String APPLICATIONS_INSERT = "INSERT INTO applications VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)";
+    public static String APPLICATIONS_INSERT_DEMO = "INSERT INTO `applications` VALUES (NULL,'applicant1_id','programme1_id','2023-01-01','cv1.pdf','068123123','nume.prenume@isa.utm.md')";
+    public static final String APPLICATIONS_INSERT = "INSERT INTO applications VALUES (NULL, ?, ?, ?, ?, ?, ?)";
 
     // SQL query to select the maximum ID from the 'users' table
     public static final String SELECT_LAST_USER_ID = "SELECT MAX(id) FROM users";

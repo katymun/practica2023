@@ -6,5 +6,5 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface ApplicationDAOIntf extends GenericDAOIntf<Application> {
-    boolean save(Application application, int idApplicant, int idInternship);
+
 }

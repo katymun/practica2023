@@ -5,6 +5,7 @@ import com.iucosoft.internshipappfx.db.DataSource;
 import com.iucosoft.internshipappfx.entities.Application;
 import com.iucosoft.internshipappfx.entities.Company;
 import com.iucosoft.internshipappfx.sql.SQLS;
+import com.iucosoft.internshipappfx.utility.DateConverter;
 import com.iucosoft.internshipappfx.utility.Domain;
 import com.iucosoft.internshipappfx.utility.exceptions.ApplicationNotFoundException;
 import com.iucosoft.internshipappfx.utility.exceptions.CompanyNotFoundException;
@@ -30,7 +31,30 @@ public class ApplicationDAOImpl implements ApplicationDAOIntf {
 
     @Override
     public boolean save(Application application) throws SQLException {
-        return false;
+        Connection conn = null;
+        PreparedStatement pstat = null;
+
+        try {
+            conn = ds.getConnection();
+            pstat = conn.prepareStatement(SQLS.APPLICATIONS_INSERT);
+            pstat.setInt(1, application.getIdApplicant());
+            pstat.setInt(2, application.getIdInternship());
+            pstat.setDate(3, DateConverter.convert(application.getApplicationDate()));
+            pstat.setString(4, application.getCvFile());
+            pstat.setString(5, application.getPhoneNumber());
+            pstat.setString(6, application.getEmail());
+            
+            int modificari = pstat.executeUpdate();
+
+            if (modificari > 0) {
+                return true;
+            } else {
+                throw new SQLException("Eroare la crearea aplicarii!");
+            }
+        } catch (Exception ex) {
+            LOG.severe(ex.toString());
+            return false;
+        }
     }
 
     @Override
@@ -94,8 +118,7 @@ public class ApplicationDAOImpl implements ApplicationDAOIntf {
                 int id = rs.getInt(1);
                 int idApplicant = rs.getInt(2);
                 int idInternship = rs.getInt(3);
-                LocalDate ld = LocalDate.parse(rs.getString(4));
-                Date applicationDate = Date.from(ld.atStartOfDay(ZoneId.systemDefault()).toInstant());
+                Date applicationDate = DateConverter.convert(rs.getDate(4));
                 String cvFile = rs.getString(5);
                 String phoneNumber = rs.getString(6);
                 String email = rs.getString(7);
@@ -122,8 +145,7 @@ public class ApplicationDAOImpl implements ApplicationDAOIntf {
                 int id = rs.getInt(1);
                 int idApplicant = rs.getInt(2);
                 int idInternship = rs.getInt(3);
-                LocalDate ld = LocalDate.parse(rs.getString(4));
-                Date applicationDate = Date.from(ld.atStartOfDay(ZoneId.systemDefault()).toInstant());
+                Date applicationDate = DateConverter.convert(rs.getDate(4));
                 String cvFile = rs.getString(5);
                 String phoneNumber = rs.getString(6);
                 String email = rs.getString(7);
@@ -136,10 +158,5 @@ public class ApplicationDAOImpl implements ApplicationDAOIntf {
             LOG.severe(ex.toString());
             throw ex;
         }
-    }
-
-    @Override
-    public boolean save(Application application, int idApplicant, int idInternship) {
-        return false;
     }
 }
