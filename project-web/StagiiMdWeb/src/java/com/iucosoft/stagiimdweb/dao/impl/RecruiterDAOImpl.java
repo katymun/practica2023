@@ -121,12 +121,10 @@ public class RecruiterDAOImpl implements RecruiterDAOIntf {
             pstat.setString(4, user.getRole().toString());
             pstat.executeUpdate();
             //conn.commit();
-            //user.getRegistDate().toString()
             int modificari = 0; // la salvarea recruiterului
             Statement stat = conn.createStatement();
             ResultSet rs = stat.executeQuery(SQLS.SELECT_LAST_USER_ID);
             if (rs.next()) {
-                System.out.println("rs");
                 int userId = rs.getInt(1);
                 recruiter.setIdUser(userId);
                 //De adaugat company id !!!
@@ -137,6 +135,7 @@ public class RecruiterDAOImpl implements RecruiterDAOIntf {
                 pstat.setString(3, company.getAbout());
                 pstat.setString(4, company.getPhoneNumber());
                 pstat.setString(5, company.getEmail());
+                pstat.setString(6, company.getImagePath());
 
                 pstat.executeUpdate();
                 //conn.commit();
@@ -279,5 +278,4 @@ public class RecruiterDAOImpl implements RecruiterDAOIntf {
             throw ex;
         }
     }
-
 }

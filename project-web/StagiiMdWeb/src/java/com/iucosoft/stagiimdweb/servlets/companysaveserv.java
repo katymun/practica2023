@@ -43,8 +43,9 @@ public class companysaveserv extends HttpServlet {
         Domain domain = Domain.DESIGN;
         String phoneNumber = "PHONE_NUMBER";
         String email = "email@gmail.com";
+        String imgPath = "img.jpg";
         
-        Company company = new Company(title, domain, description, phoneNumber, email);
+        Company company = new Company(title, domain, description, phoneNumber, email, imgPath);
         CompanyDAOIntf companyDao = (CompanyDAOIntf) request.getServletContext().getAttribute("companyDao");
         try {
 //            if (companyDao == null) {

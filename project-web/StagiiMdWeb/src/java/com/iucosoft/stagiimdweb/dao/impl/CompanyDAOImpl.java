@@ -43,6 +43,7 @@ public class CompanyDAOImpl implements CompanyDAOIntf {
             pstat.setString(3, company.getAbout());
             pstat.setString(4, company.getPhoneNumber());
             pstat.setString(5, company.getEmail());
+            pstat.setString(6, company.getImagePath());
 
             int modificari = pstat.executeUpdate();
 
@@ -69,6 +70,7 @@ public class CompanyDAOImpl implements CompanyDAOIntf {
             pstat.setString(3, company.getAbout());
             pstat.setString(4, company.getPhoneNumber());
             pstat.setString(5, company.getEmail());
+            pstat.setString(6, company.getImagePath());
             pstat.setInt(6, company.getId());
 
             pstat.executeUpdate();
@@ -123,8 +125,9 @@ public class CompanyDAOImpl implements CompanyDAOIntf {
                 String about = rs.getString(4);
                 String phoneNumber = rs.getString(5);
                 String email = rs.getString(6);
+                String imagePath = rs.getString(7);
 
-                Company company = new Company(id, title, domain, about, phoneNumber, email);
+                Company company = new Company(id, title, domain, about, phoneNumber, email, imagePath);
                 companies.add(company);
             }
             return companies;
@@ -147,8 +150,9 @@ public class CompanyDAOImpl implements CompanyDAOIntf {
                 String about = rs.getString(4);
                 String phoneNumber = rs.getString(5);
                 String email = rs.getString(6);
+                String imagePath = rs.getString(7);
 
-                Company company = new Company(id, title, domain, about, phoneNumber, email);
+                Company company = new Company(id, title, domain, about, phoneNumber, email, imagePath);
                 return company;
             }
             throw new CompanyNotFoundException("Find by id = " + idCompany + " failed!");
@@ -161,10 +165,11 @@ public class CompanyDAOImpl implements CompanyDAOIntf {
     @Override
     public Company findByName(String companyTitle) throws SQLException {
         try (Connection conn = ds.getConnection();
-                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_COMPANY_BY_NAME);) {
+                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_COMPANY_BY_NAME);
+                ResultSet rs = pstat.executeQuery();) {
 
             pstat.setString(1, companyTitle);
-            ResultSet rs = pstat.executeQuery();
+
             if (rs.next()) {
                 int id = rs.getInt(1);
                 String title = rs.getString(2);
@@ -172,8 +177,9 @@ public class CompanyDAOImpl implements CompanyDAOIntf {
                 String about = rs.getString(4);
                 String phoneNumber = rs.getString(5);
                 String email = rs.getString(6);
+                String imagePath = rs.getString(7);
 
-                Company company = new Company(id, title, domain, about, phoneNumber, email);
+                Company company = new Company(id, title, domain, about, phoneNumber, email, imagePath);
                 return company;
             }
             throw new CompanyNotFoundException("Find by name = " + companyTitle + " failed!");

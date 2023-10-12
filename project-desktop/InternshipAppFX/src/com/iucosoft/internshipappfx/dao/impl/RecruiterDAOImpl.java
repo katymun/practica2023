@@ -132,6 +132,7 @@ public class RecruiterDAOImpl implements RecruiterDAOIntf {
                 pstat.setString(3, company.getAbout());
                 pstat.setString(4, company.getPhoneNumber());
                 pstat.setString(5, company.getEmail());
+                pstat.setString(6, company.getImagePath());
 
                 pstat.executeUpdate();
                 //conn.commit();

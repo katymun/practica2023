@@ -19,25 +19,28 @@ public class Company {
     private String about;
     private String phoneNumber;
     private String email;
+    private String imagePath;
 
     public Company() {
     }
 
-    public Company(int id, String title, Domain domain, String about, String phoneNumber, String email) {
+    public Company(int id, String title, Domain domain, String about, String phoneNumber, String email, String imagePath) {
         this.id = id;
         this.title = title;
         this.domain = domain;
         this.about = about;
         this.phoneNumber = phoneNumber;
         this.email = email;
+        this.imagePath = imagePath;
     }
 
-    public Company(String title, Domain domain, String about, String phoneNumber, String email) {
+    public Company(String title, Domain domain, String about, String phoneNumber, String email, String imagePath) {
         this.title = title;
         this.domain = domain;
         this.about = about;
         this.phoneNumber = phoneNumber;
         this.email = email;
+        this.imagePath = imagePath;
     }
 
     public String getEmail() {
@@ -88,15 +91,24 @@ public class Company {
         this.phoneNumber = phoneNumber;
     }
 
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 71 * hash + this.id;
-        hash = 71 * hash + Objects.hashCode(this.title);
-        hash = 71 * hash + Objects.hashCode(this.domain);
-        hash = 71 * hash + Objects.hashCode(this.about);
-        hash = 71 * hash + Objects.hashCode(this.phoneNumber);
-        hash = 71 * hash + Objects.hashCode(this.email);
+        int hash = 5;
+        hash = 53 * hash + this.id;
+        hash = 53 * hash + Objects.hashCode(this.title);
+        hash = 53 * hash + Objects.hashCode(this.domain);
+        hash = 53 * hash + Objects.hashCode(this.about);
+        hash = 53 * hash + Objects.hashCode(this.phoneNumber);
+        hash = 53 * hash + Objects.hashCode(this.email);
+        hash = 53 * hash + Objects.hashCode(this.imagePath);
         return hash;
     }
 
@@ -127,6 +139,9 @@ public class Company {
         if (!Objects.equals(this.email, other.email)) {
             return false;
         }
+        if (!Objects.equals(this.imagePath, other.imagePath)) {
+            return false;
+        }
         if (this.domain != other.domain) {
             return false;
         }
@@ -135,7 +150,7 @@ public class Company {
 
     @Override
     public String toString() {
-        return "Company{" + "id=" + id + ", title=" + title + ", domain=" + domain + ", about=" + about + ", phoneNumber=" + phoneNumber + ", email=" + email + '}';
+        return "Company{" + "id=" + id + ", title=" + title + ", domain=" + domain + ", about=" + about + ", phoneNumber=" + phoneNumber + ", email=" + email + ", imagePath=" + imagePath + '}';
     }
     
     
