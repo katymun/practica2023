@@ -5,6 +5,7 @@
  */
 package com.iucosoft.internshipappfx.entities;
 
+import com.iucosoft.internshipappfx.utility.Domain;
 import com.iucosoft.internshipappfx.utility.Role;
 import com.iucosoft.internshipappfx.utility.Status;
 
@@ -19,8 +20,8 @@ public class Applicant extends User {
     private String aName;
     private String aSurname;
     private int age;
-    private String status;  //din enum
-    private String domain;  //din enum
+    private Status status;  //din enum
+    private Domain domain;  //din enum
     private String cvFile;
     private int idUser;
     private String email;
@@ -29,8 +30,7 @@ public class Applicant extends User {
     public Applicant() {
     }
 
-    public Applicant(int id, String aName, String aSurname, int age, String status, String domain, String cvFile,
-                     int idUser, String email, String phoneNumber) {
+    public Applicant(int id, String aName, String aSurname, int age, Status status, Domain domain, String cvFile, int idUser, String email, String phoneNumber) {
         this.id = id;
         this.aName = aName;
         this.aSurname = aSurname;
@@ -41,7 +41,21 @@ public class Applicant extends User {
         this.idUser = idUser;
         this.email = email;
         this.phoneNumber = phoneNumber;
-        role = Role.APPLICANT;
+    }
+
+    
+    
+    public Applicant(String aName, String aSurname, int age, Status status, Domain domain, String cvFile,
+                     String email, String phoneNumber) {
+        this.aName = aName;
+        this.aSurname = aSurname;
+        this.age = age;
+        this.status = status;
+        this.domain = domain;
+        this.cvFile = cvFile;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.role = Role.APPLICANT;
     }
 
     public int getId() {
@@ -84,11 +98,11 @@ public class Applicant extends User {
         this.status = status;
     }
 
-    public String getDomain() {
+    public Domain getDomain() {
         return domain;
     }
 
-    public void setDomain(String domain) {
+    public void setDomain(Domain domain) {
         this.domain = domain;
     }
 

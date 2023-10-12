@@ -1,19 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.iucosoft.internshipappfx.entities;
 
 import com.iucosoft.internshipappfx.utility.Role;
+import java.time.LocalDate;
+import java.time.ZoneId;
 
 import java.util.Date;
 import java.util.Objects;
 
-/**
- *
- * @author munka
- */
 public class User {
     private int id;
     private String username;
@@ -21,6 +14,25 @@ public class User {
     private Date registDate;
     protected Role role;
 
+    public User() {
+    }
+    
+    public User(int id, String username, String password, Date registDate, Role role) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.registDate = registDate;
+        this.role = role;
+    }
+
+    public User(String username, String password, Date registDate, Role role) {
+        this.username = username;
+        this.password = password;
+        this.registDate = registDate;
+        this.role = role;
+    }
+
+    
 
     public Role getRole() {
         return role;
@@ -94,6 +106,12 @@ public class User {
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "User{" + "id=" + id + ", username=" + username + ", password=" + password + ", registDate=" + registDate + ", role=" + role + '}';
+    }
+    
     
     
 }

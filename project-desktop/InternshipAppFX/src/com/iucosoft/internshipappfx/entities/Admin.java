@@ -7,9 +7,9 @@ package com.iucosoft.internshipappfx.entities;
 
 import com.iucosoft.internshipappfx.utility.Role;
 
-public class Admin extends User {
+public class Admin {
     public Admin() {
-        role = Role.ADMIN;
+        Role role = Role.ADMIN;
     }
 
 
