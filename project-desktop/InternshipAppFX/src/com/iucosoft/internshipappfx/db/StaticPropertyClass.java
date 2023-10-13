@@ -12,5 +12,5 @@ package com.iucosoft.internshipappfx.db;
 public class StaticPropertyClass {
     public static boolean DEBUG = false;
     public static String JDBC_FILE = "jdbc.properties";
-    public static String JDBC_FILE_TEST = "jdbctestare.properties";
+    public static String JDBC_FILE_TEST = "jdbctest.properties";
 }

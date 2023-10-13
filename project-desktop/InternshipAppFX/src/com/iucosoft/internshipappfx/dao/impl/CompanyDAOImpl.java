@@ -71,7 +71,7 @@ public class CompanyDAOImpl implements CompanyDAOIntf {
             pstat.setString(4, company.getPhoneNumber());
             pstat.setString(5, company.getEmail());
             pstat.setString(6, company.getImagePath());
-            pstat.setInt(6, company.getId());
+            pstat.setInt(7, company.getId());
 
             pstat.executeUpdate();
             return true;
