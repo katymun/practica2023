@@ -1,86 +1,41 @@
-USE `practicatest`;
--- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
---
--- Host: localhost    Database: practica
--- ------------------------------------------------------
--- Server version	8.0.34
+INSERT INTO practicatest.`users` (id, username, password, register_date, role) VALUES ('1', 'munkatea', 'pass1', '2008-7-04', 'ADMIN');
+INSERT INTO practicatest.`users` (id, username, password, register_date, role) VALUES ('2', 'bradpitt', 'pass2', '2020-4-14', 'RECRUITER');
+INSERT INTO practicatest.`users` (id, username, password, register_date, role) VALUES ('3', 'qtarantino', 'pass3', '2018-7-03', 'RECRUITER');
+INSERT INTO practicatest.`users` (id, username, password, register_date, role) VALUES ('4', 'enidelcu', 'pass4', '2021-12-02', 'APPLICANT');
+INSERT INTO practicatest.`users` (id, username, password, register_date, role) VALUES ('5', 'ludmila', 'pass5', '2010-1-31', 'APPLICANT');
+INSERT INTO practicatest.`users` (id, username, password, register_date, role) VALUES ('6', 'gnelli', 'pass6', '2017-10-15', 'APPLICANT');
+INSERT INTO practicatest.`users` (id, username, password, register_date, role) VALUES ('7', 'iuco', 'pass7', '2023-1-01', 'RECRUITER');
+INSERT INTO practicatest.`users` (id, username, password, register_date, role) VALUES ('8', 'vbostan', 'pass8', '2019-4-13', 'RECRUITER');
+INSERT INTO practicatest.`users` (id, username, password, register_date, role) VALUES ('9', 'hlanda', 'pass9', '2020-3-11', 'RECRUITER');
+INSERT INTO practicatest.`users` (id, username, password, register_date, role) VALUES ('10', 'oppenheimer', 'pass10', '2013-3-27', 'APPLICANT');
+INSERT INTO practicatest.`users` (id, username, password, register_date, role) VALUES ('11', 'holmes', 'pass11', '2009-5-31', 'APPLICANT');
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+INSERT INTO practicatest.`companies` (id, title, domain, about, phone_number, email, img_path) VALUES ('1', 'IUCOSOFT', 'IT', 'We work in JAVA', '060111111', 'email@iucosoft.com', 'img1.jpg');
+INSERT INTO practicatest.`companies` (id, title, domain, about, phone_number, email, img_path) VALUES ('2', 'ORATORICA', 'EDUCATION', 'Courses for learning new languages', '060222222', 'oratorica@gmail.com', 'img2.jpg');
+INSERT INTO practicatest.`companies` (id, title, domain, about, phone_number, email, img_path) VALUES ('3', 'DECOR', 'DESIGN', 'Design for posters and wallpapers', '060333333', 'mail@decor.md', 'img3.jpg');
+INSERT INTO practicatest.`companies` (id, title, domain, about, phone_number, email, img_path) VALUES ('4', 'TKD', 'SPORT_BEAUTY_WELLNESS', 'Taekwondo sport club', '060444444', 'sport@tkd.com', 'img4.jpg');
+INSERT INTO practicatest.`companies` (id, title, domain, about, phone_number, email, img_path) VALUES ('5', 'Andy\'s Pizza', 'FOOD', 'Y\'all know what does our company =-)', '060555555', 'andys.pizza@gmail.com', 'img5.jpg');
 
---
--- Dumping data for table `applicants`
---
+INSERT INTO practicatest.`applicants` (id, name, surname, age, a_status, domain, cv, user_id, email, phone_number) VALUES ('1', 'Elena', 'Nidelcu', '19', 'STUDENT', 'IT', 'cv1.pdf', '4', 'elena.nidelcu@isa.utm.md', '060123456');
+INSERT INTO practicatest.`applicants` (id, name, surname, age, a_status, domain, cv, user_id, email, phone_number) VALUES ('2', 'Ludmila', 'Friptu', '20', 'WORKING', 'EDUCATION', 'cv2.pdf', '5', 'friptu@gmail.com', '060234567');
+INSERT INTO practicatest.`applicants` (id, name, surname, age, a_status, domain, cv, user_id, email, phone_number) VALUES ('3', 'Nelli', 'Garbuz', '18', 'STUDENT', 'DESIGN', 'cv3.pdf', '6', 'nelly@dip.utm.md', '060345678');
+INSERT INTO practicatest.`applicants` (id, name, surname, age, a_status, domain, cv, user_id, email, phone_number) VALUES ('4', 'Robert', 'Oppenheimer', '40', 'WORKING', 'SPORT_BEAUTY_WELLNESS', 'cv4.pdf', '10', 'r.oppy@bomb.com', '060456789');
+INSERT INTO practicatest.`applicants` (id, name, surname, age, a_status, domain, cv, user_id, email, phone_number) VALUES ('5', 'Sherlock', 'Holmes', '30', 'UNEMPLOYED', 'FOOD', 'cv5.pdf', '11', 'holmes@gmail.com', '060567890');
 
-LOCK TABLES `applicants` WRITE;
-/*!40000 ALTER TABLE `applicants` DISABLE KEYS */;
-INSERT INTO `applicants` VALUES (1,'a1','ap1',20,'STUDENT','DESIGN','cvFile1',2,'a@gmail.com','03203985'),(2,'a2','ap2',20,'STUDENT','DESIGN','cvFile2',3,'a@gmail.com','03203985'),(3,'a2','ap2',20,'STUDENT','DESIGN','cvFile2',4,'a@gmail.com','03203985'),(4,'applicant1','surname1',20,'STUDENT','DESIGN','cvFile1',18,'a1@gmail.com','94376-2983'),(5,'applicant2','surname2',20,'UNEMPLOYED','IT','cvFile2',20,'a1@gmail.com','94376-2983');
-/*!40000 ALTER TABLE `applicants` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO practicatest.`recruiters` (id, name, surname, user_id, company_id, email) VALUES ('1', 'Brad', 'Pitt', '2', '4', 'brad.pitt@tkd.md');
+INSERT INTO practicatest.`recruiters` (id, name, surname, user_id, company_id, email) VALUES ('2', 'Quentin', 'Tarantino', '3', '5', 'quentin.tarantino@andis.md');
+INSERT INTO practicatest.`recruiters` (id, name, surname, user_id, company_id, email) VALUES ('3', 'Iurie', 'Corobceanu', '7', '1', 'iurie@iucosoft.com');
+INSERT INTO practicatest.`recruiters` (id, name, surname, user_id, company_id, email) VALUES ('4', 'Viorel', 'Bostan', '8', '2', 'viorel.bostan@oratorica.com');
+INSERT INTO practicatest.`recruiters` (id, name, surname, user_id, company_id, email) VALUES ('5', 'Hans', 'Landa', '9', '3', 'hans.landa@decor.md');
 
---
--- Dumping data for table `applications`
---
+INSERT INTO practicatest.`programmes` (id, title, domain, start_data, duration, company_id, duties, qualifications, benefits, location, paid) VALUES ('1', 'JAVA Developer', 'IT', '2020-3-05', '3 months', '1', 'Develop desktop apps', 'Know JAVA well', 'Work remotely', 'ONLINE', '0');
+INSERT INTO practicatest.`programmes` (id, title, domain, start_data, duration, company_id, duties, qualifications, benefits, location, paid) VALUES ('2', 'English teacher', 'EDUCATION', '2016-7-09', '2 months', '2', 'Teach children', 'C1 in English', 'Hiring after internship', 'Chisinau', '0');
+INSERT INTO practicatest.`programmes` (id, title, domain, start_data, duration, company_id, duties, qualifications, benefits, location, paid) VALUES ('3', 'Designer', 'DESIGN', '2023-5-25', '6 months', '3', 'Design personalised posters', 'Studii la UTM', 'Working with us', 'Chisinau', '1');
+INSERT INTO practicatest.`programmes` (id, title, domain, start_data, duration, company_id, duties, qualifications, benefits, location, paid) VALUES ('4', 'Coach', 'SPORT_BEAUTY_WELLNESS', '2022-8-27', '4 months', '4', 'Coach people', 'Maestru al Sportului', 'No benefits', 'Balti', '1');
+INSERT INTO practicatest.`programmes` (id, title, domain, start_data, duration, company_id, duties, qualifications, benefits, location, paid) VALUES ('5', 'Cook', 'FOOD', '2021-2-14', '5 weeks', '5', 'Boil eggs', 'No qualifications', 'Eat eggs', 'Cantemir', '0');
 
-LOCK TABLES `applications` WRITE;
-/*!40000 ALTER TABLE `applications` DISABLE KEYS */;
-/*!40000 ALTER TABLE `applications` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Dumping data for table `companies`
---
-
-LOCK TABLES `companies` WRITE;
-/*!40000 ALTER TABLE `companies` DISABLE KEYS */;
-INSERT INTO `companies` VALUES (2,'t3','EDUCATION','about3','203984567','c3@gmail.com',NULL),(3,'t2','EDUCATION','about3','203984567','c3@gmail.com',NULL),(4,'comp1','DESIGN','good company','129348765','comp1@example.com',NULL),(11,'comp9','DESIGN','good company','129348765','comp1@example.com',NULL),(12,'comp10','DESIGN','good company','129348765','comp1@example.com',NULL),(13,'comp11','DESIGN','good company','129348765','comp1@example.com',NULL),(14,'comp12','DESIGN','good company','129348765','comp1@example.com',NULL),(15,'comp13','DESIGN','good company','129348765','comp1@example.com',NULL),(16,'company99','DESIGN','lakjsdbva','PHONE_NUMBER','email@gmail.com',NULL),(17,'comp15','DESIGN','good company','129348765','comp1@example.com',NULL),(18,'comp70','DESIGN','kjahrg','PHONE_NUMBER','email@gmail.com',NULL),(19,'company-title1','DESIGN','good company 1','203985723','company1@example.com','img.img');
-/*!40000 ALTER TABLE `companies` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Dumping data for table `programmes`
---
-
-LOCK TABLES `programmes` WRITE;
-/*!40000 ALTER TABLE `programmes` DISABLE KEYS */;
-/*!40000 ALTER TABLE `programmes` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Dumping data for table `recruiters`
---
-
-LOCK TABLES `recruiters` WRITE;
-/*!40000 ALTER TABLE `recruiters` DISABLE KEYS */;
-INSERT INTO `recruiters` VALUES (12,'Vasile','Rotaru',12,14,'vr@example.com'),(13,'Vasile1','Rotaru1',13,15,'vr@example.com'),(14,'Vasile2','Rotaru2',14,17,'vr2@example.com'),(15,'Munteanu','Ecaterina',22,19,'ecaterina@gmail.com');
-/*!40000 ALTER TABLE `recruiters` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Dumping data for table `users`
---
-
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'username1','password1','2023-12-12',''),(2,'username3','password1','2023-12-12',''),(3,'username2','password2','2023-12-12',''),(4,'username4','password2','2023-12-12',''),(7,'user9','passw5','2023-12-24',''),(9,'user10','passw5','2023-12-24',''),(11,'user11','passw5','2023-12-24',''),(12,'user12','passw5','2023-12-24',''),(13,'user13','passw5','2023-12-24',''),(14,'user14','password6','2023-10-12','RECRUITER'),(18,'user15','p1','2023-10-12','APPLICANT'),(20,'user16','p2','2023-10-12','APPLICANT'),(22,'user17','p3','2023-10-12','RECRUITER');
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2023-10-13 16:25:20
+INSERT INTO practicatest.`applications` (id, applicant_id, programme_id, application_date, cv, phone_number, email) VALUES ('1', '1', '1', '2023-10-10', 'cv1.pdf', '060123456', 'elena.nidelcu@isa.utm.md');
+INSERT INTO practicatest.`applications` (id, applicant_id, programme_id, application_date, cv, phone_number, email) VALUES ('2', '2', '2', '2023-10-11', 'cv2.pdf', '060234567', 'friptu@gmail.com');
+INSERT INTO practicatest.`applications` (id, applicant_id, programme_id, application_date, cv, phone_number, email) VALUES ('3', '3', '3', '2023-10-12', 'cv3.pdf', '060345678', 'nelly@dip.utm.md');
+INSERT INTO practicatest.`applications` (id, applicant_id, programme_id, application_date, cv, phone_number, email) VALUES ('4', '4', '4', '2023-10-13', 'cv4.pdf', '060456789', 'r.oppy@bomb.com');
+INSERT INTO practicatest.`applications` (id, applicant_id, programme_id, application_date, cv, phone_number, email) VALUES ('5', '5', '5', '2023-10-14', 'cv5.pdf', '060567890', 'holmes@gmail.com');
