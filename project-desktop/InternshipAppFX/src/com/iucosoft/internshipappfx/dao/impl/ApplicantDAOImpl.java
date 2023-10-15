@@ -88,10 +88,12 @@ public class ApplicantDAOImpl implements ApplicantDAOIntf {
 
     @Override
     public Applicant findById(int idApplicant) throws SQLException {
+        ResultSet rs = null;
         try (Connection conn = ds.getConnection();
-                Statement stat = conn.createStatement();
-                ResultSet rs = stat.executeQuery(SQLS.FIND_APPLICANT_BY_ID);) {
+                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_APPLICANT_BY_ID);) {
 
+            pstat.setInt(1, idApplicant);
+            rs = pstat.executeQuery();
             if (rs.next()) {
                 int id = rs.getInt(1);
                 String aName = rs.getString(2);
@@ -111,7 +113,11 @@ public class ApplicantDAOImpl implements ApplicantDAOIntf {
         } catch (SQLException ex) {
             LOG.severe(ex.toString());
             throw ex;
-        }   
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+        }
     }
 
     @Override
@@ -207,12 +213,12 @@ public class ApplicantDAOImpl implements ApplicantDAOIntf {
     @Override
     public List<Applicant> findByName(String applicantName) throws SQLException {
         List<Applicant> applicants = new ArrayList<>();
+        ResultSet rs = null;
         try (Connection conn = ds.getConnection();
-                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_APPLICANT_BY_NAME);
-                ResultSet rs = pstat.executeQuery();) {
+                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_APPLICANT_BY_NAME);) {
 
             pstat.setString(1, applicantName);
-
+            rs = pstat.executeQuery();
             while (rs.next()) {
                 int id = rs.getInt(1);
                 String aName = rs.getString(2);
@@ -231,6 +237,10 @@ public class ApplicantDAOImpl implements ApplicantDAOIntf {
         } catch (SQLException ex) {
             LOG.severe(ex.toString());
             throw ex;
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
         }
         return applicants;
     }

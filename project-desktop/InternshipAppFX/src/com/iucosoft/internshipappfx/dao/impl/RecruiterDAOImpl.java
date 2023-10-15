@@ -254,10 +254,11 @@ public class RecruiterDAOImpl implements RecruiterDAOIntf {
 
     @Override
     public Recruiter findById(int idRecruiter) throws SQLException {
+        ResultSet rs = null;
         try (Connection conn = ds.getConnection();
-                Statement stat = conn.createStatement();
-                ResultSet rs = stat.executeQuery(SQLS.FIND_RECRUITER_BY_ID)) {
-
+                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_RECRUITER_BY_ID);) {
+            pstat.setInt(1, idRecruiter);
+            rs = pstat.executeQuery();
             if (rs.next()) {
                 int id = rs.getInt(1);
                 String rName = rs.getString(2);
@@ -273,6 +274,10 @@ public class RecruiterDAOImpl implements RecruiterDAOIntf {
         } catch (SQLException ex) {
             LOG.severe(ex.toString());
             throw ex;
+        }  finally {
+            if (rs != null) {
+                rs.close();
+            }
         }
     }
 

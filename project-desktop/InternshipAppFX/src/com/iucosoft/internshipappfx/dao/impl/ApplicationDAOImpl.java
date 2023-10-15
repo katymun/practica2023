@@ -110,10 +110,11 @@ public class ApplicationDAOImpl implements ApplicationDAOIntf {
 
     @Override
     public Application findById(int idApplication) throws SQLException {
+        ResultSet rs = null;
         try (Connection conn = ds.getConnection();
-                Statement stat = conn.createStatement();
-                ResultSet rs = stat.executeQuery(SQLS.FIND_APPLICATION_BY_ID)) {
-
+                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_APPLICATION_BY_ID);) {
+            pstat.setInt(1, idApplication);
+            rs = pstat.executeQuery();
             if (rs.next()) {
                 int id = rs.getInt(1);
                 int idApplicant = rs.getInt(2);
@@ -130,6 +131,10 @@ public class ApplicationDAOImpl implements ApplicationDAOIntf {
         } catch (SQLException ex) {
             LOG.severe(ex.toString());
             throw ex;
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
         }
 
     }

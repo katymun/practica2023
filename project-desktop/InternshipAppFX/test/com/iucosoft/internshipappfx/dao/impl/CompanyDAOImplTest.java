@@ -8,6 +8,8 @@ package com.iucosoft.internshipappfx.dao.impl;
 import com.iucosoft.internshipappfx.dao.intf.CompanyDAOIntf;
 import com.iucosoft.internshipappfx.entities.Company;
 import com.iucosoft.internshipappfx.utility.Domain;
+import com.iucosoft.internshipappfx.utility.exceptions.CompanyNotFoundException;
+import java.time.LocalDate;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -60,11 +62,8 @@ public class CompanyDAOImplTest extends BaseDAOImplTest {
     @Test
     public void testDelete() throws Exception {
         System.out.println("delete");
-        Company company = null;
-        CompanyDAOImpl instance = new CompanyDAOImpl();
-        instance.delete(company);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Company company = new Company(2,"t3",Domain.EDUCATION,"about3","203984567","c3@gmail.com",null);
+        
     }
 
     /**
@@ -73,12 +72,10 @@ public class CompanyDAOImplTest extends BaseDAOImplTest {
     @Test
     public void testFindAll() throws Exception {
         System.out.println("findAll");
-        CompanyDAOImpl instance = new CompanyDAOImpl();
-        List<Company> expResult = null;
-        List<Company> result = instance.findAll();
+        int expResult = 12;
+        List<Company> allCompanies = companyDao.findAll();
+        int result = allCompanies.size();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -87,13 +84,10 @@ public class CompanyDAOImplTest extends BaseDAOImplTest {
     @Test
     public void testFindById() throws Exception {
         System.out.println("findById");
-        int idCompany = 0;
-        CompanyDAOImpl instance = new CompanyDAOImpl();
-        Company expResult = null;
-        Company result = instance.findById(idCompany);
+        int idCompany = 19;
+        Company expResult = new Company(19, "company-title1", Domain.DESIGN, "good company 1", "203985723", "company1@example.com", "img.img");
+        Company result = companyDao.findById(idCompany);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -102,13 +96,12 @@ public class CompanyDAOImplTest extends BaseDAOImplTest {
     @Test
     public void testFindByName() throws Exception {
         System.out.println("findByName");
-        String companyTitle = "";
-        CompanyDAOImpl instance = new CompanyDAOImpl();
-        Company expResult = null;
-        Company result = instance.findByName(companyTitle);
+        String companyTitle = "company-title1";
+        Company expResult = new Company(19, "company-title1", Domain.DESIGN, "good company 1", "203985723", "company1@example.com", "img.img");
+        Company result = companyDao.findByName(companyTitle);
+        System.out.println(expResult);
+        System.out.println(result);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

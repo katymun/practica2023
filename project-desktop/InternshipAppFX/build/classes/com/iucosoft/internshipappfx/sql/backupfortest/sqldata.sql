@@ -41,7 +41,18 @@ UNLOCK TABLES;
 
 LOCK TABLES `companies` WRITE;
 /*!40000 ALTER TABLE `companies` DISABLE KEYS */;
-INSERT INTO `companies` VALUES (2,'t3','EDUCATION','about3','203984567','c3@gmail.com',NULL),(3,'t2','EDUCATION','about3','203984567','c3@gmail.com',NULL),(4,'comp1','DESIGN','good company','129348765','comp1@example.com',NULL),(11,'comp9','DESIGN','good company','129348765','comp1@example.com',NULL),(12,'comp10','DESIGN','good company','129348765','comp1@example.com',NULL),(13,'comp11','DESIGN','good company','129348765','comp1@example.com',NULL),(14,'comp12','DESIGN','good company','129348765','comp1@example.com',NULL),(15,'comp13','DESIGN','good company','129348765','comp1@example.com',NULL),(16,'company99','DESIGN','lakjsdbva','PHONE_NUMBER','email@gmail.com',NULL),(17,'comp15','DESIGN','good company','129348765','comp1@example.com',NULL),(18,'comp70','DESIGN','kjahrg','PHONE_NUMBER','email@gmail.com',NULL),(19,'company-title1','DESIGN','good company 1','203985723','company1@example.com','img.img');
+INSERT INTO `companies` VALUES (2,'t3','EDUCATION','about3','203984567','c3@gmail.com',NULL),
+                            (3,'t2','EDUCATION','about3','203984567','c3@gmail.com',NULL),
+                            (4,'comp1','DESIGN','good company','129348765','comp1@example.com',NULL),
+                            (11,'comp9','DESIGN','good company','129348765','comp1@example.com',NULL),
+                            (12,'comp10','DESIGN','good company','129348765','comp1@example.com',NULL),
+                            (13,'comp11','DESIGN','good company','129348765','comp1@example.com',NULL),
+                            (14,'comp12','DESIGN','good company','129348765','comp1@example.com',NULL),
+                            (15,'comp13','DESIGN','good company','129348765','comp1@example.com',NULL),
+                            (16,'company99','DESIGN','lakjsdbva','PHONE_NUMBER','email@gmail.com',NULL),
+                            (17,'comp15','DESIGN','good company','129348765','comp1@example.com',NULL),
+                            (18,'comp70','DESIGN','kjahrg','PHONE_NUMBER','email@gmail.com',NULL),
+                            (19,'company-title1','DESIGN','good company 1','203985723','company1@example.com','img.img');
 /*!40000 ALTER TABLE `companies` ENABLE KEYS */;
 UNLOCK TABLES;
 

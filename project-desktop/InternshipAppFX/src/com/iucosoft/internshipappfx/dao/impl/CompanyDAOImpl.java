@@ -139,10 +139,11 @@ public class CompanyDAOImpl implements CompanyDAOIntf {
 
     @Override
     public Company findById(int idCompany) throws SQLException {
+        ResultSet rs = null;
         try (Connection conn = ds.getConnection();
-                Statement stat = conn.createStatement();
-                ResultSet rs = stat.executeQuery(SQLS.FIND_COMPANY_BY_ID)) {
-
+                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_COMPANY_BY_ID);) {
+            pstat.setInt(1, idCompany);
+            rs = pstat.executeQuery();
             if (rs.next()) {
                 int id = rs.getInt(1);
                 String title = rs.getString(2);
@@ -159,17 +160,21 @@ public class CompanyDAOImpl implements CompanyDAOIntf {
         } catch (SQLException ex) {
             LOG.severe(ex.toString());
             throw ex;
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
         }
     }
 
     @Override
     public Company findByName(String companyTitle) throws SQLException {
+        ResultSet rs = null;
         try (Connection conn = ds.getConnection();
-                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_COMPANY_BY_NAME);
-                ResultSet rs = pstat.executeQuery();) {
+                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_COMPANY_BY_NAME);) {
 
             pstat.setString(1, companyTitle);
-
+            rs = pstat.executeQuery();
             if (rs.next()) {
                 int id = rs.getInt(1);
                 String title = rs.getString(2);
@@ -186,6 +191,10 @@ public class CompanyDAOImpl implements CompanyDAOIntf {
         } catch (SQLException ex) {
             LOG.severe(ex.toString());
             throw ex;
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
         }
     }
 

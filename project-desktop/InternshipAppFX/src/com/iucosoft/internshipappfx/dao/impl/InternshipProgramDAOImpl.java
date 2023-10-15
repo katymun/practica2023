@@ -150,10 +150,11 @@ public class InternshipProgramDAOImpl implements InternshipProgramDAOIntf {
 
     @Override
     public InternshipProgram findById(int idInternshipProgram) throws SQLException {
+        ResultSet rs = null;
         try (Connection conn = ds.getConnection();
-                Statement stat = conn.createStatement();
-                ResultSet rs = stat.executeQuery(SQLS.FIND_PROGRAMME_BY_ID)) {
-
+                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_PROGRAMME_BY_ID);) {
+            pstat.setInt(1, idInternshipProgram);
+            rs = pstat.executeQuery();
             if (rs.next()) {
                 int id = rs.getInt(1);
                 String iName = rs.getString(2);
@@ -178,6 +179,10 @@ public class InternshipProgramDAOImpl implements InternshipProgramDAOIntf {
         } catch (SQLException ex) {
             LOG.severe(ex.toString());
             throw ex;
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
         }
     }
 
