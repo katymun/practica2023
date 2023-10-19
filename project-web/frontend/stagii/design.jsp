@@ -1,3 +1,5 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,42 +15,41 @@
 </head>
 
 <body>
-<script src="header_internships.js"> </script>
-<div class="banks-section-title">Banking <b>Internships</b></div>
+<script src="header_home.js"></script>
+<div class="design-section-title">Design <b>Internships</b></div>
 <section>
-<div class="banks-companies">
-    <a href="/Internship details/Details.html" class="banks-company">
-    <div class="banks-companies1">
+<div class="design-companies">
+    <a href="/Internship details/Details.html" class="design-company">
+    <div class="design-companies1">
             <!--<div class="content">Company -->
     </div>
 </a>
-    <div class="banks-companies2">
-        <a href="/stagii/internship_details.html" class="banks-company">
+    <div class="design-companies2">
+        <a href="/stagii/internship_details.html" class="design-company">
             <!--<div class="content">Company -->
             </div>
         </a>
     </div>
-    <div class="banks-companies3">
-        <a href="/stagii/internship_details.html" class="banks-company">
+    <div class="design-companies3">
+        <a href="/stagii/internship_details.html" class="design-company">
             <!--<div class="content">Company -->
             </div>
         </a>
     </div>
-    <div class="banks-companies4">
-        <a href="/stagii/internship_details.html" class="banks-company">
+    <div class="design-companies4">
+        <a href="/stagii/internship_details.html" class="design-company">
             <!--<div class="content">Company -->
             </div>
         </a>
     </div>
-    <div class="banks-companies5">
-        <a href="/stagii/internship_details.html" class="banks-company">
+    <div class="design-companies5">
+        <a href="/stagii/internship_details.html" class="design-company">
             <!--<div class="content">Company -->
             </div>
         </a>
     </div>
 </section>
 <script src="footer.js"></script>
-
 </body>
 
 </html>

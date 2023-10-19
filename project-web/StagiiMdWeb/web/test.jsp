@@ -16,17 +16,17 @@
         <h2>Urmeaza lista de aplicanti:</h2>
         <ul>
             <c:forEach var="unApplicant" items="${applicantList}">
-                
+
                 <li>
                     <p>Name: ${unApplicant.aName}, surname: ${unApplicant.aSurname}<br>
                 status: ${unApplicant.status}</p></li>
             </c:forEach>
         </ul>
-        
+
         <p>
             Valoare atributului main din context este ${mainAttribute}
         </p>
-        
+
         <p>
             Valoare atributului main din context trimis prin servlet e ${mainAttributeServ}         </p>
 

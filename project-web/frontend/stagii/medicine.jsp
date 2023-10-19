@@ -1,3 +1,5 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,39 +15,41 @@
 </head>
 
 <body>
-<script src="header_internships.js"></script>
-<div class="sales-section-title">Sales <b>Internships</b></div>
+    <script src="header_internships.js"></script>
+    <div class="medicine-section-title">Medicine <b>Internships</b></div>
+
 <section>
-<div class="sales-companies">
-    <a href="/Internship details/Details.html" class="sales-company">
-    <div class="sales-companies1">
+<div class="medicine-companies">
+    <a href="/Internship details/Details.html" class="medicine-company">
+    <div class="medicine-companies1">
             <!--<div class="content">Company -->
     </div>
 </a>
-    <div class="sales-companies2">
-        <a href="#" class="sales-company">
+    <div class="medicine-companies2">
+        <a href="/stagii/internship_details.html" class="medicine-company">
             <!--<div class="content">Company -->
             </div>
         </a>
     </div>
-    <div class="sales-companies3">
-        <a href="#" class="sales-company">
+    <div class="medicine-companies3">
+        <a href="/stagii/internship_details.html" class="medicine-company">
             <!--<div class="content">Company -->
             </div>
         </a>
     </div>
-    <div class="sales-companies4">
-        <a href="#" class="sales-company">
+    <div class="medicine-companies4">
+        <a href="/stagii/internship_details.html" class="medicine-company">
             <!--<div class="content">Company -->
             </div>
         </a>
     </div>
-    <div class="sales-companies5">
-        <a href="#" class="sales-company">
+    <div class="medicine-companies5">
+        <a href="/stagii/internship_details.html" class="medicine-company">
             <!--<div class="content">Company -->
             </div>
         </a>
     </div>
+
 </section>
 <script src="footer.js"></script>
 
