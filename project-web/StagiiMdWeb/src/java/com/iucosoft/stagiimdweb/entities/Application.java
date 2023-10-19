@@ -21,6 +21,7 @@ public class Application {
     private String cvFile;
     private String phoneNumber;
     private String email;
+    private String institution;
 
     public Application() {
     }
@@ -33,6 +34,26 @@ public class Application {
         this.cvFile = cvFile;
         this.phoneNumber = phoneNumber;
         this.email = email;
+    }
+    
+    public Application(int idApplicant, int idInternship, Date applicationDate, String cvFile, String phoneNumber, String email) {
+        this.idApplicant = idApplicant;
+        this.idInternship = idInternship;
+        this.applicationDate = applicationDate;
+        this.cvFile = cvFile;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.institution = null;
+    }
+    
+    public Application(int idApplicant, int idInternship, Date applicationDate, String cvFile, String phoneNumber, String email, String institution) {
+        this.idApplicant = idApplicant;
+        this.idInternship = idInternship;
+        this.applicationDate = applicationDate;
+        this.cvFile = cvFile;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.institution = institution;
     }
 
     public String getEmail() {
@@ -91,16 +112,30 @@ public class Application {
         this.phoneNumber = phoneNumber;
     }
 
+    public String getInstitution() {
+        return institution;
+    }
+
+    public void setInstitution(String institution) {
+        this.institution = institution;
+    }
+
+    @Override
+    public String toString() {
+        return "Application{" + "id=" + id + ", idApplicant=" + idApplicant + ", idInternship=" + idInternship + ", applicationDate=" + applicationDate + ", cvFile=" + cvFile + ", phoneNumber=" + phoneNumber + ", email=" + email + ", institution=" + institution + '}';
+    }
+
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 89 * hash + this.id;
-        hash = 89 * hash + this.idApplicant;
-        hash = 89 * hash + this.idInternship;
-        hash = 89 * hash + Objects.hashCode(this.applicationDate);
-        hash = 89 * hash + Objects.hashCode(this.cvFile);
-        hash = 89 * hash + Objects.hashCode(this.phoneNumber);
-        hash = 89 * hash + Objects.hashCode(this.email);
+        int hash = 5;
+        hash = 53 * hash + this.id;
+        hash = 53 * hash + this.idApplicant;
+        hash = 53 * hash + this.idInternship;
+        hash = 53 * hash + Objects.hashCode(this.applicationDate);
+        hash = 53 * hash + Objects.hashCode(this.cvFile);
+        hash = 53 * hash + Objects.hashCode(this.phoneNumber);
+        hash = 53 * hash + Objects.hashCode(this.email);
+        hash = 53 * hash + Objects.hashCode(this.institution);
         return hash;
     }
 
@@ -132,6 +167,9 @@ public class Application {
             return false;
         }
         if (!Objects.equals(this.email, other.email)) {
+            return false;
+        }
+        if (!Objects.equals(this.institution, other.institution)) {
             return false;
         }
         if (!Objects.equals(this.applicationDate, other.applicationDate)) {

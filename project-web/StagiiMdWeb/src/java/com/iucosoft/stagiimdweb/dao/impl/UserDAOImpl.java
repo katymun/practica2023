@@ -35,7 +35,7 @@ public class UserDAOImpl implements UserDAOIntf {
     public boolean save(User t) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
     @Override
     public boolean update(User user) throws SQLException {
         Connection conn = null;
@@ -110,10 +110,11 @@ public class UserDAOImpl implements UserDAOIntf {
 
     @Override
     public User findById(int idUser) throws SQLException {
+        ResultSet rs = null;
         try (Connection conn = ds.getConnection();
-                Statement stat = conn.createStatement();
-                ResultSet rs = stat.executeQuery(SQLS.FIND_USER_BY_ID)) {
-
+                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_USER_BY_ID);) {
+            pstat.setInt(1, idUser);
+            rs = pstat.executeQuery();
             if (rs.next()) {
                 int id = rs.getInt(1);
                 String username = rs.getString(2);
@@ -128,8 +129,11 @@ public class UserDAOImpl implements UserDAOIntf {
         } catch (SQLException ex) {
             LOG.severe(ex.toString());
             throw ex;
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
         }
     }
-
     
 }

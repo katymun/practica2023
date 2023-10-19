@@ -4,7 +4,10 @@ import com.iucosoft.stagiimdweb.dao.intf.CompanyDAOIntf;
 import com.iucosoft.stagiimdweb.entities.Company;
 import com.iucosoft.stagiimdweb.sql.SQLS;
 import com.iucosoft.stagiimdweb.utility.Domain;
+import com.iucosoft.stagiimdweb.utility.ImageUtil;
 import com.iucosoft.stagiimdweb.utility.exceptions.CompanyNotFoundException;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,6 +16,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sql.DataSource;
 
@@ -44,6 +48,8 @@ public class CompanyDAOImpl implements CompanyDAOIntf {
             pstat.setString(4, company.getPhoneNumber());
             pstat.setString(5, company.getEmail());
             pstat.setString(6, company.getImagePath());
+            pstat.setBytes(7, company.getImgData());
+            
 
             int modificari = pstat.executeUpdate();
 
@@ -71,7 +77,8 @@ public class CompanyDAOImpl implements CompanyDAOIntf {
             pstat.setString(4, company.getPhoneNumber());
             pstat.setString(5, company.getEmail());
             pstat.setString(6, company.getImagePath());
-            pstat.setInt(6, company.getId());
+            pstat.setBytes(7, company.getImgData());
+            pstat.setInt(8, company.getId());
 
             pstat.executeUpdate();
             return true;
@@ -139,10 +146,11 @@ public class CompanyDAOImpl implements CompanyDAOIntf {
 
     @Override
     public Company findById(int idCompany) throws SQLException {
+        ResultSet rs = null;
         try (Connection conn = ds.getConnection();
-                Statement stat = conn.createStatement();
-                ResultSet rs = stat.executeQuery(SQLS.FIND_COMPANY_BY_ID)) {
-
+                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_COMPANY_BY_ID);) {
+            pstat.setInt(1, idCompany);
+            rs = pstat.executeQuery();
             if (rs.next()) {
                 int id = rs.getInt(1);
                 String title = rs.getString(2);
@@ -159,17 +167,21 @@ public class CompanyDAOImpl implements CompanyDAOIntf {
         } catch (SQLException ex) {
             LOG.severe(ex.toString());
             throw ex;
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
         }
     }
 
     @Override
     public Company findByName(String companyTitle) throws SQLException {
+        ResultSet rs = null;
         try (Connection conn = ds.getConnection();
-                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_COMPANY_BY_NAME);
-                ResultSet rs = pstat.executeQuery();) {
+                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_COMPANY_BY_NAME);) {
 
             pstat.setString(1, companyTitle);
-
+            rs = pstat.executeQuery();
             if (rs.next()) {
                 int id = rs.getInt(1);
                 String title = rs.getString(2);
@@ -186,7 +198,80 @@ public class CompanyDAOImpl implements CompanyDAOIntf {
         } catch (SQLException ex) {
             LOG.severe(ex.toString());
             throw ex;
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
         }
     }
 
+    @Override
+    public Company getCompanyImage(int idCompany) throws SQLException {
+        Company company = new Company();
+        
+        ResultSet rs = null;
+        try (Connection conn = ds.getConnection();
+                PreparedStatement pstat = conn.prepareStatement(SQLS.GET_COMPANY_IMAGE);) {
+            pstat.setInt(1, idCompany);
+            rs = pstat.executeQuery();
+            if (rs.next()) {
+                int id = idCompany;
+                String title = rs.getString(1);
+                String imagePath = rs.getString(2);
+                byte[] imgData = rs.getBytes(3);
+                company.setId(idCompany);
+                company.setTitle(title);
+                company.setImagePath(imagePath);
+                company.setImgData(imgData);
+                try {
+                    byte[] imgDataFile = ImageUtil.readImageData(company.getImagePath());
+                    String s = new String(imgDataFile);
+                    System.out.println("imgData = " + s + "gata!");
+                } catch (IOException ex) {
+                    Logger.getLogger(CompanyDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+                }
+        
+                return company;
+            }
+            throw new CompanyNotFoundException("Find by id = " + idCompany + " failed!");
+        } catch (SQLException ex) {
+            LOG.severe(ex.toString());
+            throw ex;
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+        }
+    }
+
+    @Override
+    public boolean updateCompanyImage(int idCompany, String imagePath, byte[] imgData) throws SQLException {
+        Connection conn = null;
+        PreparedStatement pstat = null;
+        try {
+            conn = ds.getConnection();
+            pstat = conn.prepareStatement(SQLS.UPDATE_COMPANY_IMAGE);
+            
+            pstat.setString(1, imagePath);
+            System.out.println("imgData este " + imgData.length);
+           // pstat.setBinaryStream(2, new ByteArrayInputStream(imgData));
+            pstat.setBlob(2, new ByteArrayInputStream(imgData), imgData.length);
+            
+            pstat.setInt(3, idCompany);
+
+            pstat.executeUpdate();
+            return true;
+        } catch (Exception ex) {
+            LOG.severe(ex.toString());
+            ex.printStackTrace();
+            throw ex;
+        } finally {
+            if (pstat != null) {
+                pstat.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+        }
+    }
 }

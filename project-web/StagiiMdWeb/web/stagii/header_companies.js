@@ -4,7 +4,7 @@ headerTemplate.innerHTML = `
 <div class="wrapper">
     <nav>
         <!--> <div class="box"><!-->
-            <a href="/Homepage/home.html" class="logo-button">
+            <a href="/stagii/home.html" class="logo-button">
                 <div class="logo">
                     ST <img class="vector" src="images/logo.svg" />GII.MD
 
@@ -17,11 +17,11 @@ headerTemplate.innerHTML = `
             </li>
 
             <li>
-                <a href="#" class="styled-link2">Internships</a>
+                <a href="/stagii/internships.html">Internships</a>
             </li>
 
             <li>
-                <a href="/stagii/companies.html">Companies</a>
+                <a href="#" class="styled-link3">Companies</a>
             </li>
             <!--
                 <li>

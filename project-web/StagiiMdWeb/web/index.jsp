@@ -6,7 +6,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
+    
     <body>
+        <jsp:forward page="/stagii/home.html"/>
+        
+        
+        
+        
+        
+        <%--
         <h1>Hello World!</h1>
         <p>
             <a href="testserv">Arata orasele</a>
@@ -15,5 +23,6 @@
         <c:forEach begin="1" end="10" step="1">
             Salut
         </c:forEach>
+        --%>
     </body>
 </html>
