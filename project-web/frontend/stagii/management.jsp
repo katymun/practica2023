@@ -1,3 +1,5 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,35 +15,35 @@
 </head>
 
 <body>
-    <script src="header_internships.js"></script>
-<div class="accounting-section-title">Accounting <b>Internships</b></div>
+<script src="header_internships.js"></script>
+<div class="management-section-title">Management <b>Internships</b></div>
 <section>
-<div class="accounting-companies">
-    <a href="#" class="accounting-company">
-    <div class="accounting-companies1">
+<div class="management-companies">
+    <a href="/Internship details/Details.html" class="management-company">
+    <div class="management-companies1">
             <!--<div class="content">Company -->
     </div>
 </a>
-    <div class="accounting-companies2">
-        <a href="/stagii/internship_details.html" class="accounting-company">
+    <div class="management-companies2">
+        <a href="/stagii/internship_details.html" class="management-company">
             <!--<div class="content">Company -->
             </div>
         </a>
     </div>
-    <div class="accounting-companies3">
-        <a href="/stagii/internship_details.html" class="accounting-company">
+    <div class="management-companies3">
+        <a href="/stagii/internship_details.html" class="management-company">
             <!--<div class="content">Company -->
             </div>
         </a>
     </div>
-    <div class="accounting-companies4">
-        <a href="/stagii/internship_details.html" class="accounting-company">
+    <div class="management-companies4">
+        <a href="/stagii/internship_details.html" class="management-company">
             <!--<div class="content">Company -->
             </div>
         </a>
     </div>
-    <div class="accounting-companies5">
-        <a href="/stagii/internship_details.html" class="accounting-company">
+    <div class="management-companies5">
+        <a href="/stagii/internship_details.html" class="management-company">
             <!--<div class="content">Company -->
             </div>
         </a>
