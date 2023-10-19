@@ -14,7 +14,8 @@
         rel="stylesheet">
 </head>
 <body>
-    <script src="header_home.js"></script>
+    <!--<script src="stagii/header_home.js"></script>-->
+    <jsp:include page="common/header_home.jspf" />
     <div class="homepage-hero-section">
         <div class="homepage-left">
             <h1>
@@ -185,7 +186,8 @@
         <button class="homepage-subscribe-button">Subscribe</button>
     </div>
     <!-- End of the newsletter-->
-<script src="footer.js"></script>
+<!--<script src="stagii/footer.js"></script>-->
+<jsp:include page="common/footer.jspf" />
 </body>
 
 </html>

@@ -2,7 +2,7 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
-*/
+ */
 package com.iucosoft.stagiimdweb.entities;
 
 import com.iucosoft.stagiimdweb.utility.Domain;
@@ -20,6 +20,9 @@ public class Company {
     private String phoneNumber;
     private String email;
     private String imagePath;
+    private byte[] imgData;
+    
+    
 
     public Company() {
     }
@@ -152,8 +155,13 @@ public class Company {
     public String toString() {
         return "Company{" + "id=" + id + ", title=" + title + ", domain=" + domain + ", about=" + about + ", phoneNumber=" + phoneNumber + ", email=" + email + ", imagePath=" + imagePath + '}';
     }
-    
-    
-    
+
+    public byte[] getImgData() {
+        return imgData;
+    }
+
+    public void setImgData(byte[] imgData) {
+        this.imgData = imgData;
+    }
     
 }

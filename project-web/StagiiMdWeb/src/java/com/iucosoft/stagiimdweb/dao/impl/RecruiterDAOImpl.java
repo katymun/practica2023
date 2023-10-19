@@ -25,14 +25,38 @@ public class RecruiterDAOImpl implements RecruiterDAOIntf {
     private static final Logger LOG = Logger.getLogger(ApplicantDAOImpl.class.getName());
 
     public RecruiterDAOImpl(javax.sql.DataSource ds) {
-        this.ds = ds;   
+        this.ds = ds;
     }
 
-    
-    
     @Override
-    public List<Applicant> findByName(String recruiterName) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Recruiter> findByName(String recruiterName, String recruiterSurname) throws SQLException {
+        List<Recruiter> recruiters = new ArrayList<>();
+        ResultSet rs = null;
+        try (Connection conn = ds.getConnection();
+                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_RECRUITERS_BY_NAME);) {
+            pstat.setString(1, recruiterName);
+            pstat.setString(2, recruiterSurname);
+            rs = pstat.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt(1);
+                String rName = rs.getString(2);
+                String rSurname = rs.getString(3);
+                int idCompany = rs.getInt(4);
+                int idUser = rs.getInt(5);
+                String email = rs.getString(6);
+
+                Recruiter recruiter = new Recruiter(id, rName, rSurname, idCompany, idUser, email);
+                recruiters.add(recruiter);
+            }
+            return recruiters;
+        } catch (SQLException ex) {
+            LOG.severe(ex.toString());
+            throw ex;
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+        }
     }
 
     @Override
@@ -136,6 +160,7 @@ public class RecruiterDAOImpl implements RecruiterDAOIntf {
                 pstat.setString(4, company.getPhoneNumber());
                 pstat.setString(5, company.getEmail());
                 pstat.setString(6, company.getImagePath());
+                pstat.setBytes(7, company.getImgData());
 
                 pstat.executeUpdate();
                 //conn.commit();
@@ -154,11 +179,11 @@ public class RecruiterDAOImpl implements RecruiterDAOIntf {
                     pstat.setInt(4, recruiter.getIdCompany());
                     pstat.setString(5, recruiter.getEmail());
 
-                    pstat.executeUpdate();
+                    modificari = pstat.executeUpdate();
 //                    conn.commit();
                 } else {
                     conn.setAutoCommit(true);
-                    throw new SQLException("Eroare la crearea userului!");
+                    throw new SQLException("Eroare la crearea companiei!");
                 }
             } else {
                 conn.setAutoCommit(true);
@@ -188,9 +213,8 @@ public class RecruiterDAOImpl implements RecruiterDAOIntf {
         try {
             conn = ds.getConnection();
             pstat = conn.prepareStatement(SQLS.RECRUITERS_UPDATE);
-            pstat.setString(1, recruiter.getRName());
-            pstat.setString(2, recruiter.getRSurname());
-            pstat.setString(3, recruiter.getEmail());
+            pstat.setString(1, recruiter.getEmail());
+            pstat.setInt(2, recruiter.getId());
 
             pstat.executeUpdate();
             return true;
@@ -257,10 +281,11 @@ public class RecruiterDAOImpl implements RecruiterDAOIntf {
 
     @Override
     public Recruiter findById(int idRecruiter) throws SQLException {
+        ResultSet rs = null;
         try (Connection conn = ds.getConnection();
-                Statement stat = conn.createStatement();
-                ResultSet rs = stat.executeQuery(SQLS.FIND_RECRUITER_BY_ID)) {
-
+                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_RECRUITER_BY_ID);) {
+            pstat.setInt(1, idRecruiter);
+            rs = pstat.executeQuery();
             if (rs.next()) {
                 int id = rs.getInt(1);
                 String rName = rs.getString(2);
@@ -276,6 +301,11 @@ public class RecruiterDAOImpl implements RecruiterDAOIntf {
         } catch (SQLException ex) {
             LOG.severe(ex.toString());
             throw ex;
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
         }
     }
+
 }

@@ -44,7 +44,8 @@ public class ApplicationDAOImpl implements ApplicationDAOIntf {
             pstat.setString(4, application.getCvFile());
             pstat.setString(5, application.getPhoneNumber());
             pstat.setString(6, application.getEmail());
-
+            pstat.setString(7, application.getInstitution());
+            
             int modificari = pstat.executeUpdate();
 
             if (modificari > 0) {
@@ -65,11 +66,10 @@ public class ApplicationDAOImpl implements ApplicationDAOIntf {
         try {
             conn = ds.getConnection();
             pstat = conn.prepareStatement(SQLS.APPLICATIONS_UPDATE);
-            pstat.setString(1, application.getApplicationDate().toString());
-            pstat.setString(2, application.getCvFile());
-            pstat.setString(3, application.getPhoneNumber());
-            pstat.setString(4, application.getEmail());
-            pstat.setInt(5, application.getId());
+            pstat.setString(1, application.getCvFile());
+            pstat.setString(2, application.getPhoneNumber());
+            pstat.setString(3, application.getEmail());
+            pstat.setInt(4, application.getId());
 
             pstat.executeUpdate();
             return true;
@@ -111,10 +111,11 @@ public class ApplicationDAOImpl implements ApplicationDAOIntf {
 
     @Override
     public Application findById(int idApplication) throws SQLException {
+        ResultSet rs = null;
         try (Connection conn = ds.getConnection();
-                Statement stat = conn.createStatement();
-                ResultSet rs = stat.executeQuery(SQLS.FIND_APPLICATION_BY_ID)) {
-
+                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_APPLICATION_BY_ID);) {
+            pstat.setInt(1, idApplication);
+            rs = pstat.executeQuery();
             if (rs.next()) {
                 int id = rs.getInt(1);
                 int idApplicant = rs.getInt(2);
@@ -131,6 +132,10 @@ public class ApplicationDAOImpl implements ApplicationDAOIntf {
         } catch (SQLException ex) {
             LOG.severe(ex.toString());
             throw ex;
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
         }
 
     }
