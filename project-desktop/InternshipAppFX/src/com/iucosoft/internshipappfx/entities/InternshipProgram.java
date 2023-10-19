@@ -21,8 +21,8 @@ public class InternshipProgram {
     }
 
     public InternshipProgram(String iName, Domain domain, Date startDate, 
-            String duration, String duties, String qualifications, 
-            String benefits, String location, boolean paid, int idCompany) {
+            String duration, int idCompany, String duties, String qualifications, 
+            String benefits, String location, boolean paid) {
         this.iName = iName;
         this.domain = domain;
         this.startDate = startDate;

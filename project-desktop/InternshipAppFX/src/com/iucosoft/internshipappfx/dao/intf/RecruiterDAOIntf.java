@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface RecruiterDAOIntf extends GenericDAOIntf<Recruiter> {
-    List<Applicant> findByName(String recruiterName) throws SQLException;
+    List<Recruiter> findByName(String recruiterName, String recruiterSurname) throws SQLException;
     boolean save(User user, Recruiter recruiter) throws SQLException;
     boolean save(User user, Recruiter recruiter, Company company) throws SQLException;
 

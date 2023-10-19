@@ -24,8 +24,8 @@ public class SQLS {
     public static final String APPLICANTS_INSERT = "INSERT INTO applicants VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     // SQL for the 'companies' entity
-    public static String COMPANIES_INSERT_DEMO = "INSERT INTO `companies` VALUES (NULL,'title1','IT','This is an IT company.','060123456','companyname@gmail.com','img1.jpg')";
-    public static final String COMPANIES_INSERT = "INSERT INTO companies VALUES (NULL, ?, ?, ?, ?, ?, ?)";
+    public static String COMPANIES_INSERT_DEMO = "INSERT INTO `companies` VALUES (NULL,'title1','IT','This is an IT company.','060123456','companyname@gmail.com','img1.jpg','imgdatabytes')";
+    public static final String COMPANIES_INSERT = "INSERT INTO companies VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)";
 
     // SQL for the 'programmes' entity
     public static String PROGRAMMES_INSERT_DEMO = "INSERT INTO `programmes` VALUES (NULL,NULL,'tilte2','IT','2023-01-01','3 months','company1_id','some duties','some qualifications','some benefits','Chisinau','false')";
@@ -49,12 +49,13 @@ public class SQLS {
 
     // Update queries
     public static final String USERS_UPDATE = "UPDATE users SET PASSWORD=? WHERE ID=?";
-    public static final String APPLICANTS_UPDATE = "UPDATE applicants SET AGE=?, STATUT=?, DOMAIN=?, CV=?, EMAIL=?, PHONE_NUMBER=? WHERE ID=?";
+    public static final String APPLICANTS_UPDATE = "UPDATE applicants SET AGE=?, A_STATUS=?, DOMAIN=?, CV=?, EMAIL=?, PHONE_NUMBER=? WHERE ID=?";
     public static final String RECRUITERS_UPDATE = "UPDATE recruiters SET EMAIL=? WHERE ID=?";
-    public static final String COMPANIES_UPDATE = "UPDATE companies SET TITLE=?, DOMAIN=?, ABOUT=?, PHONE_NUMBER=?, EMAIL=?, IMG_PATH=? WHERE ID=?";
+    public static final String COMPANIES_UPDATE = "UPDATE companies SET TITLE=?, DOMAIN=?, ABOUT=?, PHONE_NUMBER=?, EMAIL=?, IMG_PATH=?, IMG_DATA=? WHERE ID=?";
     public static final String APPLICATIONS_UPDATE = "UPDATE applications SET CV=?, PHONE_NUMBER=?, EMAIL=? WHERE ID=?";
     public static final String PROGRAMMES_UPDATE = "UPDATE programmes SET TITLE=?, DOMAIN=?, START_DATA=?, DURATION=?, DUTIES=?, QUALIFICATIONS=?, BENEFITS=?, LOCATION=?, PAID=? WHERE ID=?";
-
+    public static final String UPDATE_COMPANY_IMAGE = "UPDATE companies SET IMG_PATH=?, IMG_DATA=? WHERE ID=?";
+    
     // Delete queries
     public static final String USERS_DELETE = "DELETE FROM USERS WHERE ID=?";
     public static final String APPLICANTS_DELETE = "DELETE FROM APPLICANTS WHERE ID=?";
@@ -85,6 +86,11 @@ public class SQLS {
     // Find by Name queries
     
     public static final String FIND_COMPANY_BY_NAME = "SELECT * FROM companies WHERE TITLE=?";
-    public static final String FIND_APPLICANT_BY_NAME = "SELECT * FROM applicants WHERE NAME=?";
+    public static final String FIND_APPLICANT_BY_NAME = "SELECT * FROM applicants WHERE NAME=? OR SURNAME=?";
+    public static final String FIND_RECRUITERS_BY_NAME = "SELECT * FROM recruiters WHERE NAME=? OR SURNAME=?";
+   
+    
+    public static final String GET_COMPANY_IMAGE = "SELECT TITLE, IMG_PATH, IMG_DATA FROM companies WHERE ID=?";
+    
 
 }

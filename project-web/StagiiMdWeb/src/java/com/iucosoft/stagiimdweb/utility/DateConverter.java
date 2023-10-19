@@ -21,4 +21,8 @@ public class DateConverter {
         Instant instant = Instant.now();
         return java.util.Date.from(instant);
     }
+    
+    public static java.util.Date convert(java.time.LocalDate ld) {
+        return java.util.Date.from(ld.atStartOfDay(java.time.ZoneId.systemDefault()).toInstant());
+    }
 }

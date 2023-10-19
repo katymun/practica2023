@@ -8,6 +8,7 @@ package com.iucosoft.internshipappfx.dao.impl;
 import com.iucosoft.internshipappfx.dao.intf.CompanyDAOIntf;
 import com.iucosoft.internshipappfx.entities.Company;
 import com.iucosoft.internshipappfx.utility.Domain;
+import com.iucosoft.internshipappfx.utility.ImageUtil;
 import com.iucosoft.internshipappfx.utility.exceptions.CompanyNotFoundException;
 import java.time.LocalDate;
 import java.util.List;
@@ -38,7 +39,9 @@ public class CompanyDAOImplTest extends BaseDAOImplTest {
     @Test
     public void testSave() throws Exception {
         System.out.println("save");
-        Company company = new Company("titlu1", Domain.DESIGN, "good company", "098457608", "c@gmail.com", "img.jpg");
+        byte[] data = {1, 2, 3, 4};
+        Company company = new Company("Climatehnic SRL", Domain.ENGINEERING, "Air conditioneeing and warming solutions", "079783222", "climatehnicmd@gmail.com", "img6.jpg");
+        company.setImgData(data);
         boolean expResult = true;
         boolean result = companyDao.save(company);
         assertEquals(expResult, result);
@@ -50,7 +53,7 @@ public class CompanyDAOImplTest extends BaseDAOImplTest {
     @Test
     public void testUpdate() throws Exception {
         System.out.println("update");
-        Company company = new Company(19, "company-title1", Domain.DESIGN, "good company for all people", "0984545868", "c@gmail.com", "img.jpg");
+        Company company = new Company(1, "IUCOSOFT", Domain.IT, "We work in JAVA", "060111111", "iurie.coropceanu@iucosoft.com", "img10.jpg");
         boolean expResult = true;
         boolean result = companyDao.update(company);
         assertEquals(expResult, result);
@@ -62,8 +65,11 @@ public class CompanyDAOImplTest extends BaseDAOImplTest {
     @Test
     public void testDelete() throws Exception {
         System.out.println("delete");
-        Company company = new Company(2,"t3",Domain.EDUCATION,"about3","203984567","c3@gmail.com",null);
-        
+        Company company = companyDao.findById(6);
+        companyDao.delete(company);
+        int expResult = 5;
+        int result = companyDao.findAll().size();
+        assertEquals(expResult, result);
     }
 
     /**
@@ -72,7 +78,7 @@ public class CompanyDAOImplTest extends BaseDAOImplTest {
     @Test
     public void testFindAll() throws Exception {
         System.out.println("findAll");
-        int expResult = 12;
+        int expResult = 6;
         List<Company> allCompanies = companyDao.findAll();
         int result = allCompanies.size();
         assertEquals(expResult, result);
@@ -84,8 +90,8 @@ public class CompanyDAOImplTest extends BaseDAOImplTest {
     @Test
     public void testFindById() throws Exception {
         System.out.println("findById");
-        int idCompany = 19;
-        Company expResult = new Company(19, "company-title1", Domain.DESIGN, "good company 1", "203985723", "company1@example.com", "img.img");
+        int idCompany = 1;
+        Company expResult = new Company(1, "IUCOSOFT", Domain.IT, "We work in JAVA", "060111111", "email@iucosoft.com", "img1.png");
         Company result = companyDao.findById(idCompany);
         assertEquals(expResult, result);
     }
@@ -96,11 +102,59 @@ public class CompanyDAOImplTest extends BaseDAOImplTest {
     @Test
     public void testFindByName() throws Exception {
         System.out.println("findByName");
-        String companyTitle = "company-title1";
-        Company expResult = new Company(19, "company-title1", Domain.DESIGN, "good company 1", "203985723", "company1@example.com", "img.img");
+        String companyTitle = "IUCOSOFT";
+        Company expResult = new Company(1, "IUCOSOFT", Domain.IT, "We work in JAVA", "060111111", "email@iucosoft.com", "img1.png");
         Company result = companyDao.findByName(companyTitle);
         System.out.println(expResult);
         System.out.println(result);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of getCompanyImage method, of class CompanyDAOImpl.
+     */
+    @Test
+    public void testGetCompanyImage() throws Exception {
+        System.out.println("getCompanyImage");
+        
+        
+        
+        int idCompany = 1;
+        String imagePath = "img2.png";
+        String title = "IUCOSOFT";
+        Company expResult = new Company();
+        expResult.setId(1);
+        expResult.setTitle(title);
+        expResult.setImagePath(imagePath);
+        expResult.setImgData(ImageUtil.readImageData(expResult.getImagePath()));
+        
+        byte[] imgData = ImageUtil.readImageData(imagePath);
+//        String imgDataFile = 
+        String s = new String(imgData);
+        
+        System.out.println("????????????" + s);
+        companyDao.updateCompanyImage(idCompany, imagePath, imgData);
+        
+        Company result = companyDao.getCompanyImage(idCompany);
+        assertEquals("IUCOSOFT", result.getTitle());
+        assertEquals("img2.png", result.getImagePath());
+        assertArrayEquals(expResult.getImgData(), result.getImgData());
+    }
+
+    /**
+     * Test of updateCompanyImage method, of class CompanyDAOImpl.
+     */
+    @Test
+    public void testUpdateCompanyImage() throws Exception {
+        System.out.println("updateCompanyImage");
+        int idCompany = 1;
+        String imagePath = "img2.png";
+        
+        byte[] imgData = ImageUtil.readImageData(imagePath);
+        String s = new String(imgData);
+        System.out.println("????????????" + s);
+        boolean expResult = true;
+        boolean result = companyDao.updateCompanyImage(idCompany, imagePath, imgData);
         assertEquals(expResult, result);
     }
     

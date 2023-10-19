@@ -80,6 +80,7 @@ CREATE TABLE `companies` (
   `phone_number` varchar(45) NOT NULL,
   `email` varchar(45) NOT NULL,
   `img_path` varchar(80) DEFAULT NULL,
+  `img_data` mediumblob DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `title_UNIQUE` (`title`)
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

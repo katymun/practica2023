@@ -20,6 +20,9 @@ public class Company {
     private String phoneNumber;
     private String email;
     private String imagePath;
+    private byte[] imgData;
+    
+    
 
     public Company() {
     }
@@ -151,6 +154,14 @@ public class Company {
     @Override
     public String toString() {
         return "Company{" + "id=" + id + ", title=" + title + ", domain=" + domain + ", about=" + about + ", phoneNumber=" + phoneNumber + ", email=" + email + ", imagePath=" + imagePath + '}';
+    }
+
+    public byte[] getImgData() {
+        return imgData;
+    }
+
+    public void setImgData(byte[] imgData) {
+        this.imgData = imgData;
     }
     
 }

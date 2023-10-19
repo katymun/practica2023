@@ -39,14 +39,13 @@ public class ApplicantDAOImpl implements ApplicantDAOIntf {
         try {
             conn = ds.getConnection();
             pstat = conn.prepareStatement(SQLS.APPLICANTS_UPDATE);
-            pstat.setString(1, applicant.getaName());
-            pstat.setString(2, applicant.getaSurname());
-            pstat.setInt(3, applicant.getAge());
-            pstat.setString(4, applicant.getStatus().toString());
-            pstat.setString(5, applicant.getDomain().toString());
-            pstat.setString(6, applicant.getCvFile());
-            pstat.setString(7, applicant.getEmail());
-            pstat.setString(8, applicant.getPhoneNumber());
+            pstat.setInt(1, applicant.getAge());
+            pstat.setString(2, applicant.getStatus().toString());
+            pstat.setString(3, applicant.getDomain().toString());
+            pstat.setString(4, applicant.getCvFile());
+            pstat.setString(5, applicant.getEmail());
+            pstat.setString(6, applicant.getPhoneNumber());
+            pstat.setInt(7, applicant.getId());
 
             pstat.executeUpdate();
             return true;
@@ -162,7 +161,6 @@ public class ApplicantDAOImpl implements ApplicantDAOIntf {
             pstat.setString(2, user.getPassword());
             pstat.setDate(3, DateConverter.convert(user.getRegistDate()));
             pstat.setString(4, user.getRole().toString());
-            System.out.println("rolul userului - " + user.getRole().toString());
             
             int modificari = pstat.executeUpdate();
             System.out.println("Modificari = " + modificari);
@@ -211,13 +209,14 @@ public class ApplicantDAOImpl implements ApplicantDAOIntf {
     }
 
     @Override
-    public List<Applicant> findByName(String applicantName) throws SQLException {
+    public List<Applicant> findByName(String applicantName, String applicantSurname) throws SQLException {
         List<Applicant> applicants = new ArrayList<>();
         ResultSet rs = null;
         try (Connection conn = ds.getConnection();
                 PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_APPLICANT_BY_NAME);) {
 
             pstat.setString(1, applicantName);
+            pstat.setString(2, applicantSurname);
             rs = pstat.executeQuery();
             while (rs.next()) {
                 int id = rs.getInt(1);

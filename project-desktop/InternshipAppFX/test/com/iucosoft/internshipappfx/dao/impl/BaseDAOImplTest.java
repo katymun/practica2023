@@ -95,7 +95,7 @@ public class BaseDAOImplTest {
     /**
      * Test of save method, of class CompanyDAOImpl.
      */
-    @Test
+    //@Test
     public void testSave() throws Exception {
         System.out.println("save");
         Company company = null;
@@ -167,7 +167,7 @@ public class BaseDAOImplTest {
     /**
      * Test of findByName method, of class CompanyDAOImpl.
      */
-    @Test
+    //@Test
     public void testFindByName() throws Exception {
         System.out.println("findByName");
         String companyTitle = "";

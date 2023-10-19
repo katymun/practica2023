@@ -43,6 +43,7 @@ public class ApplicationDAOImpl implements ApplicationDAOIntf {
             pstat.setString(4, application.getCvFile());
             pstat.setString(5, application.getPhoneNumber());
             pstat.setString(6, application.getEmail());
+            pstat.setString(7, application.getInstitution());
             
             int modificari = pstat.executeUpdate();
 
@@ -64,11 +65,10 @@ public class ApplicationDAOImpl implements ApplicationDAOIntf {
         try {
             conn = ds.getConnection();
             pstat = conn.prepareStatement(SQLS.APPLICATIONS_UPDATE);
-            pstat.setString(1, application.getApplicationDate().toString());
-            pstat.setString(2, application.getCvFile());
-            pstat.setString(3, application.getPhoneNumber());
-            pstat.setString(4, application.getEmail());
-            pstat.setInt(5, application.getId());
+            pstat.setString(1, application.getCvFile());
+            pstat.setString(2, application.getPhoneNumber());
+            pstat.setString(3, application.getEmail());
+            pstat.setInt(4, application.getId());
 
             pstat.executeUpdate();
             return true;
