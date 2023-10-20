@@ -28,7 +28,7 @@ nav {
 
 nav .logo {
     color: var(--TEXT, #0C0C0E);
-    font-family: "HelveticaNeue";
+    font-family: Stolzl;
     font-size: 30px;
     font-weight: 400;
     padding-left: 122px;
@@ -81,9 +81,9 @@ h1 {
     transform: translate(45%,30%);
     z-index: 1;
 }
-.homepage-details{
+/*.homepage-details{
     transform: translate(1000%,-400%);
-}
+}*/
 
 .homepage-find-internships {
     transform: translate(-10%,-100%);
@@ -227,7 +227,7 @@ h1 {
 }
 
 .homepage-right-image {
-    width: 850px;
+    
     padding-right: 50px;
 }
 
@@ -242,7 +242,7 @@ h1 {
 }
 .homepage-text-category {
     font-size: 25px;
-    font-family: "Stolzl";
+    font-family: Stolzl;
     font-weight: 400;
     color: var(--TEXT);
     font-style: normal;
@@ -464,7 +464,7 @@ margin-top: 50px;
 .homepage-news{
     margin-top: 50px;
     padding-left: 200px;
-    width: 1300px;
+    width: 1100px;
     align-items: center;
 }
 
@@ -580,7 +580,7 @@ margin-top: 50px;
 
 .logo1 {
     color: var(--COMPONENTS);
-    font-family: "HelveticaNeue";
+    font-family: Stolzl;
     font-size: 30px;
     padding-left: 122px;
     padding-top: 50px;
@@ -622,8 +622,8 @@ transform: translateY(600%);
 
 .internship-button {
     width: 300px;
-    position: relative;
-    padding-left: 615px;
+    postion: absolute;
+    margin: auto;
 }
 
 .internship-search{
@@ -1569,28 +1569,32 @@ text-decoration: underline;
     margin-left: 25px;
     margin-top: 25px;
 }
-.internship-details-description-internship{
+
+.internship-details-container1{
+    align-items: center;
+    
+}
+
+.internship-details-description-internship {
     width: 650px;
     height: 700px;
     border-radius: 5px;
-    margin-left: 345px;
-    margin-top: 50px;
+    margin: 50px auto; /* Center the element horizontally and provide top margin */
     display: inline-block;
     border: 1px solid var(--TEXT2, #AEB4C1);
     background: var(--COMPONENTS, #FFF);
-    vertical-align: top; /* Aligns with the top of the line */
+    vertical-align: top;
 }
 
-.internship-details-details-internship{
+.internship-details-details-internship {
     width: 340px;
     height: 475px;
-    margin-top: 50px;
-    margin-left: 10px;
+    margin: 50px auto; /* Center the element horizontally and provide top margin */
     border-radius: 5px;
     display: inline-block;
     border: 1px solid var(--TEXT2, #AEB4C1);
     background: var(--COMPONENTS, #FFF);
-    vertical-align: top; /* Aligns with the top of the line */
+    vertical-align: top;
 }
 
 .internship-details-company-mail{
@@ -1928,4 +1932,117 @@ transform: translate(2%,5%);
     color: var(--COMPONENTS);
     padding-left: 122px;
     padding-top: 30px;
+}
+
+.internships-found-section-title{ 
+    position: relative; 
+    font-size: 30px; 
+font-family: "Stolzl"; 
+font-weight: 400; 
+color:var(--TEXT); 
+padding-left: 345px; 
+padding-top: 150px; 
+} 
+.internships-found-companies1{ 
+    margin-top: 80px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 1000px; /* Width of the individual box */ 
+    height: 150px; /* Height of the individual box */ 
+    border-radius: 5px; 
+    border: 1px solid var(--TEXT2, #AEB4C1); 
+    background: var(--COMPONENTS, #FFF); 
+    flex-direction: column;  
+    display: block; 
+} 
+.internships-found-companies2{ 
+    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */ 
+    width: 1000px; /* Width of the individual box */ 
+    height: 150px; /* Height of the individual box */ 
+    border-radius: 5px; 
+    border: 1px solid var(--TEXT2, #AEB4C1); 
+    background: var(--COMPONENTS, #FFF); 
+    flex-direction: column;  
+    display: block; 
+} 
+ 
+.internships-found-companies3{ 
+    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */ 
+    width: 1000px; /* Width of the individual box */ 
+    height: 150px; /* Height of the individual box */ 
+    border-radius: 5px; 
+    border: 1px solid var(--TEXT2, #AEB4C1); 
+    background: var(--COMPONENTS, #FFF); 
+    flex-direction: column;  
+    display: block; 
+} 
+.internships-found-companies4{ 
+    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */ 
+    width: 1000px; /* Width of the individual box */ 
+    height: 150px; /* Height of the individual box */ 
+    border-radius: 5px; 
+    border: 1px solid var(--TEXT2, #AEB4C1); 
+    background: var(--COMPONENTS, #FFF); 
+    flex-direction: column;  
+    display: block; 
+} 
+.internships-found-companies5{ 
+    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */ 
+    width: 1000px; /* Width of the individual box */ 
+    height: 150px; /* Height of the individual box */ 
+    border-radius: 5px; 
+    border: 1px solid var(--TEXT2, #AEB4C1); 
+    background: var(--COMPONENTS, #FFF); 
+    flex-direction: column;  
+    display: block; 
+} 
+.internships-found-companies6{ 
+    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */ 
+    width: 1000px; /* Width of the individual box */ 
+    height: 150px; /* Height of the individual box */ 
+    border-radius: 5px; 
+    border: 1px solid var(--TEXT2, #AEB4C1); 
+    background: var(--COMPONENTS, #FFF); 
+    flex-direction: column;  
+    display: block; 
+} 
+.internships-found-companies7{ 
+    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */ 
+    width: 1000px; /* Width of the individual box */ 
+    height: 150px; /* Height of the individual box */ 
+    border-radius: 5px; 
+    border: 1px solid var(--TEXT2, #AEB4C1); 
+    background: var(--COMPONENTS, #FFF); 
+    flex-direction: column;  
+    display: block; 
+} 
+.internships-found-companies8{ 
+    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */ 
+    width: 1000px; /* Width of the individual box */ 
+    height: 150px; /* Height of the individual box */ 
+    border-radius: 5px; 
+    border: 1px solid var(--TEXT2, #AEB4C1); 
+    background: var(--COMPONENTS, #FFF); 
+    flex-direction: column;  
+    display: block; 
+} 
+.internships-found-companies9{ 
+    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */ 
+    width: 1000px; /* Width of the individual box */ 
+    height: 150px; /* Height of the individual box */ 
+    border-radius: 5px; 
+    border: 1px solid var(--TEXT2, #AEB4C1); 
+    background: var(--COMPONENTS, #FFF); 
+    flex-direction: column;  
+    display: block; 
+} 
+.internships-found-companies10{ 
+    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */ 
+    width: 1000px; /* Width of the individual box */ 
+    height: 150px; /* Height of the individual box */ 
+    border-radius: 5px; 
+    border: 1px solid var(--TEXT2, #AEB4C1); 
+    background: var(--COMPONENTS, #FFF); 
+    flex-direction: column;
+    display: block; 
 }

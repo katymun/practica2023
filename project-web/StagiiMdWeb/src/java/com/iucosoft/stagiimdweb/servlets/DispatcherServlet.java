@@ -31,16 +31,18 @@ public class DispatcherServlet extends HttpServlet {
             throws ServletException, IOException {
         String page = "index.jsp";
         String path = request.getServletPath();
-        log(path);
+        log("path = " + path);
         
         switch(path) {
             case "/stagii/home.html": page = "/homeserv"; break;
-            case "/stagii/internships.html": page = "internshipserv"; break;
-            case "/stagii/companies.html": page = "companiesserv"; break;
+            case "/stagii/internships.html": page = "/internshipserv";  break;
+            case "/stagii/companies.html": page = "/companiesserv"; break;
+            case "/stagii/internship_details.html": page = "/internshipdetailsserv"; break;
             default: page = "index.jsp";
             
                 
         }
+        log("page = " + page);
         
         request.getRequestDispatcher(page).forward(request, response);
         

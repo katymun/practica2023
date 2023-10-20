@@ -3,71 +3,72 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Onest:wght@400;700&display=swap"
-        rel="stylesheet">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Onest:wght@400;700&display=swap"
+              rel="stylesheet">
+    </head>
 
-<body>
-    <script src="header_internships.js"></script>
-            <!-- end of desktop navigation menu-->
-            <div class="internship-best">
-                <img src="images/accentul.svg" alt="" class="internship-best-accent">
-                <div class="internship-section-title">Discover the <b> Best Internships</b></div>
-            </div>
+    <body>
+        <!--<script src="header_internships.js"></script>-->
+        <jsp:include page="common/header_internships.jspf" />
+        <!-- end of desktop navigation menu-->
+        <div class="internship-best">
+            <img src="images/accentul.svg" alt="" class="internship-best-accent">
+            <div class="internship-section-title">Discover the <b> Best Internships</b></div>
         </div>
-        <div class="internship-button">
-            <div class="internship-form-group">
-                <label class="internship-col control-label" for=""></label>
-                <div class="internship-col">
-                    <input id="" name="" type="text" placeholder="Search for internship title" class="internship-input internship-custom-input">
-                    <div class="internship-container">
-                        <img src="images/Search logo.svg" class="internship-search">
-                        <a href="#" class="internship-search">
-                            <button class="internship-search-button ">Search</button>
-                        </a>
-                    </div>
+    </div>
+    <div class="internship-button">
+        <div class="internship-form-group">
+            <label class="internship-col control-label" for=""></label>
+            <div class="internship-col">
+                <input id="" name="" type="text" placeholder="Search for internship title" class="internship-input internship-custom-input">
+                <div class="internship-container">
+                    <img src="images/Search logo.svg" class="internship-search">
+                    <a href="#" class="internship-search">
+                        <button class="internship-search-button ">Search</button>
+                    </a>
                 </div>
             </div>
         </div>
+    </div>
 
     <div class="internship-white-boxes">
         <a href="/stagii/IT.html" class="internship-white-box-link">
-        <div class="internship-white-box">
-            <img src="images/IT sign.svg"  class="internship-box-image1">
-            <p class="internship-box-text">IT</p>
-        </div>
-    </a>
-    <a href="/stagii/design.html" class="internship-white-box-link">
-        <div class="internship-white-box">
-            <img src="images/Design sign.svg"  class="internship-box-image2">
-            <p class="internship-box-text">Design</p>
-        </div>
-    </a>
-    <a href="/stagii/marketing.html" class="internship-white-box-link">
-        <div class="internship-white-box">
-            <img src="images/Marketing sign.svg"  class="internship-box-image3">
-            <p class="internship-box-text">Marketing</p>
-        </div>
-    </a>
-    <a href="/stagii/management.html" class="internship-white-box-link">
-        <div class="internship-white-box">
-            <img src="images/Management sign.svg"  class="internship-box-image4">
-            <p class="internship-box-text">Management</p>
-        </div>
-    </a>
-    <a href="/stagii/Telecommunications.html" class="internship-white-box-link">
-        <div class="internship-white-box">
-            <img src="images/Telecommunications sign.svg"  class="internship-box-image5">
-            <p class="internship-box-text1">Telecommunications</p>
-        </div>
-    </a>
+            <div class="internship-white-box">
+                <img src="images/IT sign.svg"  class="internship-box-image1">
+                <p class="internship-box-text">IT</p>
+            </div>
+        </a>
+        <a href="/stagii/design.html" class="internship-white-box-link">
+            <div class="internship-white-box">
+                <img src="images/Design sign.svg"  class="internship-box-image2">
+                <p class="internship-box-text">Design</p>
+            </div>
+        </a>
+        <a href="/stagii/marketing.html" class="internship-white-box-link">
+            <div class="internship-white-box">
+                <img src="images/Marketing sign.svg"  class="internship-box-image3">
+                <p class="internship-box-text">Marketing</p>
+            </div>
+        </a>
+        <a href="/stagii/management.html" class="internship-white-box-link">
+            <div class="internship-white-box">
+                <img src="images/Management sign.svg"  class="internship-box-image4">
+                <p class="internship-box-text">Management</p>
+            </div>
+        </a>
+        <a href="/stagii/Telecommunications.html" class="internship-white-box-link">
+            <div class="internship-white-box">
+                <img src="images/Telecommunications sign.svg"  class="internship-box-image5">
+                <p class="internship-box-text1">Telecommunications</p>
+            </div>
+        </a>
     </div>
     <div class="internship-white-boxes2">
         <a href="/stagii/Logistics.html" class="internship-white-box-link">
@@ -101,7 +102,8 @@
             </div>
         </a>
     </div>
-    <script src="footer.js"></script>
+    <!--    <script src="footer.js"></script>-->
+    <jsp:include page="common/footer.jspf" />
 </body>
 
 </html>

@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author munka
  */
-@WebServlet(name = "internshipserv", urlPatterns = {"/internshipserv"})
-public class internshipserv extends HttpServlet {
+@WebServlet(name = "internshipsfoundserv", urlPatterns = {"/internshipsfoundserv"})
+public class internshipsfoundserv extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,19 +31,13 @@ public class internshipserv extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        /*
-        1. Din request extragem valorile parametrilor (parametru = din url, dupa ? sau din componente vizuale)
-        2. Validarea acestor valori*
-        3. Utilizam parametrii pentru a lucra cu bd (Katea)
-        4. Transmitem la urmatoarea componenta, informatii care trebuie afisate
-        5. Decidem pagina la care trebuie sa trecem
-        6. Trecem la pagina urmatoare (forward sau redirect, forward - trecerea pe server, redirect - se schimba url, dupa pe server)
+        String searchInternships = request.getParameter("SEARCH_INTERNSHIPS");
         
-        */
         
-        //String companyDescription = request.getParameter("COMPANY_DESCRIPTION");
+        //prin dao primesc lista conform cautarii
+        //request.setAttribute cu lista 
         
-        request.getRequestDispatcher("stagii/internships.jsp").forward(request, response);
+        request.getRequestDispatcher("stagii/internships_found.jsp").forward(request, response);
         
     }
 

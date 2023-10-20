@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author munka
  */
-@WebServlet(name = "internshipserv", urlPatterns = {"/internshipserv"})
-public class internshipserv extends HttpServlet {
+@WebServlet(name = "internshipsbydomainserv", urlPatterns = {"/internshipsbydomainserv"})
+public class internshipsbydomainserv extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,20 +31,21 @@ public class internshipserv extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        /*
-        1. Din request extragem valorile parametrilor (parametru = din url, dupa ? sau din componente vizuale)
-        2. Validarea acestor valori*
-        3. Utilizam parametrii pentru a lucra cu bd (Katea)
-        4. Transmitem la urmatoarea componenta, informatii care trebuie afisate
-        5. Decidem pagina la care trebuie sa trecem
-        6. Trecem la pagina urmatoare (forward sau redirect, forward - trecerea pe server, redirect - se schimba url, dupa pe server)
-        
-        */
-        
-        //String companyDescription = request.getParameter("COMPANY_DESCRIPTION");
-        
-        request.getRequestDispatcher("stagii/internships.jsp").forward(request, response);
-        
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet internshipsbydomainserv</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet internshipsbydomainserv at " + request.getContextPath() + "</h1>");
+            out.println(request.getParameter("domain"));
+            out.println("</body>");
+            
+            out.println("</html>");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -8,7 +8,6 @@ package com.iucosoft.stagiimdweb.servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,8 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author munka
  */
-@WebServlet(name = "internshipserv", urlPatterns = {"/internshipserv"})
-public class internshipserv extends HttpServlet {
+public class internshipdetailsserv extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,22 +27,10 @@ public class internshipserv extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        /*
-        1. Din request extragem valorile parametrilor (parametru = din url, dupa ? sau din componente vizuale)
-        2. Validarea acestor valori*
-        3. Utilizam parametrii pentru a lucra cu bd (Katea)
-        4. Transmitem la urmatoarea componenta, informatii care trebuie afisate
-        5. Decidem pagina la care trebuie sa trecem
-        6. Trecem la pagina urmatoare (forward sau redirect, forward - trecerea pe server, redirect - se schimba url, dupa pe server)
-        
-        */
-        
-        //String companyDescription = request.getParameter("COMPANY_DESCRIPTION");
-        
-        request.getRequestDispatcher("stagii/internships.jsp").forward(request, response);
-        
+        request.getRequestDispatcher("stagii/internship_details.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
