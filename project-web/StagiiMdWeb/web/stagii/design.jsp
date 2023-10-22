@@ -19,31 +19,31 @@
 <div class="design-section-title">Design <b>Internships</b></div>
 <section>
 <div class="design-companies">
-    <a href="/Internship details/Details.html" class="design-company">
+    <a href="internship_details.html" class="design-company">
     <div class="design-companies1">
             <!--<div class="content">Company -->
     </div>
 </a>
     <div class="design-companies2">
-        <a href="/stagii/internship_details.html" class="design-company">
+        <a href="internship_details.html" class="design-company">
             <!--<div class="content">Company -->
             </div>
         </a>
     </div>
     <div class="design-companies3">
-        <a href="/stagii/internship_details.html" class="design-company">
+        <a href="internship_details.html" class="design-company">
             <!--<div class="content">Company -->
             </div>
         </a>
     </div>
     <div class="design-companies4">
-        <a href="/stagii/internship_details.html" class="design-company">
+        <a href="internship_details.html" class="design-company">
             <!--<div class="content">Company -->
             </div>
         </a>
     </div>
     <div class="design-companies5">
-        <a href="/stagii/internship_details.html" class="design-company">
+        <a href="internship_details.html" class="design-company">
             <!--<div class="content">Company -->
             </div>
         </a>

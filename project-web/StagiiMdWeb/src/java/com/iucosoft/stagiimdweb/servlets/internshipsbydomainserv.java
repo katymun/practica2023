@@ -5,8 +5,13 @@
  */
 package com.iucosoft.stagiimdweb.servlets;
 
+import com.iucosoft.stagiimdweb.dao.intf.InternshipProgramDAOIntf;
+import com.iucosoft.stagiimdweb.entities.InternshipProgram;
+import com.iucosoft.stagiimdweb.utility.Domain;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,8 +22,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author munka
  */
-@WebServlet(name = "internshipserv", urlPatterns = {"/internshipserv"})
-public class internshipserv extends HttpServlet {
+@WebServlet(name = "internshipsbydomainserv", urlPatterns = {"/internshipsbydomainserv"})
+public class internshipsbydomainserv extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,19 +36,36 @@ public class internshipserv extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        /*
-        1. Din request extragem valorile parametrilor (parametru = din url, dupa ? sau din componente vizuale)
-        2. Validarea acestor valori*
-        3. Utilizam parametrii pentru a lucra cu bd (Katea)
-        4. Transmitem la urmatoarea componenta, informatii care trebuie afisate
-        5. Decidem pagina la care trebuie sa trecem
-        6. Trecem la pagina urmatoare (forward sau redirect, forward - trecerea pe server, redirect - se schimba url, dupa pe server)
+        String domain = request.getParameter("domain");
+        String page = "";
+        InternshipProgramDAOIntf internshipDao = (InternshipProgramDAOIntf) request.getServletContext().getAttribute("internshipDao");
+        try {
+            Domain domainVal = Domain.BANKING;
+            switch(domain) {
+                case "IT": domainVal = Domain.IT; break;
+                case "design": domainVal = Domain.DESIGN; break;
+                case "marketing": domainVal = Domain.MARKETING; break;
+                case "management": domainVal = Domain.MANAGEMENT; break;
+            }
+            List<InternshipProgram> internshipList = internshipDao.findAllByDomain(domainVal);
+            
+            //request.setAttribute cu lista 
+            request.setAttribute("internshipList", internshipList);
+        } catch (SQLException ex) {
+            
+            log("eroare" + ex.toString());
+            
+            throw new IOException(ex);
+        }
+        switch(domain) {
+            case "IT": page = "stagii/IT.jsp"; break;
+            case "design": page = "stagii/design.jsp"; break;
+            case "marketing": page = "stagii/marketing.jsp"; break;
+            case "management": page = "stagii/management.jsp"; break;
+            default: page = "home.html";
+        }
         
-        */
-        
-        //String companyDescription = request.getParameter("COMPANY_DESCRIPTION");
-        
-        request.getRequestDispatcher("stagii/internships.jsp").forward(request, response);
+        request.getRequestDispatcher(page).forward(request, response);
         
     }
 

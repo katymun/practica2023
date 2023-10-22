@@ -8,7 +8,7 @@
     </head>
     
     <body>
-        <jsp:forward page="/stagii/home.html"/>
+        <jsp:forward page="home.html"/>
         
         
         

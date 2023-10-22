@@ -19,31 +19,31 @@
 <div class="banks-section-title">Banking <b>Internships</b></div>
 <section>
 <div class="banks-companies">
-    <a href="/Internship details/Details.html" class="banks-company">
+    <a href="internship_details.html" class="banks-company">
     <div class="banks-companies1">
             <!--<div class="content">Company -->
     </div>
 </a>
     <div class="banks-companies2">
-        <a href="/stagii/internship_details.html" class="banks-company">
+        <a href="internship_details.html" class="banks-company">
             <!--<div class="content">Company -->
             </div>
         </a>
     </div>
     <div class="banks-companies3">
-        <a href="/stagii/internship_details.html" class="banks-company">
+        <a href="internship_details.html" class="banks-company">
             <!--<div class="content">Company -->
             </div>
         </a>
     </div>
     <div class="banks-companies4">
-        <a href="/stagii/internship_details.html" class="banks-company">
+        <a href="internship_details.html" class="banks-company">
             <!--<div class="content">Company -->
             </div>
         </a>
     </div>
     <div class="banks-companies5">
-        <a href="/stagii/internship_details.html" class="banks-company">
+        <a href="internship_details.html" class="banks-company">
             <!--<div class="content">Company -->
             </div>
         </a>

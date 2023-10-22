@@ -5,8 +5,18 @@
  */
 package com.iucosoft.stagiimdweb.weblisteners;
 
+import com.iucosoft.stagiimdweb.dao.impl.ApplicantDAOImpl;
+import com.iucosoft.stagiimdweb.dao.impl.ApplicationDAOImpl;
 import com.iucosoft.stagiimdweb.dao.impl.CompanyDAOImpl;
+import com.iucosoft.stagiimdweb.dao.impl.InternshipProgramDAOImpl;
+import com.iucosoft.stagiimdweb.dao.impl.RecruiterDAOImpl;
+import com.iucosoft.stagiimdweb.dao.impl.UserDAOImpl;
+import com.iucosoft.stagiimdweb.dao.intf.ApplicantDAOIntf;
+import com.iucosoft.stagiimdweb.dao.intf.ApplicationDAOIntf;
 import com.iucosoft.stagiimdweb.dao.intf.CompanyDAOIntf;
+import com.iucosoft.stagiimdweb.dao.intf.InternshipProgramDAOIntf;
+import com.iucosoft.stagiimdweb.dao.intf.RecruiterDAOIntf;
+import com.iucosoft.stagiimdweb.dao.intf.UserDAOIntf;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -30,7 +40,7 @@ public class PracticaWebApplicationContextListener implements ServletContextList
         //creez obiectele dao/servicii si le pun in memoria aplicatiei
         ServletContext sc = sce.getServletContext();
         //de testare
-        sc.setAttribute("mainAttribute", "textulAtributului main");
+        //sc.setAttribute("mainAttribute", "textulAtributului main");
 
         try {
             InitialContext ic = new InitialContext();  // JNDI initial context
@@ -46,8 +56,26 @@ public class PracticaWebApplicationContextListener implements ServletContextList
                 System.out.println("Connection is ok " + conn.toString());   //de inlocuit cu logger
                 
             }
+            
             CompanyDAOIntf companyDao = new CompanyDAOImpl(ds);
             sc.setAttribute("companyDao", companyDao);
+            
+            ApplicantDAOIntf applicantDao = new ApplicantDAOImpl(ds);
+            sc.setAttribute("applicantDao", applicantDao);
+            
+            ApplicationDAOIntf applicationDao = new ApplicationDAOImpl(ds);
+            sc.setAttribute("applicationDao", applicationDao);
+            
+            UserDAOIntf userDao = new UserDAOImpl(ds);
+            sc.setAttribute("userDao", userDao);
+            
+            InternshipProgramDAOIntf internshipDao = new InternshipProgramDAOImpl(ds);
+            sc.setAttribute("internshipDao", internshipDao);
+            
+            RecruiterDAOIntf recruiterDao = new RecruiterDAOImpl(ds);
+            sc.setAttribute("recruiterDao", recruiterDao);
+            
+            
 //            ultimele doua randuri se repeta pentru toate clase dao/servicii
         } catch (SQLException se) {
             LOG.severe(se.toString());
@@ -64,6 +92,11 @@ public class PracticaWebApplicationContextListener implements ServletContextList
         ServletContext sc = sce.getServletContext();
         
         sc.removeAttribute("companyDao");
+        sc.removeAttribute("applicantDao");
+        sc.removeAttribute("applicationDao");
+        sc.removeAttribute("userDao");
+        sc.removeAttribute("internshipDao");
+        sc.removeAttribute("recruiterDao");
         //de sters toate 6 dao
         DataSource ds = (DataSource) sc.getAttribute("ds");
         if (ds != null) {

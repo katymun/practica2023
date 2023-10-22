@@ -9,4 +9,5 @@ public interface InternshipProgramDAOIntf extends GenericDAOIntf<InternshipProgr
     List<InternshipProgram> findAllByCompanyId(int idCompany) throws SQLException;
     List<InternshipProgram> findAllByDomain(Domain domain) throws SQLException;
     List<InternshipProgram> findAllByKeyword(String keyword) throws SQLException;
+    List<InternshipProgram> findTopFiveProgramsByDate() throws SQLException;
 }

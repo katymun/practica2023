@@ -270,7 +270,68 @@ public class InternshipProgramDAOImpl implements InternshipProgramDAOIntf {
 
     @Override
     public List<InternshipProgram> findAllByKeyword(String keyword) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<InternshipProgram> programs = new ArrayList<>();
+        try (Connection conn = ds.getConnection();
+                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_TOP_10_PROGRAMS);) {
+            pstat.setString(1, "%"+keyword+"%");
+            ResultSet rs = pstat.executeQuery();
+            
+
+            while (rs.next()) {
+                int id = rs.getInt(1);
+                String iName = rs.getString(2);
+                Domain domain = Domain.valueOf(rs.getString(3));
+                Date startDate = DateConverter.convert(rs.getDate(4));
+                String duration = rs.getString(5);
+                int idCompany = rs.getInt(6);
+                String duties = rs.getString(7);
+                String qualifications = rs.getString(8);
+                String benefits = rs.getString(9);
+                String location = rs.getString(10);
+                boolean paid = rs.getBoolean(11);
+
+                InternshipProgram program = new InternshipProgram(id, iName, 
+                        domain, startDate, duration, idCompany, duties, qualifications, 
+                        benefits, location, paid);
+                programs.add(program);
+            }
+            return programs;
+        } catch (SQLException ex) {
+            LOG.severe(ex.toString());
+            throw ex;
+        }
     }
 
+    @Override
+    public List<InternshipProgram> findTopFiveProgramsByDate() throws SQLException {
+        List<InternshipProgram> programs = new ArrayList<>();
+        try (Connection conn = ds.getConnection();
+                Statement stat = conn.createStatement();) {
+            ResultSet rs = stat.executeQuery(SQLS.FIND_TOP_5_PROGRAMS_BY_DATE);
+
+            while (rs.next()) {
+                int id = rs.getInt(1);
+                String iName = rs.getString(2);
+                Domain domain = Domain.valueOf(rs.getString(3));
+                Date startDate = DateConverter.convert(rs.getDate(4));
+                int idCompany = rs.getInt(5);
+                String duration = rs.getString(6);
+                String duties = rs.getString(7);
+                String qualifications = rs.getString(8);
+                String benefits = rs.getString(9);
+                String location = rs.getString(10);
+                boolean paid = rs.getBoolean(11);
+
+                InternshipProgram program = new InternshipProgram(id, iName, 
+                        domain, startDate, duration, idCompany, duties, qualifications, 
+                        benefits, location, paid);
+                programs.add(program);
+            }
+            return programs;
+        } catch (SQLException ex) {
+            LOG.severe(ex.toString());
+            throw ex;
+        }
+    }
+    
 }
