@@ -5,8 +5,15 @@
  */
 package com.iucosoft.stagiimdweb.servlets;
 
+import com.iucosoft.stagiimdweb.dao.impl.InternshipProgramDAOImpl;
+import com.iucosoft.stagiimdweb.dao.intf.InternshipProgramDAOIntf;
+import com.iucosoft.stagiimdweb.entities.InternshipProgram;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,10 +39,25 @@ public class internshipsfoundserv extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String searchInternships = request.getParameter("SEARCH_INTERNSHIPS");
-        
+        log("searchInternships = " + searchInternships);
         
         //prin dao primesc lista conform cautarii
-        //request.setAttribute cu lista 
+        
+        InternshipProgramDAOIntf internshipDao = (InternshipProgramDAOIntf) request.getServletContext().getAttribute("internshipDao");
+        try {
+            List<InternshipProgram> internshipListTopFive = internshipDao.findAllByKeyword(searchInternships);
+            
+            //request.setAttribute cu lista 
+            request.setAttribute("internshipListTopFive", internshipListTopFive);
+        } catch (SQLException ex) {
+            
+            log("eroare" + ex.toString());
+            
+            throw new IOException(ex);
+        }
+        
+        
+        
         
         request.getRequestDispatcher("stagii/internships_found.jsp").forward(request, response);
         

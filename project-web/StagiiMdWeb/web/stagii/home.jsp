@@ -15,14 +15,14 @@
     </head>
     <body>
         <!--<script src="stagii/header_home.js"></script>-->
-        <jsp:include page="common/header_home.jspf" />
+        <jsp:include page="common/header_home.jspf" flush="true" />
         <%--<%@include file="common/header_home.jspf" %>--%>
         <div class="homepage-hero-section">
             <div class="homepage-left">
                 <h1>
                     <!--<img src="images/details.svg" class="homepage-details">-->
                     <div class="homepage-text">
-                        <img src="stagii/images/accent-internships.svg" class="homepage-accent">
+                        <img src="images/accent-internships.svg" class="homepage-accent">
                         <div class="homepage-find-internships">Find <b>internships</b></div>
 
                     </div>
@@ -37,7 +37,7 @@
                             <form action="internshipsfoundserv">
                             <input id="" name="SEARCH_INTERNSHIPS" type="text" placeholder="Search for an internship" class="homepage-input homepage-custom-input" >
                             <div class="homepage-container">
-                                <img src="stagii/images/Search logo.svg" class="homepage-search">
+                                <img src="images/Search logo.svg" class="homepage-search">
                                 <a href="#" class="homepage-search">
                                     <button class="homepage-search-button">Search</button>
                                 </a>
@@ -55,11 +55,11 @@
                     </br>
                 </div>
             </div>
-            <img src="stagii/images/image front page.svg" alt="" class="homepage-right-image" />
+            <img src="images/image front page.svg" alt="" class="homepage-right-image" />
         </div>
     </div>
     <div class="homepage-internships-text">
-        <img src="stagii/images/accent2.svg" class="homepage-accent2">
+        <img src="images/accent2.svg" class="homepage-accent2">
         <div class="homepage-text-category"> Find an <b>internship </b><br>by category</br> </div>
     </div>
 </div>
@@ -70,29 +70,29 @@
 <div class="homepage-white-boxes">
     <a href="internshipsbydomainserv?domain=IT" class="homepage-white-box-link">
         <div class="homepage-white-box">
-            <img src="stagii/images/IT sign.svg"  class="homepage-box-image1">
+            <img src="images/IT sign.svg"  class="homepage-box-image1">
             <p class="homepage-box-text1">IT</p>
         </div>
     </a>
     <a href="internshipsbydomainserv?domain=design" class="homepage-white-box-link">
         <div class="homepage-white-box">
-            <img src="stagii/images/Design sign.svg"  class="homepage-box-image2">
+            <img src="images/Design sign.svg"  class="homepage-box-image2">
             <p class="homepage-box-text">Design</p>
         </div>
     </a>
     <a href="internshipsbydomainserv?domain=marketing" class="homepage-white-box-link">
         <div class="homepage-white-box">
-            <img src="stagii/images/Marketing sign.svg"  class="homepage-box-image3">
+            <img src="images/Marketing sign.svg"  class="homepage-box-image3">
             <p class="homepage-box-text">Marketing</p>
         </div>
     </a>
     <a href="internshipsbydomainserv?domain=management" class="homepage-white-box-link">
         <div class="homepage-white-box">
-            <img src="stagii/images/Management sign.svg"  class="homepage-box-image4">
+            <img src="images/Management sign.svg"  class="homepage-box-image4">
             <p class="homepage-box-text2">Management</p>
         </div>
     </a>
-    <a href="/stagii/internships.html" class="homepage-white-box-link">
+    <a href="internships.html" class="homepage-white-box-link">
         <div class="homepage-white-box">
             <p class="homepage-box-text3">Discover <br> more</br></p>
         </div>
@@ -106,31 +106,31 @@
     </br>
     <div class="homepage-companies">
         <div class="homepage-companies1">
-            <a href="/stagii/companies_details.html" class="homepage-company">
+            <a href="companies_details.html" class="homepage-company">
                 <!--<div class="content">Company -->
         </div>
         </a>
     </div>
     <div class="homepage-companies2">
-        <a href="/stagii/companies_details.html" class="homepage-company">
+        <a href="companies_details.html" class="homepage-company">
             <!--<div class="content">Company -->
     </div>
 </a>
 </div>
 <div class="homepage-companies3">
-    <a href="/stagii/companies_details.html" class="homepage-company">
+    <a href="companies_details.html" class="homepage-company">
         <!--<div class="content">Company -->
 </div>
 </a>
 </div>
 <div class="homepage-companies4">
-    <a href="/stagii/companies_details.html" class="homepage-company">
+    <a href="companies_details.html" class="homepage-company">
         <!--<div class="content">Company -->
 </div>
 </a>
 </div>
 <div class="homepage-companies5">
-    <a href="/stagii/companies_details.html" class="homepage-company">
+    <a href="companies_details.html" class="homepage-company">
         <!--<div class="content">Company -->
 </div>
 </a>
@@ -138,7 +138,7 @@
 <br>
 <div class="homepage-container1">
     <div class="homepage-vertical-center">
-        <a href="/stagii/internships.html" class="homepage-more-internships">
+        <a href="internships.html" class="homepage-more-internships">
             <button class="homepage-more-button">More internships</button>
         </a>
     </div>
@@ -152,10 +152,10 @@
 <!-- End of company internship sections-->
 <div class="homepage-container2">
     <!-- Text input-->
-    <img src="stagii/images/newsletter.svg" class="homepage-news">
+    <img src="images/newsletter.svg" class="homepage-news">
     <br>
     <div class="homepage-receive">Receive internships by email</div>
-    <img src="stagii/images/accent3.svg" class="homepage-accent3">
+    <img src="images/accent3.svg" class="homepage-accent3">
     <div class="homepage-form-group1">
         <label class="homepage-col control-label" for=""></label>
         <div class="homepage-col">

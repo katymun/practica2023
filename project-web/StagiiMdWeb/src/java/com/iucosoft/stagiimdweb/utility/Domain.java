@@ -16,5 +16,6 @@ public enum Domain {
     BANKING,
     ENGINEERING,
     ENTERTAINMENT,
+    MANAGEMENT,
     COMMERCE;
 }

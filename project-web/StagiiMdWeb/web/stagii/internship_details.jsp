@@ -7,7 +7,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/stagii/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Onest:wght@400;700&display=swap"
@@ -15,9 +15,10 @@
     </head>
 
     <body>
-        <script src="header_internships.js"></script>
+        <jsp:include page="common/header_internships.jspf" />
         <div class="internship-details-white-box1">
         </div>
+        <!--internshipProgram-->
         <div class="internship-details-container1">
             <div class="internship-details-description-internship">
                 <p class="internship-details-box-text1">Company overview:</p>
@@ -56,20 +57,20 @@
         <div class="internship-details-company-mail"><div class="internship-details-email">E-mail:</div> </div>
 
         <div class="internship-details-other">Other internships published by this company:</div>
-        <a href="/stagii/internship_details.html" class="internship-details-styled-link">
+        <a href="internship_details.html" class="internship-details-styled-link">
             <div class="internship-details-other-box1"></div>
         </a>
-        <a href="/stagii/internship_details.html">
+        <a href="internship_details.html">
             <div class="internship-details-other-box2"></div>
         </a>
         <div class="internship-details-similar">Similar internships:</div>
-        <a href="/stagii/internship_details.html">
+        <a href="internship_details.html">
             <div class="internship-details-similar-box1"></div>
         </a>
-        <a href="/stagii/internship_details.html">
+        <a href="internship_details.html">
             <div class="internship-details-similar-box2"></div>
         </a>
-        <script src="footer.js"></script>
+        <jsp:include page="common/footer.jspf" />
     </body>
 
 </html>

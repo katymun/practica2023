@@ -1,7 +1,7 @@
 <footer>
     <div class="footer">
         <div class="logo1">
-            ST<img src="stagii/images/logo.svg" class="logo3" />GII.MD
+            ST<img src="images/logo.svg" class="logo3" />GII.MD
         </div>
         <p class="copyright">This website was developed by Team04 © 2023</p>
     </div>

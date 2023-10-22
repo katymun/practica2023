@@ -55,7 +55,7 @@ public class SQLS {
     public static final String APPLICATIONS_UPDATE = "UPDATE applications SET CV=?, PHONE_NUMBER=?, EMAIL=? WHERE ID=?";
     public static final String PROGRAMMES_UPDATE = "UPDATE programmes SET TITLE=?, DOMAIN=?, START_DATA=?, DURATION=?, DUTIES=?, QUALIFICATIONS=?, BENEFITS=?, LOCATION=?, PAID=? WHERE ID=?";
     public static final String UPDATE_COMPANY_IMAGE = "UPDATE companies SET IMG_PATH=?, IMG_DATA=? WHERE ID=?";
-    
+
     // Delete queries
     public static final String USERS_DELETE = "DELETE FROM USERS WHERE ID=?";
     public static final String APPLICANTS_DELETE = "DELETE FROM APPLICANTS WHERE ID=?";
@@ -81,16 +81,16 @@ public class SQLS {
     public static final String FIND_PROGRAMME_BY_ID = "SELECT * FROM programmes WHERE ID=?";
     public static final String FIND_ALL_PROGRAMMES_BY_COMPANY = "SELECT * FROM programmes WHERE company_id = ?";
     public static final String FIND_ALL_PROGRAMMES_BY_DOMAIN = "SELECT * FROM programmes WHERE domain = ?";
-    
-    
+
     // Find by Name queries
-    
     public static final String FIND_COMPANY_BY_NAME = "SELECT * FROM companies WHERE TITLE=?";
     public static final String FIND_APPLICANT_BY_NAME = "SELECT * FROM applicants WHERE NAME=? OR SURNAME=?";
     public static final String FIND_RECRUITERS_BY_NAME = "SELECT * FROM recruiters WHERE NAME=? OR SURNAME=?";
-   
-    
+
+    public static final String FIND_TOP_5_PROGRAMS_BY_DATE = "SELECT * FROM applications WHERE application_date>=CURRENT_DATE() ORDER BY application_date LIMIT 5";
+
+    public static final String FIND_TOP_10_PROGRAMS = "SELECT * FROM programmes WHERE title LIKE ? LIMIT 10";
+
     public static final String GET_COMPANY_IMAGE = "SELECT TITLE, IMG_PATH, IMG_DATA FROM companies WHERE ID=?";
-    
 
 }

@@ -19,7 +19,7 @@
     <jsp:include page="common/header_companies.jspf" />
             <!-- end of desktop navigation menu-->
             <div class="companies-best">
-                <img src="stagii/images/accent.svg" alt="" class="companies-accent">
+                <img src="images/accent.svg" alt="" class="companies-accent">
                 <div class="companies-section-title">Find <b> internships</b> by company</div>
             </div>
         </div>
@@ -30,7 +30,7 @@
                     <input id="" name="" type="text" placeholder="Search for a company"
                         class="companies-form-control-input companies-custom-input">
                     <div class="companies-container">
-                        <img src="stagii/images/Search logo.svg" class="companies-search">
+                        <img src="images/Search logo.svg" class="companies-search">
                         <a href="#" class="companies-search">
                             <button class="companies-search-button">Search</button>
                         </a>
@@ -40,7 +40,7 @@
         </div>
 
     <div class="companies-white-boxes">
-        <a href="stagii/companies_details.html" class="companies-white-box-link">
+        <a href="companies_details.html" class="companies-white-box-link">
         <div class="companies-white-box">
         </div>
     </a>

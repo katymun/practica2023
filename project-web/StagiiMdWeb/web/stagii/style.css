@@ -202,7 +202,7 @@ h1 {
     font-size: 16px;
     font-family: "Montserrat";
     color: var(--TEXT2, #AEB4C1);
-    padding-top: 12px;
+    padding-top: 15px;
     display: flex;
     justify-content: center
    
@@ -211,7 +211,7 @@ h1 {
     font-size: 16px;
     font-family: "Montserrat";
     color: var(--TEXT2, #AEB4C1);
-    padding-top: 12px;
+    padding-top: 15px;
     display: flex;
     justify-content: center
    
@@ -220,7 +220,7 @@ h1 {
     font-size: 16px;
     font-family: "Montserrat";
     color: var(--TEXT2, #AEB4C1);
-    padding-top: 12px;
+    padding-top: 15px;
     display: flex;
     justify-content: center
    
@@ -233,7 +233,7 @@ h1 {
 
 .homepage-accent2{
     width: 130px;
-    transform: translate(165%,460%);
+    transform: translate(165%,500%);
   
 }
 
@@ -283,22 +283,26 @@ h1 {
     cursor: pointer;
     transform: scale(1.1);
 }
-.homepage-white-box:hover .homepage-box-image1 {
-    content: url('images/IT_white.svg');
-    transform: scale(1.1);  /* Set the path to your hover image */
+.homepage-white-box-link:hover .homepage-box-image1 {
+    background-image: url('images/IT_white.svg');
+    transform: scale(1.1);
 }
-.homepage-white-box:hover .homepage-box-image2 {
-    content: url('images/Design_white.svg');
-    transform: scale(1.1);  /* Set the path to your hover image */
+
+.homepage-white-box-link:hover .homepage-box-image2 {
+    background-image: url('images/Design_white.svg');
+    transform: scale(1.1);
 }
-.homepage-white-box:hover .homepage-box-image3 {
-    content: url('images/Marketing_white.svg');
-    transform: scale(1.1);  /* Set the path to your hover image */
+
+.homepage-white-box-link:hover .homepage-box-image3 {
+    background-image: url('images/Marketing_white.svg');
+    transform: scale(1.1);
 }
-.homepage-white-box:hover .homepage-box-image4 {
-    content: url('images/Management_white.svg');
-    transform: scale(1.1);  /* Set the path to your hover image */
+
+.homepage-white-box-link:hover .homepage-box-image4 {
+    background-image: url('images/Management_white.svg');
+    transform: scale(1.1);
 }
+
 .homepage-box-text1{
     font-size: 25px;
 font-family: "Montserrat";
@@ -470,7 +474,7 @@ margin-top: 50px;
 
 .homepage-accent3{
     width: 147px;
-    transform: translate(515%, -5750%);
+    transform: translate(455%, -4920%);
 }
 .homepage-container2 {
     position: relative;
@@ -622,8 +626,9 @@ transform: translateY(600%);
 
 .internship-button {
     width: 300px;
-    postion: absolute;
-    margin: auto;
+    position: relative;
+    padding-right: 510px;
+    padding-left: 510px;
 }
 
 .internship-search{
@@ -637,7 +642,7 @@ transform: translateY(600%);
     position: absolute;
     top: 100%; /* Align the button vertically in the middle */
     left:680px; /* Adjust the distance from the right edge */
-    transform: translate(325%,-200%); /* Center the button vertically */
+    transform: translate(225%,-200%); /* Center the button vertically */
     border-radius: 5px;
     z-index: 2;
     width: 110px;
@@ -715,44 +720,44 @@ transform: translateY(600%);
     cursor: pointer;
     transform: scale(1.1);
 }
-.internship-white-box:hover .internship-box-image1 {
-    content: url('images/IT_white.svg');
+.internship-white-box:hover .internship-box-image2 {
+    background-image: url('images/IT_white.svg');
     transform: scale(1.1);  /* Set the path to your hover image */
 }
 .internship-white-box:hover .internship-box-image2 {
-    content: url('images/Design_white.svg');
+    backgroud-image: url('images/Design_white.svg');
     transform: scale(1.1);  /* Set the path to your hover image */
 }
 .internship-white-box:hover .internship-box-image3 {
-    content: url('images/Marketing_white.svg');
+    backgroud-image: url('images/Marketing_white.svg');
     transform: scale(1.1);  /* Set the path to your hover image */
 }
 .internship-white-box:hover .internship-box-image4 {
-    content: url('images/Management_white.svg');
+    backgroud-image: url('images/Management_white.svg');
     transform: scale(1.1);  /* Set the path to your hover image */
 }
 .internship-white-box:hover .internship-box-image5 {
-    content: url('images/Telecommunications_white.svg');
+    backgroud-image: url('images/Telecommunications_white.svg');
     transform: scale(1.1);  /* Set the path to your hover image */
 }
 .internship-white-box:hover .internship-box-image6 {
-    content: url('images/Logistics_white.svg');
+    background-image: url('images/Logistics_white.svg');
     transform: scale(1.1);  /* Set the path to your hover image */
 }
 .internship-white-box:hover .internship-box-image7 {
-    content: url('images/Sales_white.svg');
+    background-image: url('images/Mail.svg');
     transform: scale(1.1);  /* Set the path to your hover image */
 }
 .internship-white-box:hover .internship-box-image8 {
-    content: url('images/Accounting_white.svg');
+    background-image: url('images/Accounting_white.svg');
     transform: scale(1.1);  /* Set the path to your hover image */
 }
 .internship-white-box:hover .internship-box-image9 {
-    content: url('images/Banks_white.svg');
+    backgroud-image: url('images/Banks_white.svg');
     transform: scale(1.1);  /* Set the path to your hover image */
 }
 .internship-white-box:hover .internship-box-image10 {
-    content: url('images/Medicine_white.svg');
+    backgroud-image: url('images/Medicine_white.svg');
     transform: scale(1.1);  /* Set the path to your hover image */
 }
 .internship-box-text1{
@@ -795,58 +800,58 @@ color:var(--TEXT);
 padding-left: 345px;
 padding-top: 150px;
 }
+/*.it-companies1{
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;  Width of the individual box 
+    height: 150px;  Height of the individual box 
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+    flex-direction: column; 
+    display: block;
+}*/
+
 .it-companies1{
     margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
+    width: 1000px;
+    height: 150px;
     border-radius: 5px;
     border: 1px solid var(--TEXT2, #AEB4C1);
     background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.it-companies2{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
+    display: flex; /* Change display to flex for layout */
+    align-items: center; /* Vertically align the items */
+    justify-content: space-between; /* Even spacing between items */
+    padding: 0 20px; /* Add padding to the sides */
 }
 
-.it-companies3{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
+.avatar{
+    width: 80px;
+    height: 80px;
+    background-color: grey; /* Placeholder color, change to a background image or different color */
+    border-radius: 50%;
 }
-.it-companies4{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
+.company-info{
+    flex-grow: 1;
+    padding-left: 20px;
 }
-.it-companies5{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
+
+.company-name, .company-detail{
+    margin: 0;
+}
+.date-info{
+    display: flex;
+    flex-direction: column;  /* Adjusts the children to be in a column */
+    gap: 10px;
+}
+
+.date-info input{
+    padding: 5px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
 }
 
 .it-footer {
@@ -1729,7 +1734,8 @@ transform: translateY(600%);
 .companies-button {
     width: 300px;
     position: relative;
-    padding-left: 615px;
+    padding-right: 510px;
+    padding-left: 510px;
 }
 
 .companies-search{
@@ -1743,7 +1749,7 @@ transform: translateY(600%);
     position: absolute;
     top: 100%; /* Align the button vertically in the middle */
     left:680px; /* Adjust the distance from the right edge */
-    transform: translate(325%,-200%); /* Center the button vertically */
+    transform: translate(225%,-200%);; /* Center the button vertically */
     border-radius: 5px;
     z-index: 2;
     width: 110px;

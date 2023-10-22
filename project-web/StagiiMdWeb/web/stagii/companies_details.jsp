@@ -21,12 +21,12 @@
             <!--<div class="content">Company -->
         </div>
         <div class="companies-details-specific">Internships:</div>
-        <a href="/stagii/internship_details.html" class="companies-details-company">
+        <a href="internship_details.html" class="companies-details-company">
         <div class="companies-details-companies2">
                 <!--<div class="content">Company -->
         </div>
     </a>
-    <a href="/stagii/internship_details.html" class="companies-details-company"></a>
+    <a href="internship_details.html" class="companies-details-company"></a>
         <div class="companies-details-companies3">
                 <!--<div class="content">Company -->
         </div>

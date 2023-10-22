@@ -25,25 +25,25 @@
     </div>
 </a>
     <div class="accounting-companies2">
-        <a href="/stagii/internship_details.html" class="accounting-company">
+        <a href="internship_details.html" class="accounting-company">
             <!--<div class="content">Company -->
             </div>
         </a>
     </div>
     <div class="accounting-companies3">
-        <a href="/stagii/internship_details.html" class="accounting-company">
+        <a href="internship_details.html" class="accounting-company">
             <!--<div class="content">Company -->
             </div>
         </a>
     </div>
     <div class="accounting-companies4">
-        <a href="/stagii/internship_details.html" class="accounting-company">
+        <a href="internship_details.html" class="accounting-company">
             <!--<div class="content">Company -->
             </div>
         </a>
     </div>
     <div class="accounting-companies5">
-        <a href="/stagii/internship_details.html" class="accounting-company">
+        <a href="internship_details.html" class="accounting-company">
             <!--<div class="content">Company -->
             </div>
         </a>

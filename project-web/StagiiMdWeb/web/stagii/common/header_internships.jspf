@@ -2,7 +2,7 @@
 <div class="wrapper">
     <nav>
         <!--> <div class="box"><!-->
-            <a href="/stagii/home.html" class="logo-button">
+            <a href="home.html" class="logo-button">
                 <div class="logo">
                     ST <img class="vector" src="images/logo.svg" />GII.MD
 
@@ -11,15 +11,15 @@
                 </a>
         <ul>
             <li>
-                <a href="/stagii/home.html">Home</a>
+                <a href="home.html">Home</a>
             </li>
 
             <li>
-                <a href="#" class="styled-link2">Internships</a>
+                <a href="internships.html" class="styled-link2">Internships</a>
             </li>
 
             <li>
-                <a href="/stagii/companies.html">Companies</a>
+                <a href="companies.html">Companies</a>
             </li>
             <!--
                 <li>

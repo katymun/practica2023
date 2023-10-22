@@ -5,8 +5,12 @@
  */
 package com.iucosoft.stagiimdweb.servlets;
 
+import com.iucosoft.stagiimdweb.dao.intf.InternshipProgramDAOIntf;
+import com.iucosoft.stagiimdweb.entities.InternshipProgram;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,6 +34,23 @@ public class internshipdetailsserv extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        String idInternshipStr = request.getParameter("ID_INTERNSHIP");
+        int idInternship = Integer.parseInt(idInternshipStr);
+        
+        InternshipProgramDAOIntf internshipDao = (InternshipProgramDAOIntf) request.getServletContext().getAttribute("internshipDao");
+        try {
+            InternshipProgram internshipProgram = internshipDao.findById(idInternship);
+            
+            //request.setAttribute cu lista 
+            request.setAttribute("internshipProgram", internshipProgram);
+        } catch (SQLException ex) {
+            
+            log("eroare" + ex.toString());
+            
+            throw new IOException(ex);
+        }
+        
         request.getRequestDispatcher("stagii/internship_details.jsp").forward(request, response);
     }
 

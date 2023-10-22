@@ -34,10 +34,10 @@ public class DispatcherServlet extends HttpServlet {
         log("path = " + path);
         
         switch(path) {
-            case "/stagii/home.html": page = "/homeserv"; break;
-            case "/stagii/internships.html": page = "/internshipserv";  break;
-            case "/stagii/companies.html": page = "/companiesserv"; break;
-            case "/stagii/internship_details.html": page = "/internshipdetailsserv"; break;
+            case "/home.html": page = "/homeserv"; break;
+            case "/internships.html": page = "/internshipserv";  break;
+            case "/companies.html": page = "/companiesserv"; break;
+            case "/internship_details.html": page = "/internshipdetailsserv"; break;
             default: page = "index.jsp";
             
                 
