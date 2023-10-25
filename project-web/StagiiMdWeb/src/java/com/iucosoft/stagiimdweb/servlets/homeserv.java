@@ -5,8 +5,18 @@
  */
 package com.iucosoft.stagiimdweb.servlets;
 
+import com.iucosoft.stagiimdweb.dao.impl.InternshipProgramDAOImpl;
+import com.iucosoft.stagiimdweb.dao.intf.InternshipProgramDAOIntf;
+import com.iucosoft.stagiimdweb.entities.Company;
+import com.iucosoft.stagiimdweb.entities.InternshipProgram;
+import com.iucosoft.stagiimdweb.services.impl.InternshipServiceImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,8 +42,28 @@ public class homeserv extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // trimiti pe pagina 5 internshipuri 
-        // 
+        
+        InternshipProgramDAOIntf internshipDao = (InternshipProgramDAOIntf) request.getServletContext().getAttribute("internshipDao");
+        InternshipServiceImpl internshipService = (InternshipServiceImpl) request.getServletContext().getAttribute("internshipService");
+        
+        
+        
+        List<InternshipProgram> internshipListTopFive = null;
+        try {
+            internshipListTopFive = internshipDao.findTopFiveProgramsByDate();
+            Map<InternshipProgram, Company> internshipCompanyTopFiveMap = internshipService.getInternshipCompanyMap(internshipListTopFive);
+            
+//            request.setAttribute("internshipListTopFive", internshipListTopFive);
+            request.setAttribute("internshipCompanyTopFiveMap", internshipCompanyTopFiveMap);
+        } catch (SQLException ex) {
+            log("eroare" + ex.toString());
+            throw new IOException(ex);
+        }
+
+        //request.setAttribute cu lista 
+        
         request.getRequestDispatcher("stagii/home.jsp").forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

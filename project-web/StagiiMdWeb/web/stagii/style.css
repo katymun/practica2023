@@ -182,8 +182,8 @@ h1 {
     list-style: none;
     margin: 0;
     position: relative;
-    
-    
+
+
 }
 
 .homepage-examples ul li {
@@ -205,7 +205,7 @@ h1 {
     padding-top: 15px;
     display: flex;
     justify-content: center
-   
+
 }
 .homepage-examples-back{
     font-size: 16px;
@@ -214,7 +214,7 @@ h1 {
     padding-top: 15px;
     display: flex;
     justify-content: center
-   
+
 }
 .homepage-examples-design{
     font-size: 16px;
@@ -223,18 +223,18 @@ h1 {
     padding-top: 15px;
     display: flex;
     justify-content: center
-   
+
 }
 
 .homepage-right-image {
-    
+
     padding-right: 50px;
 }
 
 .homepage-accent2{
     width: 130px;
     transform: translate(165%,500%);
-  
+
 }
 
 .homepage-internships-text{
@@ -258,7 +258,7 @@ h1 {
     display: flex;
     flex-wrap: wrap; /* Allow items to wrap to the next row */
     justify-content: space-between; /* Distribute space between items */
-   /* margin-top: 20px; /* Spacing between the examples and white boxes */
+    /* margin-top: 20px; /* Spacing between the examples and white boxes */
 }
 
 .homepage-white-box{
@@ -272,7 +272,9 @@ h1 {
     justify-content: center; /* Center items vertically */
     align-items: center; /* Center items horizontally */
     margin-bottom: 20px; /* Space between rows */
+    transition: all 0.2s ease-out;
 }
+
 .homepage-white-box-link {
     text-decoration: none; /* Removes the underline from anchor tags */
     display: block; /* Makes the entire area clickable */
@@ -305,20 +307,20 @@ h1 {
 
 .homepage-box-text1{
     font-size: 25px;
-font-family: "Montserrat";
-font-weight: 400;
-color: var(--TEXT);
-width: 22px;
-height: 30px;
-text-decoration: underline;
+    font-family: "Montserrat";
+    font-weight: 400;
+    color: var(--TEXT);
+    width: 22px;
+    height: 30px;
+    text-decoration: underline;
 }
 
 .homepage-box-text2{
     font-size: 20px;
-font-family: "Montserrat";
-font-weight: 400;
-color: var(--TEXT);
-text-decoration: underline;
+    font-family: "Montserrat";
+    font-weight: 400;
+    color: var(--TEXT);
+    text-decoration: underline;
 }
 
 
@@ -346,107 +348,13 @@ text-decoration: underline;
 
 .homepage-more-internships{
     font-size: 25px;
-font-family: "Stolzl";
-font-weight: 400;
-color: var(--TEXT);
-padding-left: 118px;
-margin-top: 50px;
+    font-family: "Stolzl";
+    font-weight: 400;
+    color: var(--TEXT);
+    padding-left: 118px;
+    margin-top: 50px;
 }
 
-.homepage-companies1{
-    width: 800px; /* Width of one box + its margin multiplied by 5 */
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    cursor: pointer;
-    flex-direction: column; 
-    margin-bottom: 20px; 
-    display: block;
-}
-
-.homepage-companies1{
-    width: 800px; /* Width of one box + its margin multiplied by 5 */
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    cursor: pointer;
-    flex-direction: column; 
-    margin-bottom: 20px; 
-    display: block;
-}
-.homepage-companies2{
-    width: 800px; /* Width of one box + its margin multiplied by 5 */
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    cursor: pointer;
-    flex-direction: column; 
-    margin-bottom: 20px; 
-    display: block;
-}
-.homepage-companies3{
-    width: 800px; /* Width of one box + its margin multiplied by 5 */
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    cursor: pointer;
-    flex-direction: column; 
-    margin-bottom: 20px; 
-    display: block;
-}
-.homepage-companies4{
-    width: 800px; /* Width of one box + its margin multiplied by 5 */
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    cursor: pointer;
-    flex-direction: column; 
-    margin-bottom: 20px; 
-    display: block;
-}
-.homepage-companies5{
-    width: 800px; /* Width of one box + its margin multiplied by 5 */
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    cursor: pointer;
-    flex-direction: column; 
-    margin-bottom: 20px; 
-    display: block;
-}
-.homepage-companies1:hover{
-    transform: scale(1.1);
-}
-.homepage-companies2:hover{
-    transform: scale(1.1);
-}
-.homepage-companies3:hover{
-    transform: scale(1.1);
-}
-.homepage-companies4:hover{
-    transform: scale(1.1);
-}
-.homepage-companies5:hover{
-    transform: scale(1.1);
-}
 
 .homepage-container1 {
     display: flex;
@@ -591,7 +499,7 @@ margin-top: 50px;
 }
 
 .logo3{
-transform: translate(2%,5%);
+    transform: translate(2%,5%);
 }
 .copyright {
     font-size: 12px;
@@ -612,11 +520,11 @@ transform: translate(2%,5%);
 .internship-section-title{
     position: relative;
     font-size: 20px;
-font-family: "Stolzl";
-font-weight: 400;
-color: rgba(0, 0, 0, 1);
-padding-left: 122px;
-transform: translateY(600%);
+    font-family: "Stolzl";
+    font-weight: 400;
+    color: rgba(0, 0, 0, 1);
+    padding-left: 122px;
+    transform: translateY(600%);
 
 }
 .internship-best-accent{
@@ -709,7 +617,9 @@ transform: translateY(600%);
     justify-content: center; /* Center items vertically */
     align-items: center; /* Center items horizontally */
     margin-bottom: 20px; /* Space between rows */
+    transition: all 0.1s ease-out;
 }
+
 .internship-white-box-link {
     text-decoration: none; /* Removes the underline from anchor tags */
     display: block; /* Makes the entire area clickable */
@@ -762,11 +672,11 @@ transform: translateY(600%);
 }
 .internship-box-text1{
     font-size: 16px;
-font-family: "Montserrat";
-font-weight: 400;
-color: var(--TEXT);
-text-decoration: underline;
-text-align: center;
+    font-family: "Montserrat";
+    font-weight: 400;
+    color: var(--TEXT);
+    text-decoration: underline;
+    text-align: center;
 }
 
 .internship-box-text{
@@ -794,11 +704,11 @@ text-align: center;
 .it-section-title{
     position: relative;
     font-size: 30px;
-font-family: "Stolzl";
-font-weight: 400;
-color:var(--TEXT);
-padding-left: 345px;
-padding-top: 150px;
+    font-family: "Stolzl";
+    font-weight: 400;
+    color:var(--TEXT);
+    padding-left: 345px;
+    padding-top: 150px;
 }
 /*.it-companies1{
     margin-top: 80px;
@@ -813,8 +723,19 @@ padding-top: 150px;
     display: block;
 }*/
 
+.internships-found-company {
+    text-decoration: none;  /* Remove the underline */
+    color: inherit;  /* Ensure the text inside uses its original color and not the typical blue link color */
+}
+
+
+/* If you want a subtle transition effect when hovering */
+.internships-found-company {
+    transition: background-color 0.3s ease;
+}
+
 .it-companies1{
-    margin-top: 80px;
+    margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
     width: 1000px;
@@ -826,13 +747,20 @@ padding-top: 150px;
     align-items: center; /* Vertically align the items */
     justify-content: space-between; /* Even spacing between items */
     padding: 0 20px; /* Add padding to the sides */
-}
+    transition: transform 0.3s ease; align-content: }
 
-.avatar{
+.it-companies1:hover{
+    transform:scale(1.03);
+}
+    
+    
+   .avatar{
     width: 80px;
     height: 80px;
     background-color: grey; /* Placeholder color, change to a background image or different color */
     border-radius: 50%;
+    margin-right: 60px;
+    margin-left: 20px;
 }
 .company-info{
     flex-grow: 1;
@@ -841,17 +769,29 @@ padding-top: 150px;
 
 .company-name, .company-detail{
     margin: 0;
-}
-.date-info{
-    display: flex;
-    flex-direction: column;  /* Adjusts the children to be in a column */
-    gap: 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.date-info input{
+.company-name {
+    font-size: 18px; /* Adjust the size as per your requirements */
+    font-weight: 500; /* This will make it medium weight */
+    margin-bottom: 20px;
+}
+
+.company-detail {
+    font-size: 16px; /* Adjust the size as per your requirements */
+}
+
+.date-info div {
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    height: 20px; /* You can adjust this to your needs */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px; /* Adding space between the two boxes */
+    margin-right: 10px;
 }
 
 .it-footer {
@@ -865,11 +805,11 @@ padding-top: 150px;
 .accounting-section-title{
     position: relative;
     font-size: 30px;
-font-family: "Stolzl";
-font-weight: 400;
-color:var(--TEXT);
-padding-left: 345px;
-padding-top: 150px;
+    font-family: "Stolzl";
+    font-weight: 400;
+    color:var(--TEXT);
+    padding-left: 345px;
+    padding-top: 150px;
 }
 .accounting-companies1{
     margin-top: 80px;
@@ -937,11 +877,11 @@ padding-top: 150px;
 .banks-section-title{
     position: relative;
     font-size: 30px;
-font-family: "Stolzl";
-font-weight: 400;
-color:var(--TEXT);
-padding-left: 345px;
-padding-top: 150px;
+    font-family: "Stolzl";
+    font-weight: 400;
+    color:var(--TEXT);
+    padding-left: 345px;
+    padding-top: 150px;
 }
 .banks-companies1{
     margin-top: 80px;
@@ -1008,11 +948,11 @@ padding-top: 150px;
 .design-section-title{
     position: relative;
     font-size: 30px;
-font-family: "Stolzl";
-font-weight: 400;
-color:var(--TEXT);
-padding-left: 345px;
-padding-top: 150px;
+    font-family: "Stolzl";
+    font-weight: 400;
+    color:var(--TEXT);
+    padding-left: 345px;
+    padding-top: 150px;
 }
 .design-companies1{
     margin-top: 80px;
@@ -1079,11 +1019,11 @@ padding-top: 150px;
 .management-section-title{
     position: relative;
     font-size: 30px;
-font-family: "Stolzl";
-font-weight: 400;
-color:var(--TEXT);
-padding-left: 345px;
-padding-top: 150px;
+    font-family: "Stolzl";
+    font-weight: 400;
+    color:var(--TEXT);
+    padding-left: 345px;
+    padding-top: 150px;
 }
 .management-companies1{
     margin-top: 80px;
@@ -1150,11 +1090,11 @@ padding-top: 150px;
 .marketing-section-title{
     position: relative;
     font-size: 30px;
-font-family: "Stolzl";
-font-weight: 400;
-color:var(--TEXT);
-padding-left: 345px;
-padding-top: 150px;
+    font-family: "Stolzl";
+    font-weight: 400;
+    color:var(--TEXT);
+    padding-left: 345px;
+    padding-top: 150px;
 }
 .marketing-companies1{
     margin-top: 80px;
@@ -1221,11 +1161,11 @@ padding-top: 150px;
 .medicine-section-title{
     position: relative;
     font-size: 30px;
-font-family: "Stolzl";
-font-weight: 400;
-color:var(--TEXT);
-padding-left: 345px;
-padding-top: 150px;
+    font-family: "Stolzl";
+    font-weight: 400;
+    color:var(--TEXT);
+    padding-left: 345px;
+    padding-top: 150px;
 }
 .medicine-companies1{
     margin-top: 80px;
@@ -1292,11 +1232,11 @@ padding-top: 150px;
 .sales-section-title{
     position: relative;
     font-size: 30px;
-font-family: "Stolzl";
-font-weight: 400;
-color:var(--TEXT);
-padding-left: 345px;
-padding-top: 150px;
+    font-family: "Stolzl";
+    font-weight: 400;
+    color:var(--TEXT);
+    padding-left: 345px;
+    padding-top: 150px;
 }
 .sales-companies1{
     margin-top: 80px;
@@ -1363,11 +1303,11 @@ padding-top: 150px;
 .telecommunications-section-title{
     position: relative;
     font-size: 30px;
-font-family: "Stolzl";
-font-weight: 400;
-color:var(--TEXT);
-padding-left: 345px;
-padding-top: 150px;
+    font-family: "Stolzl";
+    font-weight: 400;
+    color:var(--TEXT);
+    padding-left: 345px;
+    padding-top: 150px;
 }
 .telecommunications-companies1{
     margin-top: 80px;
@@ -1443,39 +1383,39 @@ padding-top: 150px;
 }
 .internship-details-box-text1{
     font-size: 18px;
-font-family: "Stolzl";
-font-weight: 400;
-color: var(--TEXT);
-padding-left: 25px;
-padding-top: 15px;
-text-decoration: underline;
+    font-family: "Stolzl";
+    font-weight: 400;
+    color: var(--TEXT);
+    padding-left: 25px;
+    padding-top: 15px;
+    text-decoration: underline;
 }
 .internship-details-box-text2{
     font-size: 18px;
-font-family: "Stolzl";
-font-weight: 400;
-color: var(--TEXT);
-padding-left: 25px;
-padding-top: 180px;
-text-decoration: underline;
+    font-family: "Stolzl";
+    font-weight: 400;
+    color: var(--TEXT);
+    padding-left: 25px;
+    padding-top: 180px;
+    text-decoration: underline;
 }
 .internship-details-box-text3{
     font-size: 18px;
-font-family: "Stolzl";
-font-weight: 400;
-color: var(--TEXT);
-padding-left: 25px;
-padding-top: 100px;
-text-decoration: underline;
+    font-family: "Stolzl";
+    font-weight: 400;
+    color: var(--TEXT);
+    padding-left: 25px;
+    padding-top: 100px;
+    text-decoration: underline;
 }
 .internship-details-box-text4{
     font-size: 18px;
-font-family: "Stolzl";
-font-weight: 400;
-color: var(--TEXT);
-padding-left: 25px;
-padding-top: 100px;
-text-decoration: underline;
+    font-family: "Stolzl";
+    font-weight: 400;
+    color: var(--TEXT);
+    padding-left: 25px;
+    padding-top: 100px;
+    text-decoration: underline;
 }
 
 .internship-details-container2{
@@ -1577,7 +1517,7 @@ text-decoration: underline;
 
 .internship-details-container1{
     align-items: center;
-    
+
 }
 
 .internship-details-description-internship {
@@ -1648,11 +1588,11 @@ text-decoration: underline;
 
 .internship-details-similar{
     font-size: 20px;
-font-family: "Stolzl";
-font-weight: 400;
-color: var(--TEXT);
-text-align: center;
-margin-top: 150px;
+    font-family: "Stolzl";
+    font-weight: 400;
+    color: var(--TEXT);
+    text-align: center;
+    margin-top: 150px;
 
 }
 .internship-details-similar-box1{
@@ -1695,7 +1635,7 @@ margin-top: 150px;
 }
 
 .internship-details-logo3{
-transform: translate(2%,5%);
+    transform: translate(2%,5%);
 }
 .internship-details-copyright {
     font-size: 12px;
@@ -1718,11 +1658,11 @@ transform: translate(2%,5%);
 .companies-section-title{
     position: relative;
     font-size: 20px;
-font-family: "Stolzl";
-font-weight: 400;
-color: rgba(0, 0, 0, 1);
-padding-left: 122px;
-transform: translateY(600%);
+    font-family: "Stolzl";
+    font-weight: 400;
+    color: rgba(0, 0, 0, 1);
+    padding-left: 122px;
+    transform: translateY(600%);
 
 }
 
@@ -1854,7 +1794,7 @@ transform: translateY(600%);
 }
 
 .companies-logo3{
-transform: translate(2%,5%);
+    transform: translate(2%,5%);
 }
 .companies-copyright {
     font-size: 12px;
@@ -1866,11 +1806,11 @@ transform: translate(2%,5%);
 .companies-details-section-title{
     position: relative;
     font-size: 30px;
-font-family: "Stolzl";
-font-weight: 400;
-color:var(--TEXT);
-padding-left: 345px;
-padding-top: 150px;
+    font-family: "Stolzl";
+    font-weight: 400;
+    color:var(--TEXT);
+    padding-left: 345px;
+    padding-top: 150px;
 }
 .companies-details-companies1{
     width: 1000px; /* Width of the individual box */
@@ -1904,11 +1844,11 @@ padding-top: 150px;
 }
 .companies-details-specific{
     font-size: 25px;
-font-family: "Montserrat";
-font-weight: 400;
-color:var(--TEXT);
-text-align: center;
-padding-top: 50px;
+    font-family: "Montserrat";
+    font-weight: 400;
+    color:var(--TEXT);
+    text-align: center;
+    padding-top: 50px;
 
 }
 
@@ -1930,7 +1870,7 @@ padding-top: 50px;
 }
 
 .companies-details-logo3{
-transform: translate(2%,5%);
+    transform: translate(2%,5%);
 }
 .companies-details-copyright {
     font-size: 12px;
@@ -1943,11 +1883,11 @@ transform: translate(2%,5%);
 .internships-found-section-title{ 
     position: relative; 
     font-size: 30px; 
-font-family: "Stolzl"; 
-font-weight: 400; 
-color:var(--TEXT); 
-padding-left: 345px; 
-padding-top: 150px; 
+    font-family: "Stolzl"; 
+    font-weight: 400; 
+    color:var(--TEXT); 
+    padding-left: 345px; 
+    padding-top: 150px; 
 } 
 .internships-found-companies1{ 
     margin-top: 80px; 
@@ -1971,7 +1911,7 @@ padding-top: 150px;
     flex-direction: column;  
     display: block; 
 } 
- 
+
 .internships-found-companies3{ 
     margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */ 
     width: 1000px; /* Width of the individual box */ 

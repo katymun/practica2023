@@ -6,12 +6,15 @@
 package com.iucosoft.stagiimdweb.servlets;
 
 import com.iucosoft.stagiimdweb.dao.intf.InternshipProgramDAOIntf;
+import com.iucosoft.stagiimdweb.entities.Company;
 import com.iucosoft.stagiimdweb.entities.InternshipProgram;
+import com.iucosoft.stagiimdweb.services.impl.InternshipServiceImpl;
 import com.iucosoft.stagiimdweb.utility.Domain;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,31 +42,28 @@ public class internshipsbydomainserv extends HttpServlet {
         String domain = request.getParameter("domain");
         String page = "";
         InternshipProgramDAOIntf internshipDao = (InternshipProgramDAOIntf) request.getServletContext().getAttribute("internshipDao");
+                InternshipServiceImpl internshipService = (InternshipServiceImpl) request.getServletContext().getAttribute("internshipService");
+
         try {
             Domain domainVal = Domain.BANKING;
             switch(domain) {
                 case "IT": domainVal = Domain.IT; break;
-                case "design": domainVal = Domain.DESIGN; break;
-                case "marketing": domainVal = Domain.MARKETING; break;
-                case "management": domainVal = Domain.MANAGEMENT; break;
+                case "Design": domainVal = Domain.DESIGN; break;
+                case "Marketing": domainVal = Domain.MARKETING; break;
+                case "Management": domainVal = Domain.MANAGEMENT; break;
             }
             List<InternshipProgram> internshipList = internshipDao.findAllByDomain(domainVal);
-            
+            Map<InternshipProgram, Company> internshipCompanyMap = internshipService.getInternshipCompanyMap(internshipList);
             //request.setAttribute cu lista 
-            request.setAttribute("internshipList", internshipList);
+            request.setAttribute("internshipCompanyMap", internshipCompanyMap);
+            request.setAttribute("domain", domain);
         } catch (SQLException ex) {
             
             log("eroare" + ex.toString());
             
             throw new IOException(ex);
         }
-        switch(domain) {
-            case "IT": page = "stagii/IT.jsp"; break;
-            case "design": page = "stagii/design.jsp"; break;
-            case "marketing": page = "stagii/marketing.jsp"; break;
-            case "management": page = "stagii/management.jsp"; break;
-            default: page = "home.html";
-        }
+        page = "stagii/internships_by_domain.jsp";
         
         request.getRequestDispatcher(page).forward(request, response);
         

@@ -1,12 +1,13 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+
         <link rel="stylesheet" href="${pageContext.request.contextPath}/stagii/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,13 +36,13 @@
                         <label class="homepage-col control-label" for=""></label>
                         <div class="homepage-col">
                             <form action="internshipsfoundserv">
-                            <input id="" name="SEARCH_INTERNSHIPS" type="text" placeholder="Search for an internship" class="homepage-input homepage-custom-input" >
-                            <div class="homepage-container">
-                                <img src="images/Search logo.svg" class="homepage-search">
-                                <a href="#" class="homepage-search">
-                                    <button class="homepage-search-button">Search</button>
-                                </a>
-                            </div>
+                                <input id="" name="SEARCH_INTERNSHIPS" type="text" placeholder="Search for an internship" class="homepage-input homepage-custom-input" >
+                                <div class="homepage-container">
+                                    <img src="images/Search logo.svg" class="homepage-search">
+                                    <a href="#" class="homepage-search">
+                                        <button class="homepage-search-button">Search</button>
+                                    </a>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -74,19 +75,19 @@
             <p class="homepage-box-text1">IT</p>
         </div>
     </a>
-    <a href="internshipsbydomainserv?domain=design" class="homepage-white-box-link">
+    <a href="internshipsbydomainserv?domain=Design" class="homepage-white-box-link">
         <div class="homepage-white-box">
             <img src="images/Design sign.svg"  class="homepage-box-image2">
             <p class="homepage-box-text">Design</p>
         </div>
     </a>
-    <a href="internshipsbydomainserv?domain=marketing" class="homepage-white-box-link">
+    <a href="internshipsbydomainserv?domain=Marketing" class="homepage-white-box-link">
         <div class="homepage-white-box">
             <img src="images/Marketing sign.svg"  class="homepage-box-image3">
             <p class="homepage-box-text">Marketing</p>
         </div>
     </a>
-    <a href="internshipsbydomainserv?domain=management" class="homepage-white-box-link">
+    <a href="internshipsbydomainserv?domain=Management" class="homepage-white-box-link">
         <div class="homepage-white-box">
             <img src="images/Management sign.svg"  class="homepage-box-image4">
             <p class="homepage-box-text2">Management</p>
@@ -104,45 +105,59 @@
     <br>
     <div class="homepage-more-internships">Featured internships:</div>
     </br>
-    <div class="homepage-companies">
-        <div class="homepage-companies1">
-            <a href="companies_details.html" class="homepage-company">
-                <!--<div class="content">Company -->
+    <div class="homepage-companies1">
+        <c:forEach items="${internshipCompanyTopFiveMap}" var="internshipCompany">
+            <a href="internship_details.html?ID_INTERNSHIP=${internshipCompany.key.id}" class="internships-found-company it-companies1">
+                
+                <div class="avatar">
+                    <img src="uploads/${internshipCompany.value.imagePath}" width="100px" alt="noImg"/>
+                </div>
+                <div class="company-info">
+                    <p class="company-name">${internshipCompany.key.iName}</p>
+                    <p class="company-detail">${internshipCompany.value.title}</p>
+                </div>
+                <div class="date-info">
+                    <div class="date-duration">${internshipCompany.key.duration}</div>
+                    <div class="date-start"><fmt:formatDate value="${internshipCompany.key.startDate}" pattern="dd-MM-yyyy" /></div>
+                </div>
+            </a>
+        </c:forEach>
+    </div>
+
+<!--    <div class="homepage-companies1">
+        <a href="internship_details.html?ID_INTERNSHIP=${internship.id}" class="internships-found-company it-companies1">
+            <div class="avatar"></div>
+            <div class="company-info">
+                <p class="company-name">Numele Internshipului</p>
+                <p class="company-detail">Numele companiei</p>
+            </div>
+            <div class="date-info">
+                <div class="date-duration">Duration</div>
+                <div class="date-start">Start date</div>
+            </div>
+        </a>
+    </div>
+    <div class="homepage-companies1">
+        <a href="internship_details.html?ID_INTERNSHIP=${internship.id}" class="internships-found-company it-companies1">
+            <div class="avatar"></div>
+            <div class="company-info">
+                <p class="company-name">Numele Internshipului</p>
+                <p class="company-detail">Numele companiei</p>
+            </div>
+            <div class="date-info">
+                <div class="date-duration">Duration</div>
+                <div class="date-start">Start date</div>
+            </div>
+        </a>
+    </div>-->
+    <br>
+    <div class="homepage-container1">
+        <div class="homepage-vertical-center">
+            <a href="internships.html" class="homepage-more-internships">
+                <button class="homepage-more-button">More internships</button>
+            </a>
         </div>
-        </a>
     </div>
-    <div class="homepage-companies2">
-        <a href="companies_details.html" class="homepage-company">
-            <!--<div class="content">Company -->
-    </div>
-</a>
-</div>
-<div class="homepage-companies3">
-    <a href="companies_details.html" class="homepage-company">
-        <!--<div class="content">Company -->
-</div>
-</a>
-</div>
-<div class="homepage-companies4">
-    <a href="companies_details.html" class="homepage-company">
-        <!--<div class="content">Company -->
-</div>
-</a>
-</div>
-<div class="homepage-companies5">
-    <a href="companies_details.html" class="homepage-company">
-        <!--<div class="content">Company -->
-</div>
-</a>
-</div>
-<br>
-<div class="homepage-container1">
-    <div class="homepage-vertical-center">
-        <a href="internships.html" class="homepage-more-internships">
-            <button class="homepage-more-button">More internships</button>
-        </a>
-    </div>
-</div>
 </div>
 </br>
 </div>
@@ -188,8 +203,6 @@
 </form>
 <button class="homepage-subscribe-button">Subscribe</button>
 </div>
-<!-- End of the newsletter-->
-<!--<script src="stagii/footer.js"></script>-->
 <jsp:include page="common/footer.jspf" />
 </body>
 

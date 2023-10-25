@@ -19,6 +19,7 @@ import com.iucosoft.internshipappfx.dao.intf.RecruiterDAOIntf;
 import com.iucosoft.internshipappfx.dao.intf.UserDAOIntf;
 import com.iucosoft.internshipappfx.entities.Applicant;
 import com.iucosoft.internshipappfx.entities.Company;
+import com.iucosoft.internshipappfx.entities.InternshipProgram;
 import com.iucosoft.internshipappfx.entities.Recruiter;
 import com.iucosoft.internshipappfx.entities.User;
 import com.iucosoft.internshipappfx.utility.DateConverter;
@@ -26,6 +27,7 @@ import com.iucosoft.internshipappfx.utility.Domain;
 import com.iucosoft.internshipappfx.utility.Role;
 import com.iucosoft.internshipappfx.utility.Status;
 import java.sql.SQLException;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
 
@@ -42,7 +44,10 @@ public class Demo {
         InternshipProgramDAOIntf programDao = new InternshipProgramDAOImpl();
         ApplicantDAOIntf applicantDao = new ApplicantDAOImpl();
         
-
+        List<InternshipProgram> list = programDao.findTopFiveProgramsByDate();
+        System.out.println("list = " + list);
+        InternshipProgram internship = programDao.findById(1);
+        internship.getStartDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         
     }
 }

@@ -17,6 +17,8 @@ import com.iucosoft.stagiimdweb.dao.intf.CompanyDAOIntf;
 import com.iucosoft.stagiimdweb.dao.intf.InternshipProgramDAOIntf;
 import com.iucosoft.stagiimdweb.dao.intf.RecruiterDAOIntf;
 import com.iucosoft.stagiimdweb.dao.intf.UserDAOIntf;
+import com.iucosoft.stagiimdweb.services.InternshipServiceIntf;
+import com.iucosoft.stagiimdweb.services.impl.InternshipServiceImpl;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -75,6 +77,10 @@ public class PracticaWebApplicationContextListener implements ServletContextList
             RecruiterDAOIntf recruiterDao = new RecruiterDAOImpl(ds);
             sc.setAttribute("recruiterDao", recruiterDao);
             
+            InternshipServiceImpl internshipService = new InternshipServiceImpl();
+            internshipService.setCompanyDao(companyDao);
+//            internshipService.setInternshipDao(internshipDao);
+            sc.setAttribute("internshipService", internshipService);
             
 //            ultimele doua randuri se repeta pentru toate clase dao/servicii
         } catch (SQLException se) {
