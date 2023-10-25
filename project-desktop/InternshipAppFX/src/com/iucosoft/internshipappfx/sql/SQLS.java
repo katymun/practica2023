@@ -87,8 +87,7 @@ public class SQLS {
     public static final String FIND_COMPANY_BY_NAME = "SELECT * FROM companies WHERE TITLE=?";
     public static final String FIND_APPLICANT_BY_NAME = "SELECT * FROM applicants WHERE NAME=?";
 
-    public static final String FIND_TOP_5_PROGRAMS_BY_DATE = "SELECT * FROM practica.applications\n"
-            + "WHERE application_date>=CURRENT_DATE() ORDER BY application_date LIMIT 5";
+    public static final String FIND_TOP_5_PROGRAMS_BY_DATE = "SELECT * FROM programmes WHERE start_data >= CURRENT_DATE() ORDER BY start_data LIMIT 5;";
     
     public static final String FIND_TOP_10_PROGRAMS = "";
 

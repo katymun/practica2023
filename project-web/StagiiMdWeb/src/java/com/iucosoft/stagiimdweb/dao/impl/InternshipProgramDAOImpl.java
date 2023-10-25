@@ -314,8 +314,8 @@ public class InternshipProgramDAOImpl implements InternshipProgramDAOIntf {
                 String iName = rs.getString(2);
                 Domain domain = Domain.valueOf(rs.getString(3));
                 Date startDate = DateConverter.convert(rs.getDate(4));
-                int idCompany = rs.getInt(5);
-                String duration = rs.getString(6);
+                String duration = rs.getString(5);
+                int idCompany = rs.getInt(6);
                 String duties = rs.getString(7);
                 String qualifications = rs.getString(8);
                 String benefits = rs.getString(9);

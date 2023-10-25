@@ -27,13 +27,15 @@
         <div class="internship-form-group">
             <label class="internship-col control-label" for=""></label>
             <div class="internship-col">
-                <input id="" name="" type="text" placeholder="Search for internship" class="internship-input internship-custom-input">
-                <div class="internship-container">
-                    <img src="images/Search logo.svg" class="internship-search">
-                    <a href="#" class="internship-search">
-                        <button class="internship-search-button ">Search</button>
-                    </a>
-                </div>
+                <form action="internshipsfoundserv">
+                    <input id="" name="SEARCH_INTERNSHIPS" placeholder="Search for an internship" type="text" class="internship-input internship-custom-input">
+                    <div class="internship-container">
+                        <img src="images/Search logo.svg" class="internship-search">
+                        <a href="#" class="internship-search">
+                            <button class="internship-search-button ">Search</button>
+                        </a>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

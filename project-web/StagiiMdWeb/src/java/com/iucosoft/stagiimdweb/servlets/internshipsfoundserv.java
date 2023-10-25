@@ -7,11 +7,14 @@ package com.iucosoft.stagiimdweb.servlets;
 
 import com.iucosoft.stagiimdweb.dao.impl.InternshipProgramDAOImpl;
 import com.iucosoft.stagiimdweb.dao.intf.InternshipProgramDAOIntf;
+import com.iucosoft.stagiimdweb.entities.Company;
 import com.iucosoft.stagiimdweb.entities.InternshipProgram;
+import com.iucosoft.stagiimdweb.services.impl.InternshipServiceImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -41,14 +44,16 @@ public class internshipsfoundserv extends HttpServlet {
         String searchInternships = request.getParameter("SEARCH_INTERNSHIPS");
         log("searchInternships = " + searchInternships);
         
-        //prin dao primesc lista conform cautarii
-        
         InternshipProgramDAOIntf internshipDao = (InternshipProgramDAOIntf) request.getServletContext().getAttribute("internshipDao");
+        InternshipServiceImpl internshipService = (InternshipServiceImpl) request.getServletContext().getAttribute("internshipService");
+
+        
         try {
-            List<InternshipProgram> internshipListTopFive = internshipDao.findAllByKeyword(searchInternships);
-            
+            List<InternshipProgram> internshipList = internshipDao.findAllByKeyword(searchInternships);
+            Map<InternshipProgram, Company> internshipCompanyMap = internshipService.getInternshipCompanyMap(internshipList);
+
             //request.setAttribute cu lista 
-            request.setAttribute("internshipListTopFive", internshipListTopFive);
+            request.setAttribute("internshipCompanyMap", internshipCompanyMap);
         } catch (SQLException ex) {
             
             log("eroare" + ex.toString());

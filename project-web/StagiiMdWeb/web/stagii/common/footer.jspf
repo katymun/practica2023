@@ -1,7 +1,11 @@
 <footer>
     <div class="footer">
         <div class="logo1">
-            ST<img src="images/logo.svg" class="logo3" />GII.MD
+            <a href="home.html" class="logo-button">
+                <div class="logo">
+                    ST <img class="vector" src="images/logo.svg" />GII.MD
+                </div>
+            </a>
         </div>
         <p class="copyright">This website was developed by Team04 © 2023</p>
     </div>
