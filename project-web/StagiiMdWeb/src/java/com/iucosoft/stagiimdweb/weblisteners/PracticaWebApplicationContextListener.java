@@ -10,12 +10,14 @@ import com.iucosoft.stagiimdweb.dao.impl.ApplicationDAOImpl;
 import com.iucosoft.stagiimdweb.dao.impl.CompanyDAOImpl;
 import com.iucosoft.stagiimdweb.dao.impl.InternshipProgramDAOImpl;
 import com.iucosoft.stagiimdweb.dao.impl.RecruiterDAOImpl;
+import com.iucosoft.stagiimdweb.dao.impl.SubscribeDAOImpl;
 import com.iucosoft.stagiimdweb.dao.impl.UserDAOImpl;
 import com.iucosoft.stagiimdweb.dao.intf.ApplicantDAOIntf;
 import com.iucosoft.stagiimdweb.dao.intf.ApplicationDAOIntf;
 import com.iucosoft.stagiimdweb.dao.intf.CompanyDAOIntf;
 import com.iucosoft.stagiimdweb.dao.intf.InternshipProgramDAOIntf;
 import com.iucosoft.stagiimdweb.dao.intf.RecruiterDAOIntf;
+import com.iucosoft.stagiimdweb.dao.intf.SubscribeDAOIntf;
 import com.iucosoft.stagiimdweb.dao.intf.UserDAOIntf;
 import com.iucosoft.stagiimdweb.services.InternshipServiceIntf;
 import com.iucosoft.stagiimdweb.services.impl.InternshipServiceImpl;
@@ -81,6 +83,9 @@ public class PracticaWebApplicationContextListener implements ServletContextList
             internshipService.setCompanyDao(companyDao);
 //            internshipService.setInternshipDao(internshipDao);
             sc.setAttribute("internshipService", internshipService);
+            
+            SubscribeDAOIntf subscribeDao = new SubscribeDAOImpl(ds);
+            sc.setAttribute("subscribeDao", subscribeDao);
             
 //            ultimele doua randuri se repeta pentru toate clase dao/servicii
         } catch (SQLException se) {

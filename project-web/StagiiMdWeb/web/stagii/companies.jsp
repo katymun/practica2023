@@ -1,3 +1,5 @@
+<%@page import="com.iucosoft.stagiimdweb.entities.Company"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -39,50 +41,47 @@
         </div>
     </div>
 
-    <div class="companies-white-boxes">
-        <a href="companydetailsserv" class="companies-white-box-link">
-            <div class="companies-white-box">
-            </div>
-        </a>
-        <a href="companydetailsserv" class="companies-white-box-link">
-            <div class="companies-white-box">
-            </div>
-        </a>
-        <a href="companydetailsserv" class="companies-white-box-link">
-            <div class="companies-white-box">
-            </div>
-        </a>
-        <a href="companydetailsserv" class="companies-white-box-link">
-            <div class="companies-white-box">
-            </div>
-        </a>
-        <a href="companydetailsserv" class="companies-white-box-link">
-            <div class="companies-white-box">
-            </div>
-        </a>
-    </div>
+    <div class="companies-white-boxes"></div>
+
+
+    <%
+        List<Company> companyList = (List<Company>) request.getAttribute("companyList");
+        if (companyList != null) {
+            int element = 0;
+            float columns = 5f;  // numarul de coloane pe un rand
+            int rows = (int) Math.ceil(companyList.size() / columns);
+            for (int i = 0; i < rows; i++) {
+    %>
+
     <div class="companies-white-boxes2">
-        <a href="companydetailsserv" class="companies-white-box-link">
+
+        <%
+            for (int j = 0; j < (int) columns && element < companyList.size() - 1; j++) {
+                element = i * (int) columns + j;
+                Company company = companyList.get(element);
+                if (company != null) {
+//                    out.println("ImagePath="+company.getImagePath());
+        %>
+
+        <a href="companydetailsserv?company-id=<%=company.getId() %>" class="companies-white-box-link">
             <div class="companies-white-box">
+                    <img src="uploads/<%=company.getImagePath() %>" width="100px" alt="No Image"/>
+              
             </div>
         </a>
-        <a href="companydetailsserv" class="companies-white-box-link">
-            <div class="companies-white-box">
-            </div>
-        </a>
-        <a href="companydetailsserv" class="companies-white-box-link">
-            <div class="companies-white-box">
-            </div>
-        </a>
-        <a href="companydetailsserv" class="companies-white-box-link">
-            <div class="companies-white-box">
-            </div>
-        </a>
-        <a href="companydetailsserv" class="companies-white-box-link">
-            <div class="companies-white-box">
-            </div>
-        </a>
+
+        <%                } // de la if la company
+            } // de la j
+
+        %>
+
     </div>
+
+    <%            } //de la i
+        } //de la if
+
+    %>
+
     <jsp:include page="common/footer.jspf" />
 </body>
 

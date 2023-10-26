@@ -728,6 +728,12 @@ h1 {
     display: block;
 }*/
 
+.internships-info-box-details{
+    margin-top: 50px;
+    width: 1000px;
+}
+
+
 .internships-found-company {
     text-decoration: none;  /* Remove the underline */
     color: inherit;  /* Ensure the text inside uses its original color and not the typical blue link color */
@@ -758,6 +764,19 @@ h1 {
     transform:scale(1.03);
 }
 
+.it-companies2{
+    margin-top: 130px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 957px;
+    height: 150px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+    display: flex; /* Change display to flex for layout */
+    align-items: center; /* Vertically align the items */
+    justify-content: space-between; /* Even spacing between items */
+    padding: 0 20px; /* Add padding to the sides */ }
 
 .avatar{
     width: 80px;
@@ -816,6 +835,7 @@ h1 {
     margin-top: 34px;
     margin-left: 30px;
     color: solid var(--TEXT2);
+    width: 150px;
 }
 
 
@@ -1348,41 +1368,24 @@ h1 {
     border: 1px solid var(--TEXT2, #AEB4C1);
     background: var(--COMPONENTS, #FFF);
 }
-.internship-details-box-text1{
+.internship-details-box-text{
     font-size: 18px;
+    font-family: "Stolzl";
+    font-weight: 400;
+    color: var(--TEXT);
+    padding-left: 25px;
+    padding-top: 28px;
+    padding-bottom: 12px;
+    text-decoration: underline;
+}
+.internship-details-box1{
+    font-size: 16px;
     font-family: "Stolzl";
     font-weight: 400;
     color: var(--TEXT);
     padding-left: 25px;
     padding-top: 15px;
-    text-decoration: underline;
-}
-.internship-details-box-text2{
-    font-size: 18px;
-    font-family: "Stolzl";
-    font-weight: 400;
-    color: var(--TEXT);
-    padding-left: 25px;
-    padding-top: 180px;
-    text-decoration: underline;
-}
-.internship-details-box-text3{
-    font-size: 18px;
-    font-family: "Stolzl";
-    font-weight: 400;
-    color: var(--TEXT);
-    padding-left: 25px;
-    padding-top: 100px;
-    text-decoration: underline;
-}
-.internship-details-box-text4{
-    font-size: 18px;
-    font-family: "Stolzl";
-    font-weight: 400;
-    color: var(--TEXT);
-    padding-left: 25px;
-    padding-top: 100px;
-    text-decoration: underline;
+    text-indent: 20px;
 }
 
 .internship-details-container2{
@@ -1391,12 +1394,17 @@ h1 {
 }
 .internship-details-box2{
     margin-left: 25px;
+    margin-top: 25px;
     font-size: 15px;
     font-family: "Stolzl";
     color: var(--TEXT2);
-    text-decoration: underline;
     transform: translateX(25%, -300%);
 }
+
+.part-time{
+    text-decoration: none;
+}
+
 .internship-details-studies{
     margin-left: 25px;
     margin-top: 25px;
@@ -1411,10 +1419,10 @@ h1 {
 }
 .internship-details-box3{
     margin-left: 25px;
+    margin-top: 25px;
     font-size: 15px;
     font-family: "Stolzl";
     color: var(--TEXT2);
-    text-decoration: underline;
     transform: translateX(25%, -300%);
 }
 .internship-details-schedule{
@@ -1427,10 +1435,11 @@ h1 {
 }
 .internship-details-box4{
     margin-left: 25px;
+    margin-top: 25px;
     font-size: 15px;
     font-family: "Stolzl";
     color: var(--TEXT2);
-    text-decoration: underline;
+    /*text-decoration: underline;*/
     transform: translateX(25%, -300%);
 }
 .internship-details-location{
@@ -1443,10 +1452,10 @@ h1 {
 }
 .internship-details-box5{
     margin-left: 25px;
+    margin-top: 25px;
     font-size: 15px;
     font-family: "Stolzl";
     color: var(--TEXT2);
-    text-decoration: underline;
     transform: translateX(25%, -300%);
 }
 .internship-details-phone{
@@ -1459,10 +1468,10 @@ h1 {
 }
 .internship-details-box6{
     margin-left: 25px;
+    margin-top: 25px;
     font-size: 15px;
     font-family: "Stolzl";
     color: var(--TEXT2);
-    text-decoration: underline;
     transform: translateX(25%, -300%);
 }
 .internship-details-container7{
@@ -1471,10 +1480,10 @@ h1 {
 }
 .internship-details-box7{
     margin-left: 25px;
+    margin-top: 25px;
     font-size: 15px;
     font-family: "Stolzl";
     color: var(--TEXT2);
-    text-decoration: underline;
     transform: translateX(25%, -300%);
 }
 .internship-details-mail{

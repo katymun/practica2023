@@ -6,7 +6,9 @@
 package com.iucosoft.stagiimdweb.servlets;
 
 import com.iucosoft.stagiimdweb.dao.intf.CompanyDAOIntf;
+import com.iucosoft.stagiimdweb.dao.intf.SubscribeDAOIntf;
 import com.iucosoft.stagiimdweb.entities.Company;
+import com.iucosoft.stagiimdweb.entities.Subscribe;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -21,8 +23,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author munka
  */
-@WebServlet(name = "companiesserv", urlPatterns = {"/companiesserv"})
-public class companiesserv extends HttpServlet {
+@WebServlet(name = "subscribeserv", urlPatterns = {"/subscribeserv"})
+public class subscribeserv extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,18 +37,21 @@ public class companiesserv extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        CompanyDAOIntf companyDao = (CompanyDAOIntf) request.getServletContext().getAttribute("companyDao");
-        List<Company> companyList = null;
+        SubscribeDAOIntf subscribeDao = (SubscribeDAOIntf) request.getServletContext().getAttribute("subscribeDao");
+        String position = request.getParameter("position");
+        String fullName = request.getParameter("full-name");
+        String email = request.getParameter("email");
+        Subscribe subscribe = new Subscribe(position, fullName, email);
+        
         try {
-            companyList = companyDao.findAll();
-            log("companii:" + companyList.size());
+            subscribeDao.save(subscribe);
         } catch (SQLException ex) {
             log(ex.toString());
             throw new IOException(ex);
         }
 
-        request.setAttribute("companyList", companyList);
-        request.getRequestDispatcher("stagii/companies.jsp").forward(request, response);    
+        request.setAttribute("subscribe", subscribe);
+        request.getRequestDispatcher("homeserv").forward(request, response);  
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

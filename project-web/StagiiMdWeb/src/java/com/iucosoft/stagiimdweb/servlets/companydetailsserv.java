@@ -5,8 +5,14 @@
  */
 package com.iucosoft.stagiimdweb.servlets;
 
+import com.iucosoft.stagiimdweb.dao.intf.CompanyDAOIntf;
+import com.iucosoft.stagiimdweb.dao.intf.InternshipProgramDAOIntf;
+import com.iucosoft.stagiimdweb.entities.Company;
+import com.iucosoft.stagiimdweb.entities.InternshipProgram;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,6 +37,20 @@ public class companydetailsserv extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String companyIdStr = request.getParameter("company-id");
+        int companyId = Integer.parseInt(companyIdStr);
+        CompanyDAOIntf companyDao = (CompanyDAOIntf) request.getServletContext().getAttribute("companyDao");
+        InternshipProgramDAOIntf internshipDao = (InternshipProgramDAOIntf) request.getServletContext().getAttribute("internshipDao");
+        try {
+            Company company = companyDao.findById(companyId);
+            request.setAttribute("company", company);
+            List<InternshipProgram> internshipsList = internshipDao.findAllByCompanyId(companyId);
+            request.setAttribute("internshipsList", internshipsList);
+        } catch (SQLException ex) {
+            log(ex.toString());
+            throw new IOException(ex);
+        } 
+        
         request.getRequestDispatcher("stagii/companies_details.jsp").forward(request, response);
     }
 

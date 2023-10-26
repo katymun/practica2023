@@ -1,5 +1,6 @@
 package com.iucosoft.stagiimdweb.dao.intf;
 
+import com.iucosoft.stagiimdweb.entities.Company;
 import com.iucosoft.stagiimdweb.entities.InternshipProgram;
 import com.iucosoft.stagiimdweb.utility.Domain;
 import java.sql.SQLException;
@@ -10,4 +11,7 @@ public interface InternshipProgramDAOIntf extends GenericDAOIntf<InternshipProgr
     List<InternshipProgram> findAllByDomain(Domain domain) throws SQLException;
     List<InternshipProgram> findAllByKeyword(String keyword) throws SQLException;
     List<InternshipProgram> findTopFiveProgramsByDate() throws SQLException;
+    List<InternshipProgram> findTwoByCompanyId(int idCompany) throws SQLException;
+    List<InternshipProgram> findTwoByDomain(Domain domain, int idCompany) throws SQLException;
+    
 }

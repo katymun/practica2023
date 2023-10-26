@@ -35,6 +35,9 @@ public class SQLS {
     public static String APPLICATIONS_INSERT_DEMO = "INSERT INTO `applications` VALUES (NULL,'applicant1_id','programme1_id','2023-01-01','cv1.pdf','068123123','nume.prenume@isa.utm.md','UTM')";
     public static final String APPLICATIONS_INSERT = "INSERT INTO applications VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)";
 
+    public static String SUBSCRIBE_INSERT = "INSERT into subscribes VALUES (NULL, ?, ?, ?)";
+    
+    
     // SQL query to select the maximum ID from the 'users' table
     public static final String SELECT_LAST_USER_ID = "SELECT MAX(id) FROM users";
     public static final String SELECT_LAST_COMPANY_ID = "SELECT MAX(id) FROM companies";
@@ -90,6 +93,8 @@ public class SQLS {
     public static final String FIND_TOP_5_PROGRAMS_BY_DATE = "SELECT * FROM programmes WHERE start_data >= CURRENT_DATE() ORDER BY start_data LIMIT 5;";
 
     public static final String FIND_TOP_10_PROGRAMS = "SELECT * FROM programmes WHERE title LIKE ? LIMIT 10";
+    public static final String FIND_2_INTERNSHIPS_BY_COMPANY = "SELECT * FROM programmes WHERE company_id = ? LIMIT 2";
+    public static final String FIND_2_INTERNSHIPS_BY_DOMAIN = "SELECT * FROM programmes WHERE domain = ? AND company_id != ? LIMIT 2";
 
     public static final String GET_COMPANY_IMAGE = "SELECT TITLE, IMG_PATH, IMG_DATA FROM companies WHERE ID=?";
 

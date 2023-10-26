@@ -39,15 +39,17 @@ public class companypageserv extends HttpServlet {
             throws ServletException, IOException {
 //        List<Company> listaCompanii = companyDao.findByName(title);
         CompanyDAOIntf companyDao = (CompanyDAOIntf) request.getServletContext().getAttribute("companyDao");
-        List<Company> listaCompanii = null;
+        List<Company> companyList = null;
         try {
-            listaCompanii = companyDao.findAll();
+            companyList = companyDao.findAll();
+            log("companii:" + companyList.size());
         } catch (SQLException ex) {
-            Logger.getLogger(companypageserv.class.getName()).log(Level.SEVERE, null, ex);
+            log(ex.toString());
+            throw new IOException(ex);
         }
 
-        request.setAttribute("listaCompanii", listaCompanii);
-        request.getRequestDispatcher("public/companypage.jsp").forward(request, response);
+        request.setAttribute("companyList", companyList);
+        request.getRequestDispatcher("stagii/companies.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

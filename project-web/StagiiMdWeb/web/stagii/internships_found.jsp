@@ -23,9 +23,7 @@
                 <c:forEach items="${internshipCompanyMap}" var="internshipCompany">
 
                     <a href="internship_details.html?ID_INTERNSHIP=${internshipCompany.key.id}" class="internships-found-company it-companies1">
-                        <div class="avatar">
                             <img src="uploads/${internshipCompany.value.imagePath}" width="100px" alt="noImg"/>
-                        </div>
                         <div class="company-info">
                             <p class="company-name">${internshipCompany.key.iName}</p>
                             <p class="company-detail">${internshipCompany.value.title}</p>

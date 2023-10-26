@@ -108,51 +108,49 @@
     <div class="homepage-companies1">
         <c:forEach items="${internshipCompanyTopFiveMap}" var="internshipCompany">
             <a href="internship_details.html?ID_INTERNSHIP=${internshipCompany.key.id}" class="internships-found-company it-companies1">
-                        <div class="avatar">
-                            <img src="uploads/${internshipCompany.value.imagePath}" width="100px" alt="noImg"/>
-                        </div>
-                        <div class="company-info">
-                            <p class="company-name">${internshipCompany.key.iName}</p>
-                            <p class="company-detail">${internshipCompany.value.title}</p>
-                        </div>
-                        <div class="date-info1">
-                            <div class="date-duration1">Duration</div>
-                            <div class="date-start">Start Date</div>
-                        </div>
-                        <div class="date-info2">
-                            <div class="date-duration">${internshipCompany.key.duration}</div>
-                            <div class="date-start"><fmt:formatDate value="${internshipCompany.key.startDate}" pattern="d MMMMMMMMMM yyyy" /></div>
-                        </div>
-                    </a>
+                <img src="uploads/${internshipCompany.value.imagePath}" width="100px" alt="noImg"/>
+                <div class="company-info">
+                    <p class="company-name">${internshipCompany.key.iName}</p>
+                    <p class="company-detail">${internshipCompany.value.title}</p>
+                </div>
+                <div class="date-info1">
+                    <div class="date-duration1">Duration</div>
+                    <div class="date-start">Start Date</div>
+                </div>
+                <div class="date-info2">
+                    <div class="date-duration">${internshipCompany.key.duration}</div>
+                    <div class="date-start"><fmt:formatDate value="${internshipCompany.key.startDate}" pattern="d MMMMMMMMMM yyyy" /></div>
+                </div>
+            </a>
         </c:forEach>
     </div>
 
-<!--    <div class="homepage-companies1">
-        <a href="internship_details.html?ID_INTERNSHIP=${internship.id}" class="internships-found-company it-companies1">
-            <div class="avatar"></div>
-            <div class="company-info">
-                <p class="company-name">Numele Internshipului</p>
-                <p class="company-detail">Numele companiei</p>
-            </div>
-            <div class="date-info">
-                <div class="date-duration">Duration</div>
-                <div class="date-start">Start date</div>
-            </div>
-        </a>
-    </div>
-    <div class="homepage-companies1">
-        <a href="internship_details.html?ID_INTERNSHIP=${internship.id}" class="internships-found-company it-companies1">
-            <div class="avatar"></div>
-            <div class="company-info">
-                <p class="company-name">Numele Internshipului</p>
-                <p class="company-detail">Numele companiei</p>
-            </div>
-            <div class="date-info">
-                <div class="date-duration">Duration</div>
-                <div class="date-start">Start date</div>
-            </div>
-        </a>
-    </div>-->
+    <!--    <div class="homepage-companies1">
+            <a href="internship_details.html?ID_INTERNSHIP=${internship.id}" class="internships-found-company it-companies1">
+                <div class="avatar"></div>
+                <div class="company-info">
+                    <p class="company-name">Numele Internshipului</p>
+                    <p class="company-detail">Numele companiei</p>
+                </div>
+                <div class="date-info">
+                    <div class="date-duration">Duration</div>
+                    <div class="date-start">Start date</div>
+                </div>
+            </a>
+        </div>
+        <div class="homepage-companies1">
+            <a href="internship_details.html?ID_INTERNSHIP=${internship.id}" class="internships-found-company it-companies1">
+                <div class="avatar"></div>
+                <div class="company-info">
+                    <p class="company-name">Numele Internshipului</p>
+                    <p class="company-detail">Numele companiei</p>
+                </div>
+                <div class="date-info">
+                    <div class="date-duration">Duration</div>
+                    <div class="date-start">Start date</div>
+                </div>
+            </a>
+        </div>-->
     <br>
     <div class="homepage-container1">
         <div class="homepage-vertical-center">
@@ -172,12 +170,14 @@
     <!-- Text input-->
     <img src="images/newsletter.svg" class="homepage-news">
     <br>
+    <form action="subscribeserv" method="post">
     <div class="homepage-receive">Receive internships by email</div>
+    
     <img src="images/accent3.svg" class="homepage-accent3">
     <div class="homepage-form-group1">
         <label class="homepage-col control-label" for=""></label>
         <div class="homepage-col">
-            <input id="" name="" type="text" placeholder="Indicate the internship position" class="homepage-form-control1 homepage-input1">
+            <input id="" name="position" type="text" placeholder="Indicate the internship position" class="homepage-form-control1 homepage-input1">
 
         </div>
     </div>
@@ -187,7 +187,7 @@
     <div class="homepage-form-group2">
         <label class="homepage-col control-label" for=""></label>
         <div class="homepage-col">
-            <input id="" name="" type="text" placeholder="Your full name" class="homepage-form-control2 homepage-input2">
+            <input id="" name="full-name" type="text" placeholder="Your full name" class="homepage-form-control2 homepage-input2">
 
         </div>
     </div>
@@ -197,14 +197,16 @@
     <div class="homepage-form-group3">
         <label class="homepage-col control-label" for=""></label>
         <div class="homepage-col">
-            <input id="" name="" type="text" placeholder="Your email address" class="homepage-form-control3 homepage-input3">
+            <input id="" name="email" type="email" placeholder="Your email address" class="homepage-form-control3 homepage-input3">
 
         </div>
     </div>
     </br>
 </fieldset>
-</form>
+
 <button class="homepage-subscribe-button">Subscribe</button>
+</form>
+    
 </div>
 <jsp:include page="common/footer.jspf" />
 </body>

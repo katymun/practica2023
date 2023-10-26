@@ -333,5 +333,79 @@ public class InternshipProgramDAOImpl implements InternshipProgramDAOIntf {
             throw ex;
         }
     }
+
+    @Override
+    public List<InternshipProgram> findTwoByCompanyId(int idCompany) throws SQLException {
+        List<InternshipProgram> programs = new ArrayList<>();
+        ResultSet rs = null;
+        try (Connection conn = ds.getConnection();
+                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_2_INTERNSHIPS_BY_COMPANY);) {
+            pstat.setInt(1, idCompany);
+            rs = pstat.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt(1);
+                String iName = rs.getString(2);
+                Domain domain = Domain.valueOf(rs.getString(3));
+                Date startDate = DateConverter.convert(rs.getDate(4));
+                String duration = rs.getString(5);
+                String duties = rs.getString(7);
+                String qualifications = rs.getString(8);
+                String benefits = rs.getString(9);
+                String location = rs.getString(10);
+                boolean paid = rs.getBoolean(11);
+
+
+                InternshipProgram program = new InternshipProgram(id, iName, 
+                        domain, startDate, duration, idCompany, duties, 
+                        qualifications, benefits, location, paid);
+                programs.add(program);
+            }
+            return programs;
+        } catch (SQLException ex) {
+            LOG.severe(ex.toString());
+            throw ex;
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+        }
+    }
+
+    @Override
+    public List<InternshipProgram> findTwoByDomain(Domain domain, int idCompany) throws SQLException {
+        List<InternshipProgram> programs = new ArrayList<>();
+        ResultSet rs = null;
+        try (Connection conn = ds.getConnection();
+                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_2_INTERNSHIPS_BY_DOMAIN);) {
+            pstat.setString(1, domain.toString());
+            pstat.setInt(2, idCompany);
+            rs = pstat.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt(1);
+                String iName = rs.getString(2);
+                Date startDate = DateConverter.convert(rs.getDate(4));
+                String duration = rs.getString(5);
+                String duties = rs.getString(7);
+                String qualifications = rs.getString(8);
+                String benefits = rs.getString(9);
+                String location = rs.getString(10);
+                boolean paid = rs.getBoolean(11);
+
+
+                InternshipProgram program = new InternshipProgram(id, iName, 
+                        domain, startDate, duration, idCompany, duties, 
+                        qualifications, benefits, location, paid);
+                programs.add(program);
+            }
+            return programs;
+        } catch (SQLException ex) {
+            LOG.severe(ex.toString());
+            throw ex;
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+        }
+    }
     
 }
