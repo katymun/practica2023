@@ -30,13 +30,13 @@
                             <p class="company-name">${internshipCompany.key.iName}</p>
                             <p class="company-detail">${internshipCompany.value.title}</p>
                         </div>
-                        <div class="date-info">
-                            <div class="date-duration">Duration</div>
+                        <div class="date-info1">
+                            <div class="date-duration1">Duration</div>
                             <div class="date-start">Start Date</div>
                         </div>
-                        <div class="date-info">
+                        <div class="date-info2">
                             <div class="date-duration">${internshipCompany.key.duration}</div>
-                            <div class="date-start"><fmt:formatDate value="${internshipCompany.key.startDate}" pattern="dd-MM-yyyy" /></div>
+                            <div class="date-start"><fmt:formatDate value="${internshipCompany.key.startDate}" pattern="d MMMMMMMMMM yyyy" /></div>
                         </div>
                     </a>
                 </c:forEach>

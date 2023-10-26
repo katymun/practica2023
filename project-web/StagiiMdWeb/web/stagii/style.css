@@ -62,6 +62,7 @@ nav ul li a {
 }
 .logo-button{
     text-decoration: none;
+    color: inherit;
 }
 .styled-link {
     font-weight: bold;
@@ -362,6 +363,9 @@ h1 {
     padding:10px;
     padding-right: 125px;/* Center content horizontally */
 }
+
+
+
 .homepage-more-button {
     width: 332px;
     height: 62px;
@@ -375,9 +379,10 @@ h1 {
 }
 .homepage-news{
     margin-top: 50px;
-    padding-left: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     width: 1100px;
-    align-items: center;
 }
 
 .homepage-accent3{
@@ -752,9 +757,9 @@ h1 {
 .it-companies1:hover{
     transform:scale(1.03);
 }
-    
-    
-   .avatar{
+
+
+.avatar{
     width: 80px;
     height: 80px;
     background-color: grey; /* Placeholder color, change to a background image or different color */
@@ -782,9 +787,9 @@ h1 {
     font-size: 16px; /* Adjust the size as per your requirements */
 }
 
-.date-info div {
+.date-info1 div {
     padding: 5px;
-    border: 1px solid #ccc;
+    border: 2px solid var(--TEXT2);
     border-radius: 5px;
     height: 20px; /* You can adjust this to your needs */
     display: flex;
@@ -792,7 +797,28 @@ h1 {
     justify-content: center;
     margin-bottom: 20px; /* Adding space between the two boxes */
     margin-right: 10px;
+    margin-top: 20px;
+    font-size: 18px;
+    color: solid var(--TEXT2);
 }
+
+.date-duration1{
+    color: red;
+}
+
+.date-info2 div {
+    height: 20px; /* You can adjust this to your needs */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 33px; /* Adding space between the two boxes */
+    margin-right: 10px;
+    margin-top: 34px;
+    margin-left: 30px;
+    color: solid var(--TEXT2);
+}
+
+
 
 .it-footer {
     background-color: var(--TEXT); 
@@ -945,77 +971,7 @@ h1 {
     flex-direction: column; 
     display: block;
 }
-.design-section-title{
-    position: relative;
-    font-size: 30px;
-    font-family: "Stolzl";
-    font-weight: 400;
-    color:var(--TEXT);
-    padding-left: 345px;
-    padding-top: 150px;
-}
-.design-companies1{
-    margin-top: 80px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.design-companies2{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.design-companies3{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.design-companies3{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.design-companies4{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.design-companies5{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
+
 .management-section-title{
     position: relative;
     font-size: 30px;
@@ -1371,6 +1327,17 @@ h1 {
     flex-direction: column; 
     display: block;
 }
+
+.internship-details-main {
+    width: 100%;
+    max-width: 1000px;
+    margin:  auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
 .internship-details-white-box1{
     width: 1000px; /* Width of the individual box */
     height: 150px; /* Height of the individual box */
@@ -1516,7 +1483,7 @@ h1 {
 }
 
 .internship-details-container1{
-    align-items: center;
+    
 
 }
 
@@ -1524,7 +1491,6 @@ h1 {
     width: 650px;
     height: 700px;
     border-radius: 5px;
-    margin: 50px auto; /* Center the element horizontally and provide top margin */
     display: inline-block;
     border: 1px solid var(--TEXT2, #AEB4C1);
     background: var(--COMPONENTS, #FFF);
@@ -1532,14 +1498,14 @@ h1 {
 }
 
 .internship-details-details-internship {
-    width: 340px;
+    width: 322px;
     height: 475px;
-    margin: 50px auto; /* Center the element horizontally and provide top margin */
     border-radius: 5px;
     display: inline-block;
     border: 1px solid var(--TEXT2, #AEB4C1);
     background: var(--COMPONENTS, #FFF);
     vertical-align: top;
+    margin-left: 20px;
 }
 
 .internship-details-company-mail{
@@ -1547,9 +1513,28 @@ h1 {
     height: 80px;
     background: var(--TEXT, #FFF);
     border-radius: 5px;
-    margin-top: 50px;
-    margin-left: 345px;
+    margin-top: 10px;   
 }
+
+.internship-details-mail1{
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-direction: row; /* Set flex-direction to row to align children horizontally */
+    align-items: center;
+    align-items: flex-start;
+    justify-content: space-between; /* Align children with space between them */
+    box-sizing: border-box;
+
+}
+
+.internship-details-invisible{
+    width: 340px;
+    height: 80px;
+    margin-top: 50px;
+}
+
 .internship-details-email{
     font-size: 20px;
     font-family: "Stolzl";

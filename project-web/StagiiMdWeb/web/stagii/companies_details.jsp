@@ -28,7 +28,6 @@
     </a>
     <a href="internship_details.html" class="companies-details-company"></a>
         <div class="companies-details-companies3">
-                <!--<div class="content">Company -->
         </div>
     </a>
     </section>

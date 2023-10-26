@@ -17,5 +17,8 @@ public enum Domain {
     ENGINEERING,
     ENTERTAINMENT,
     MANAGEMENT,
-    COMMERCE;
+    LOGISTICS,
+    TELECOMMUNICATIONS,
+    ACCOUNTING,
+    SALES;
 }

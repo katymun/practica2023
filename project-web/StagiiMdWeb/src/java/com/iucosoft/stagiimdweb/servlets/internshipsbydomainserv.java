@@ -42,15 +42,41 @@ public class internshipsbydomainserv extends HttpServlet {
         String domain = request.getParameter("domain");
         String page = "";
         InternshipProgramDAOIntf internshipDao = (InternshipProgramDAOIntf) request.getServletContext().getAttribute("internshipDao");
-                InternshipServiceImpl internshipService = (InternshipServiceImpl) request.getServletContext().getAttribute("internshipService");
+        InternshipServiceImpl internshipService = (InternshipServiceImpl) request.getServletContext().getAttribute("internshipService");
 
         try {
             Domain domainVal = Domain.BANKING;
-            switch(domain) {
-                case "IT": domainVal = Domain.IT; break;
-                case "Design": domainVal = Domain.DESIGN; break;
-                case "Marketing": domainVal = Domain.MARKETING; break;
-                case "Management": domainVal = Domain.MANAGEMENT; break;
+            switch (domain) {
+                case "IT":
+                    domainVal = Domain.IT;
+                    break;
+                case "Design":
+                    domainVal = Domain.DESIGN;
+                    break;
+                case "Marketing":
+                    domainVal = Domain.MARKETING;
+                    break;
+                case "Management":
+                    domainVal = Domain.MANAGEMENT;
+                    break;
+                case "Telecommunications":
+                    domainVal = Domain.TELECOMMUNICATIONS;
+                    break;
+                case "Logistics":
+                    domainVal = Domain.LOGISTICS;
+                    break;
+                case "Sales":
+                    domainVal = Domain.SALES;
+                    break;
+                case "Accounting":
+                    domainVal = Domain.ACCOUNTING;
+                    break;
+                case "Banking":
+                    domainVal = Domain.BANKING;
+                    break;
+                case "Medicine":
+                    domainVal = Domain.MEDICINE;
+                    break;
             }
             List<InternshipProgram> internshipList = internshipDao.findAllByDomain(domainVal);
             Map<InternshipProgram, Company> internshipCompanyMap = internshipService.getInternshipCompanyMap(internshipList);
@@ -58,15 +84,15 @@ public class internshipsbydomainserv extends HttpServlet {
             request.setAttribute("internshipCompanyMap", internshipCompanyMap);
             request.setAttribute("domain", domain);
         } catch (SQLException ex) {
-            
+
             log("eroare" + ex.toString());
-            
+
             throw new IOException(ex);
         }
         page = "stagii/internships_by_domain.jsp";
-        
+
         request.getRequestDispatcher(page).forward(request, response);
-        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
