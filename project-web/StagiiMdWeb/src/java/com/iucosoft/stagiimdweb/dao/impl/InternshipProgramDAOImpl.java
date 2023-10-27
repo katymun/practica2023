@@ -272,8 +272,11 @@ public class InternshipProgramDAOImpl implements InternshipProgramDAOIntf {
     public List<InternshipProgram> findAllByKeyword(String keyword) throws SQLException {
         List<InternshipProgram> programs = new ArrayList<>();
         try (Connection conn = ds.getConnection();
-                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_TOP_10_PROGRAMS);) {
+                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_ALL_PROGRAMS_BY_KEYWORD);) {
             pstat.setString(1, "%"+keyword+"%");
+            pstat.setString(2, "%"+keyword+"%");
+            pstat.setString(3, "%"+keyword+"%");
+            pstat.setString(4, "%"+keyword+"%");
             ResultSet rs = pstat.executeQuery();
             
 

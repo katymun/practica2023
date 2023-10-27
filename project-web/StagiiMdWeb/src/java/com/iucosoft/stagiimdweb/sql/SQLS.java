@@ -92,7 +92,7 @@ public class SQLS {
 
     public static final String FIND_TOP_5_PROGRAMS_BY_DATE = "SELECT * FROM programmes WHERE start_data >= CURRENT_DATE() ORDER BY start_data LIMIT 5;";
 
-    public static final String FIND_TOP_10_PROGRAMS = "SELECT * FROM programmes WHERE title LIKE ? LIMIT 10";
+    public static final String FIND_ALL_PROGRAMS_BY_KEYWORD = "SELECT * FROM programmes WHERE title LIKE ?  OR qualifications LIKE ? OR duties LIKE ? OR benefits LIKE ? OR domain = ?";
     public static final String FIND_2_INTERNSHIPS_BY_COMPANY = "SELECT * FROM programmes WHERE company_id = ? LIMIT 2";
     public static final String FIND_2_INTERNSHIPS_BY_DOMAIN = "SELECT * FROM programmes WHERE domain = ? AND company_id != ? LIMIT 2";
 

@@ -1807,8 +1807,8 @@ h1 {
     padding-top: 150px;
 }
 .companies-details-companies1{
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
+    width: 1037px; /* Width of the individual box */
+    height: 180px; /* Height of the individual box */
     border-radius: 5px;
     margin-top: 150px;
     margin-left: auto;
@@ -1816,9 +1816,35 @@ h1 {
     border: 1px solid var(--TEXT2, #AEB4C1);
     background: var(--COMPONENTS, #FFF);
 }
+
+.company-description{
+    margin: 20px;
+    text-indent: 15px;
+    
+}
+
+.con{
+    display: rows;
+
+.company-email{
+    margin-left: 25px;
+    font-size: 15px;
+    font-family: "Stolzl";
+    color: var(--TEXT2);
+    text-decoration: underline; 
+}
+
+.company-phone{
+    margin-left: 25px;
+    font-size: 15px;
+    font-family: "Stolzl";
+    color: var(--TEXT2);
+    text-decoration: underline;
+}
+
 .companies-details-companies2{
     margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
+    width: 1100px; /* Width of the individual box */
     height: 150px; /* Height of the individual box */
     border-radius: 5px;
     border: 1px solid var(--TEXT2, #AEB4C1);

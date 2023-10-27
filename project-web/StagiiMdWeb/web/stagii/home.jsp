@@ -7,7 +7,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <title>STAGII.MD</title>
         <link rel="stylesheet" href="${pageContext.request.contextPath}/stagii/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -171,42 +171,42 @@
     <img src="images/newsletter.svg" class="homepage-news">
     <br>
     <form action="subscribeserv" method="post">
-    <div class="homepage-receive">Receive internships by email</div>
-    
-    <img src="images/accent3.svg" class="homepage-accent3">
-    <div class="homepage-form-group1">
-        <label class="homepage-col control-label" for=""></label>
-        <div class="homepage-col">
-            <input id="" name="position" type="text" placeholder="Indicate the internship position" class="homepage-form-control1 homepage-input1">
+        <div class="homepage-receive">Receive internships by email</div>
 
+        <img src="images/accent3.svg" class="homepage-accent3">
+        <div class="homepage-form-group1">
+            <label class="homepage-col control-label" for=""></label>
+            <div class="homepage-col">
+                <input id="" name="position" type="text" placeholder="Indicate the internship position" class="homepage-form-control1 homepage-input1">
+
+            </div>
         </div>
-    </div>
-    </br>
-    <br>
-    <!-- Text input-->
-    <div class="homepage-form-group2">
-        <label class="homepage-col control-label" for=""></label>
-        <div class="homepage-col">
-            <input id="" name="full-name" type="text" placeholder="Your full name" class="homepage-form-control2 homepage-input2">
+        </br>
+        <br>
+        <!-- Text input-->
+        <div class="homepage-form-group2">
+            <label class="homepage-col control-label" for=""></label>
+            <div class="homepage-col">
+                <input id="" name="full-name" type="text" placeholder="Your full name" class="homepage-form-control2 homepage-input2">
 
+            </div>
         </div>
-    </div>
-    </br>
-    <!-- Text input-->
-    <br>
-    <div class="homepage-form-group3">
-        <label class="homepage-col control-label" for=""></label>
-        <div class="homepage-col">
-            <input id="" name="email" type="email" placeholder="Your email address" class="homepage-form-control3 homepage-input3">
+        </br>
+        <!-- Text input-->
+        <br>
+        <div class="homepage-form-group3">
+            <label class="homepage-col control-label" for=""></label>
+            <div class="homepage-col">
+                <input id="" name="email" type="email" placeholder="Your email address" class="homepage-form-control3 homepage-input3">
 
+            </div>
         </div>
-    </div>
-    </br>
-</fieldset>
+        </br>
+        </fieldset>
 
-<button class="homepage-subscribe-button">Subscribe</button>
-</form>
-    
+        <button class="homepage-subscribe-button">Subscribe</button>
+    </form>
+
 </div>
 <jsp:include page="common/footer.jspf" />
 </body>
