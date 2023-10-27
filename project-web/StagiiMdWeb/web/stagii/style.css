@@ -1385,6 +1385,7 @@ h1 {
     color: var(--TEXT);
     padding-left: 25px;
     padding-top: 15px;
+    padding-right: 20px;
     text-indent: 20px;
 }
 
@@ -1498,7 +1499,7 @@ h1 {
 
 .internship-details-description-internship {
     width: 650px;
-    height: 700px;
+    height: 750px;
     border-radius: 5px;
     display: inline-block;
     border: 1px solid var(--TEXT2, #AEB4C1);
@@ -1508,7 +1509,7 @@ h1 {
 
 .internship-details-details-internship {
     width: 322px;
-    height: 475px;
+    height: 402px;
     border-radius: 5px;
     display: inline-block;
     border: 1px solid var(--TEXT2, #AEB4C1);
@@ -1824,14 +1825,14 @@ h1 {
 }
 
 .con{
-    display: rows;
-
+    margin-top: 10px;
+}
 .company-email{
     margin-left: 25px;
+    padding-top: 10px;
     font-size: 15px;
     font-family: "Stolzl";
     color: var(--TEXT2);
-    text-decoration: underline; 
 }
 
 .company-phone{
@@ -1839,7 +1840,15 @@ h1 {
     font-size: 15px;
     font-family: "Stolzl";
     color: var(--TEXT2);
-    text-decoration: underline;
+}
+
+.companies-details-internships{
+    font-size: 25px;
+    font-family: "Montserrat";
+    font-weight: 400;
+    color:var(--TEXT);
+    text-align: center;
+    padding-top: 50px;
 }
 
 .companies-details-companies2{
@@ -1861,15 +1870,6 @@ h1 {
     background: var(--COMPONENTS, #FFF);
     flex-direction: column; 
     display: block;
-}
-.companies-details-specific{
-    font-size: 25px;
-    font-family: "Montserrat";
-    font-weight: 400;
-    color:var(--TEXT);
-    text-align: center;
-    padding-top: 50px;
-
 }
 
 .companies-details-footer {

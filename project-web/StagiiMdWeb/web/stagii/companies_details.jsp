@@ -23,13 +23,11 @@
                     ${company.about}
                 </p>
                 <div class="con">
-                    <div class="company-phone">Telephone</div>
-                    <div class ="company-email">Email</div>
+                    <div class="company-phone"><u>Telephone:</u> ${company.phoneNumber}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <u>Email:</u> ${company.email}</div>
                 </div>
-
-
             </div>
-            <div class="companies-details-specific">Internships:</div>
+                <br>
+            <div class="companies-details-internships">Internships:</div>
 
             <c:forEach items="${internshipsList}" var="internship">
 
