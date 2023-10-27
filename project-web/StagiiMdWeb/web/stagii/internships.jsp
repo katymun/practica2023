@@ -6,7 +6,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Internships</title>
         <link rel="stylesheet" href="${pageContext.request.contextPath}/stagii/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,31 +41,31 @@
     </div>
 
     <div class="internship-white-boxes">
-        <a href="IT.html" class="internship-white-box-link">
+        <a href="internshipsbydomainserv?domain=IT" class="internship-white-box-link">
             <div class="internship-white-box">
                 <img src="images/IT sign.svg"  class="internship-box-image1">
                 <p class="internship-box-text">IT</p>
             </div>
         </a>
-        <a href="design.html" class="internship-white-box-link">
+        <a href="internshipsbydomainserv?domain=Design" class="internship-white-box-link">
             <div class="internship-white-box">
                 <img src="images/Design sign.svg"  class="internship-box-image2">
                 <p class="internship-box-text">Design</p>
             </div>
         </a>
-        <a href="marketing.html" class="internship-white-box-link">
+        <a href="internshipsbydomainserv?domain=Marketing" class="internship-white-box-link">
             <div class="internship-white-box">
                 <img src="images/Marketing sign.svg"  class="internship-box-image3">
                 <p class="internship-box-text">Marketing</p>
             </div>
         </a>
-        <a href="management.html" class="internship-white-box-link">
+        <a href="internshipsbydomainserv?domain=Management" class="internship-white-box-link">
             <div class="internship-white-box">
                 <img src="images/Management sign.svg"  class="internship-box-image4">
                 <p class="internship-box-text">Management</p>
             </div>
         </a>
-        <a href="telecommunications.html" class="internship-white-box-link">
+        <a href="internshipsbydomainserv?domain=Telecommunications" class="internship-white-box-link">
             <div class="internship-white-box">
                 <img src="images/Telecommunications sign.svg"  class="internship-box-image5">
                 <p class="internship-box-text1">Telecommunications</p>
@@ -73,31 +73,31 @@
         </a>
     </div>
     <div class="internship-white-boxes2">
-        <a href="logistics.html" class="internship-white-box-link">
+        <a href="internshipsbydomainserv?domain=Logistics" class="internship-white-box-link">
             <div class="internship-white-box">
                 <img src="images/Logistics sign.svg" class="internship-box-image6">
                 <p class="internship-box-text">Logistics</p>
             </div>
         </a>
-        <a href="sales.html" class="internship-white-box-link">
+        <a href="internshipsbydomainserv?domain=Sales" class="internship-white-box-link">
             <div class="internship-white-box">
                 <img src="images/Sales sign.svg" class="internship-box-image7">
                 <p class="internship-box-text">Sales</p>
             </div>
         </a>
-        <a href="accounting.html" class="internship-white-box-link">
+        <a href="internshipsbydomainserv?domain=Accounting" class="internship-white-box-link">
             <div class="internship-white-box">
                 <img src="images/Accounting sign.svg" class="internship-box-image8">
                 <p class="internship-box-text">Accounting</p>
             </div>
         </a>
-        <a href="banks.html" class="internship-white-box-link">
+        <a href="internshipsbydomainserv?domain=Banking" class="internship-white-box-link">
             <div class="internship-white-box">
                 <img src="images/Banks sign.svg" class="internship-box-image9">
-                <p class="internship-box-text">Banks</p>
+                <p class="internship-box-text">Banking</p>
             </div>
         </a>
-        <a href="medicine.html" class="internship-white-box-link">
+        <a href="internshipsbydomainserv?domain=Medicine" class="internship-white-box-link">
             <div class="internship-white-box">
                 <img src="images/Medicine sign.svg" class="internship-box-image10">
                 <p class="internship-box-text">Medicine</p>

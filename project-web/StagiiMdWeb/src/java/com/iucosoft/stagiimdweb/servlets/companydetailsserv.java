@@ -5,16 +5,14 @@
  */
 package com.iucosoft.stagiimdweb.servlets;
 
+import com.iucosoft.stagiimdweb.dao.intf.CompanyDAOIntf;
 import com.iucosoft.stagiimdweb.dao.intf.InternshipProgramDAOIntf;
 import com.iucosoft.stagiimdweb.entities.Company;
 import com.iucosoft.stagiimdweb.entities.InternshipProgram;
-import com.iucosoft.stagiimdweb.services.impl.InternshipServiceImpl;
-import com.iucosoft.stagiimdweb.utility.Domain;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -25,8 +23,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author munka
  */
-@WebServlet(name = "internshipsbydomainserv", urlPatterns = {"/internshipsbydomainserv"})
-public class internshipsbydomainserv extends HttpServlet {
+@WebServlet(name = "companydetailsserv", urlPatterns = {"/companydetailsserv"})
+public class companydetailsserv extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,60 +37,21 @@ public class internshipsbydomainserv extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String domain = request.getParameter("domain");
-        String page = "";
+        String companyIdStr = request.getParameter("company-id");
+        int companyId = Integer.parseInt(companyIdStr);
+        CompanyDAOIntf companyDao = (CompanyDAOIntf) request.getServletContext().getAttribute("companyDao");
         InternshipProgramDAOIntf internshipDao = (InternshipProgramDAOIntf) request.getServletContext().getAttribute("internshipDao");
-        InternshipServiceImpl internshipService = (InternshipServiceImpl) request.getServletContext().getAttribute("internshipService");
-
         try {
-            Domain domainVal = Domain.BANKING;
-            switch (domain) {
-                case "IT":
-                    domainVal = Domain.IT;
-                    break;
-                case "Design":
-                    domainVal = Domain.DESIGN;
-                    break;
-                case "Marketing":
-                    domainVal = Domain.MARKETING;
-                    break;
-                case "Management":
-                    domainVal = Domain.MANAGEMENT;
-                    break;
-                case "Telecommunications":
-                    domainVal = Domain.TELECOMMUNICATIONS;
-                    break;
-                case "Logistics":
-                    domainVal = Domain.LOGISTICS;
-                    break;
-                case "Sales":
-                    domainVal = Domain.SALES;
-                    break;
-                case "Accounting":
-                    domainVal = Domain.ACCOUNTING;
-                    break;
-                case "Banking":
-                    domainVal = Domain.BANKING;
-                    break;
-                case "Medicine":
-                    domainVal = Domain.MEDICINE;
-                    break;
-            }
-            List<InternshipProgram> internshipList = internshipDao.findAllByDomain(domainVal);
-            Map<InternshipProgram, Company> internshipCompanyMap = internshipService.getInternshipCompanyMap(internshipList);
-            //request.setAttribute cu lista 
-            request.setAttribute("internshipCompanyMap", internshipCompanyMap);
-            request.setAttribute("domain", domain);
+            Company company = companyDao.findById(companyId);
+            request.setAttribute("company", company);
+            List<InternshipProgram> internshipsList = internshipDao.findAllByCompanyId(companyId);
+            request.setAttribute("internshipsList", internshipsList);
         } catch (SQLException ex) {
-
-            log("eroare" + ex.toString());
-
+            log(ex.toString());
             throw new IOException(ex);
-        }
-        page = "stagii/internships_by_domain.jsp";
-
-        request.getRequestDispatcher(page).forward(request, response);
-
+        } 
+        
+        request.getRequestDispatcher("stagii/companies_details.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

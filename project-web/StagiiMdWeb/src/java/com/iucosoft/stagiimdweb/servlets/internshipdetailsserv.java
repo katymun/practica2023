@@ -5,12 +5,16 @@
  */
 package com.iucosoft.stagiimdweb.servlets;
 
+import com.iucosoft.stagiimdweb.dao.intf.CompanyDAOIntf;
 import com.iucosoft.stagiimdweb.dao.intf.InternshipProgramDAOIntf;
+import com.iucosoft.stagiimdweb.entities.Company;
 import com.iucosoft.stagiimdweb.entities.InternshipProgram;
+import com.iucosoft.stagiimdweb.services.impl.InternshipServiceImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -39,11 +43,24 @@ public class internshipdetailsserv extends HttpServlet {
         int idInternship = Integer.parseInt(idInternshipStr);
         
         InternshipProgramDAOIntf internshipDao = (InternshipProgramDAOIntf) request.getServletContext().getAttribute("internshipDao");
+        CompanyDAOIntf companyDao = (CompanyDAOIntf) request.getServletContext().getAttribute("companyDao");
+                InternshipServiceImpl internshipService = (InternshipServiceImpl) request.getServletContext().getAttribute("internshipService");
+
         try {
             InternshipProgram internshipProgram = internshipDao.findById(idInternship);
+            Company company = companyDao.findById(internshipProgram.getIdCompany());
             
+            List<InternshipProgram> internshipList1 = internshipDao.findTwoByCompanyId(company.getId());
+            Map<InternshipProgram, Company> internshipCompanyMapByCompany = internshipService.getInternshipCompanyMap(internshipList1);
+            
+            List<InternshipProgram> internshipList2 = internshipDao.findTwoByDomain(internshipProgram.getDomain(), company.getId());
+            Map<InternshipProgram, Company> internshipCompanyMapByDomain = internshipService.getInternshipCompanyMap(internshipList2);
+
             //request.setAttribute cu lista 
             request.setAttribute("internshipProgram", internshipProgram);
+            request.setAttribute("company", company);
+            request.setAttribute("internshipCompanyMapByCompany", internshipCompanyMapByCompany);
+            request.setAttribute("internshipCompanyMapByDomain", internshipCompanyMapByDomain);
         } catch (SQLException ex) {
             
             log("eroare" + ex.toString());

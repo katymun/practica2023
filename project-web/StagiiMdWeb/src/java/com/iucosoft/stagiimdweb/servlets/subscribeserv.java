@@ -5,9 +5,16 @@
  */
 package com.iucosoft.stagiimdweb.servlets;
 
+import com.iucosoft.stagiimdweb.dao.intf.CompanyDAOIntf;
+import com.iucosoft.stagiimdweb.dao.intf.SubscribeDAOIntf;
+import com.iucosoft.stagiimdweb.entities.Company;
+import com.iucosoft.stagiimdweb.entities.Subscribe;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.List;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +23,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author munka
  */
-public class DispatcherServlet extends HttpServlet {
+@WebServlet(name = "subscribeserv", urlPatterns = {"/subscribeserv"})
+public class subscribeserv extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,22 +37,21 @@ public class DispatcherServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String page = "index.jsp";
-        String path = request.getServletPath();
-        log("path = " + path);
+        SubscribeDAOIntf subscribeDao = (SubscribeDAOIntf) request.getServletContext().getAttribute("subscribeDao");
+        String position = request.getParameter("position");
+        String fullName = request.getParameter("full-name");
+        String email = request.getParameter("email");
+        Subscribe subscribe = new Subscribe(position, fullName, email);
         
-        switch(path) {
-            case "/home.html": page = "/homeserv"; break;
-            case "/internships.html": page = "/internshipserv";  break;
-            case "/companies.html": page = "/companiesserv"; break;
-            case "/internship_details.html": page = "/internshipdetailsserv"; break;
-            case "/companies_details.html": page = "/companydetailsserv"; break;
-            default: page = "index.jsp";
+        try {
+            subscribeDao.save(subscribe);
+        } catch (SQLException ex) {
+            log(ex.toString());
+            throw new IOException(ex);
         }
-        log("page = " + page);
-        
-        request.getRequestDispatcher(page).forward(request, response);
-        
+
+        request.setAttribute("subscribe", subscribe);
+        request.getRequestDispatcher("homeserv").forward(request, response);  
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

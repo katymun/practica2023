@@ -5,8 +5,12 @@
  */
 package com.iucosoft.stagiimdweb.servlets;
 
+import com.iucosoft.stagiimdweb.dao.intf.CompanyDAOIntf;
+import com.iucosoft.stagiimdweb.entities.Company;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,7 +35,18 @@ public class companiesserv extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("stagii/companies.jsp").forward(request, response);
+        CompanyDAOIntf companyDao = (CompanyDAOIntf) request.getServletContext().getAttribute("companyDao");
+        List<Company> companyList = null;
+        try {
+            companyList = companyDao.findAll();
+            log("companii:" + companyList.size());
+        } catch (SQLException ex) {
+            log(ex.toString());
+            throw new IOException(ex);
+        }
+
+        request.setAttribute("companyList", companyList);
+        request.getRequestDispatcher("stagii/companies.jsp").forward(request, response);    
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

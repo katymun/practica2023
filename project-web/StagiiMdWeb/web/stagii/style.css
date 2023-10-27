@@ -62,6 +62,7 @@ nav ul li a {
 }
 .logo-button{
     text-decoration: none;
+    color: inherit;
 }
 .styled-link {
     font-weight: bold;
@@ -362,6 +363,9 @@ h1 {
     padding:10px;
     padding-right: 125px;/* Center content horizontally */
 }
+
+
+
 .homepage-more-button {
     width: 332px;
     height: 62px;
@@ -375,9 +379,10 @@ h1 {
 }
 .homepage-news{
     margin-top: 50px;
-    padding-left: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     width: 1100px;
-    align-items: center;
 }
 
 .homepage-accent3{
@@ -723,6 +728,12 @@ h1 {
     display: block;
 }*/
 
+.internships-info-box-details{
+    margin-top: 50px;
+    width: 1000px;
+}
+
+
 .internships-found-company {
     text-decoration: none;  /* Remove the underline */
     color: inherit;  /* Ensure the text inside uses its original color and not the typical blue link color */
@@ -752,9 +763,22 @@ h1 {
 .it-companies1:hover{
     transform:scale(1.03);
 }
-    
-    
-   .avatar{
+
+.it-companies2{
+    margin-top: 130px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 957px;
+    height: 150px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+    display: flex; /* Change display to flex for layout */
+    align-items: center; /* Vertically align the items */
+    justify-content: space-between; /* Even spacing between items */
+    padding: 0 20px; /* Add padding to the sides */ }
+
+.avatar{
     width: 80px;
     height: 80px;
     background-color: grey; /* Placeholder color, change to a background image or different color */
@@ -782,9 +806,9 @@ h1 {
     font-size: 16px; /* Adjust the size as per your requirements */
 }
 
-.date-info div {
+.date-info1 div {
     padding: 5px;
-    border: 1px solid #ccc;
+    border: 2px solid var(--TEXT2);
     border-radius: 5px;
     height: 20px; /* You can adjust this to your needs */
     display: flex;
@@ -792,7 +816,29 @@ h1 {
     justify-content: center;
     margin-bottom: 20px; /* Adding space between the two boxes */
     margin-right: 10px;
+    margin-top: 20px;
+    font-size: 18px;
+    color: solid var(--TEXT2);
 }
+
+.date-duration1{
+    color: red;
+}
+
+.date-info2 div {
+    height: 20px; /* You can adjust this to your needs */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 33px; /* Adding space between the two boxes */
+    margin-right: 10px;
+    margin-top: 34px;
+    margin-left: 30px;
+    color: solid var(--TEXT2);
+    width: 150px;
+}
+
+
 
 .it-footer {
     background-color: var(--TEXT); 
@@ -945,77 +991,7 @@ h1 {
     flex-direction: column; 
     display: block;
 }
-.design-section-title{
-    position: relative;
-    font-size: 30px;
-    font-family: "Stolzl";
-    font-weight: 400;
-    color:var(--TEXT);
-    padding-left: 345px;
-    padding-top: 150px;
-}
-.design-companies1{
-    margin-top: 80px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.design-companies2{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.design-companies3{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.design-companies3{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.design-companies4{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.design-companies5{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
+
 .management-section-title{
     position: relative;
     font-size: 30px;
@@ -1371,6 +1347,17 @@ h1 {
     flex-direction: column; 
     display: block;
 }
+
+.internship-details-main {
+    width: 100%;
+    max-width: 1000px;
+    margin:  auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
 .internship-details-white-box1{
     width: 1000px; /* Width of the individual box */
     height: 150px; /* Height of the individual box */
@@ -1381,41 +1368,25 @@ h1 {
     border: 1px solid var(--TEXT2, #AEB4C1);
     background: var(--COMPONENTS, #FFF);
 }
-.internship-details-box-text1{
+.internship-details-box-text{
     font-size: 18px;
+    font-family: "Stolzl";
+    font-weight: 400;
+    color: var(--TEXT);
+    padding-left: 25px;
+    padding-top: 28px;
+    padding-bottom: 12px;
+    text-decoration: underline;
+}
+.internship-details-box1{
+    font-size: 16px;
     font-family: "Stolzl";
     font-weight: 400;
     color: var(--TEXT);
     padding-left: 25px;
     padding-top: 15px;
-    text-decoration: underline;
-}
-.internship-details-box-text2{
-    font-size: 18px;
-    font-family: "Stolzl";
-    font-weight: 400;
-    color: var(--TEXT);
-    padding-left: 25px;
-    padding-top: 180px;
-    text-decoration: underline;
-}
-.internship-details-box-text3{
-    font-size: 18px;
-    font-family: "Stolzl";
-    font-weight: 400;
-    color: var(--TEXT);
-    padding-left: 25px;
-    padding-top: 100px;
-    text-decoration: underline;
-}
-.internship-details-box-text4{
-    font-size: 18px;
-    font-family: "Stolzl";
-    font-weight: 400;
-    color: var(--TEXT);
-    padding-left: 25px;
-    padding-top: 100px;
-    text-decoration: underline;
+    padding-right: 20px;
+    text-indent: 20px;
 }
 
 .internship-details-container2{
@@ -1424,12 +1395,17 @@ h1 {
 }
 .internship-details-box2{
     margin-left: 25px;
+    margin-top: 25px;
     font-size: 15px;
     font-family: "Stolzl";
     color: var(--TEXT2);
-    text-decoration: underline;
     transform: translateX(25%, -300%);
 }
+
+.part-time{
+    text-decoration: none;
+}
+
 .internship-details-studies{
     margin-left: 25px;
     margin-top: 25px;
@@ -1444,10 +1420,10 @@ h1 {
 }
 .internship-details-box3{
     margin-left: 25px;
+    margin-top: 25px;
     font-size: 15px;
     font-family: "Stolzl";
     color: var(--TEXT2);
-    text-decoration: underline;
     transform: translateX(25%, -300%);
 }
 .internship-details-schedule{
@@ -1460,10 +1436,11 @@ h1 {
 }
 .internship-details-box4{
     margin-left: 25px;
+    margin-top: 25px;
     font-size: 15px;
     font-family: "Stolzl";
     color: var(--TEXT2);
-    text-decoration: underline;
+    /*text-decoration: underline;*/
     transform: translateX(25%, -300%);
 }
 .internship-details-location{
@@ -1476,10 +1453,10 @@ h1 {
 }
 .internship-details-box5{
     margin-left: 25px;
+    margin-top: 25px;
     font-size: 15px;
     font-family: "Stolzl";
     color: var(--TEXT2);
-    text-decoration: underline;
     transform: translateX(25%, -300%);
 }
 .internship-details-phone{
@@ -1492,10 +1469,10 @@ h1 {
 }
 .internship-details-box6{
     margin-left: 25px;
+    margin-top: 25px;
     font-size: 15px;
     font-family: "Stolzl";
     color: var(--TEXT2);
-    text-decoration: underline;
     transform: translateX(25%, -300%);
 }
 .internship-details-container7{
@@ -1504,10 +1481,10 @@ h1 {
 }
 .internship-details-box7{
     margin-left: 25px;
+    margin-top: 25px;
     font-size: 15px;
     font-family: "Stolzl";
     color: var(--TEXT2);
-    text-decoration: underline;
     transform: translateX(25%, -300%);
 }
 .internship-details-mail{
@@ -1516,15 +1493,14 @@ h1 {
 }
 
 .internship-details-container1{
-    align-items: center;
+    
 
 }
 
 .internship-details-description-internship {
     width: 650px;
-    height: 700px;
+    height: 750px;
     border-radius: 5px;
-    margin: 50px auto; /* Center the element horizontally and provide top margin */
     display: inline-block;
     border: 1px solid var(--TEXT2, #AEB4C1);
     background: var(--COMPONENTS, #FFF);
@@ -1532,14 +1508,14 @@ h1 {
 }
 
 .internship-details-details-internship {
-    width: 340px;
-    height: 475px;
-    margin: 50px auto; /* Center the element horizontally and provide top margin */
+    width: 322px;
+    height: 402px;
     border-radius: 5px;
     display: inline-block;
     border: 1px solid var(--TEXT2, #AEB4C1);
     background: var(--COMPONENTS, #FFF);
     vertical-align: top;
+    margin-left: 20px;
 }
 
 .internship-details-company-mail{
@@ -1547,9 +1523,28 @@ h1 {
     height: 80px;
     background: var(--TEXT, #FFF);
     border-radius: 5px;
-    margin-top: 50px;
-    margin-left: 345px;
+    margin-top: 10px;   
 }
+
+.internship-details-mail1{
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-direction: row; /* Set flex-direction to row to align children horizontally */
+    align-items: center;
+    align-items: flex-start;
+    justify-content: space-between; /* Align children with space between them */
+    box-sizing: border-box;
+
+}
+
+.internship-details-invisible{
+    width: 340px;
+    height: 80px;
+    margin-top: 50px;
+}
+
 .internship-details-email{
     font-size: 20px;
     font-family: "Stolzl";
@@ -1813,8 +1808,8 @@ h1 {
     padding-top: 150px;
 }
 .companies-details-companies1{
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
+    width: 1037px; /* Width of the individual box */
+    height: 180px; /* Height of the individual box */
     border-radius: 5px;
     margin-top: 150px;
     margin-left: auto;
@@ -1822,9 +1817,43 @@ h1 {
     border: 1px solid var(--TEXT2, #AEB4C1);
     background: var(--COMPONENTS, #FFF);
 }
+
+.company-description{
+    margin: 20px;
+    text-indent: 15px;
+    
+}
+
+.con{
+    margin-top: 10px;
+}
+.company-email{
+    margin-left: 25px;
+    padding-top: 10px;
+    font-size: 15px;
+    font-family: "Stolzl";
+    color: var(--TEXT2);
+}
+
+.company-phone{
+    margin-left: 25px;
+    font-size: 15px;
+    font-family: "Stolzl";
+    color: var(--TEXT2);
+}
+
+.companies-details-internships{
+    font-size: 25px;
+    font-family: "Montserrat";
+    font-weight: 400;
+    color:var(--TEXT);
+    text-align: center;
+    padding-top: 50px;
+}
+
 .companies-details-companies2{
     margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
+    width: 1100px; /* Width of the individual box */
     height: 150px; /* Height of the individual box */
     border-radius: 5px;
     border: 1px solid var(--TEXT2, #AEB4C1);
@@ -1841,15 +1870,6 @@ h1 {
     background: var(--COMPONENTS, #FFF);
     flex-direction: column; 
     display: block;
-}
-.companies-details-specific{
-    font-size: 25px;
-    font-family: "Montserrat";
-    font-weight: 400;
-    color:var(--TEXT);
-    text-align: center;
-    padding-top: 50px;
-
 }
 
 .companies-details-footer {
