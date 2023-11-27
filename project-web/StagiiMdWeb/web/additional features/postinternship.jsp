@@ -1,3 +1,5 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,61 +20,40 @@
                     <div class="logo">
                         ST <img class="vector" src="images/logo.svg" />GII.MD
                     </div>
-                </a>
-                <ul>
-                    <li>
-                        <a class="" href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="">Internships</a>
-                    </li>
-                    <li>
-                        <a href="">Companies</a>
-                    </li>
-                    <li>
-                        <a href="" class="signin">Sign in</a>
-                    </li>
-                    <li>
-                        <button class="signup">
-                        <a href="" >Sign up</a>
-                    </button>
-                    </li>
-                    <li>
-                        <button class="post">
-                        <a href="#" class="post-internship">Post internship</a>
-                    </button>
-                    </li>
-                    </ul>
-            </nav>
+                    </a>
         </div>
     
-        <div class="text-newaccount">New account</div>
-        <div class="element-newaccount">
-            <img class="new-account-vector" src="images/newaccount-vector.svg">
+        <div class="text-postinternship">Post an internship</div>
+        <div class="element-postinternship">
+            <img class="postinternship-vector" src="images/postinternship-vector.svg">
         </div>
-        <div class="new-account-enter-email">
-            <div class="new-account-email-input">
-                <input type="text" placeholder="Enter your email" class="new-account-input-email input">
+        <div class="postinternship-enter-email">
+            <div class="postinternship-email-input">
+                <input type="text" placeholder="Enter your email" class="postinternship-input-email input">
             </div>
         </div>
-        <div class="new-account-enter-password">
-            <div class="new-account-password-input">
-                <input type="password" placeholder="Enter your password" class="new-account-input-password input" id="passwordInput">
+        <div class="postinternship-enter-password">
+            <div class="postinternship-password-input">
+                <input type="password" placeholder="Enter your password" class="postinternship-input-password input" id="passwordInput">
                 <button class="password-toggle-button" onclick="togglePasswordVisibility('passwordInput', 'eyeIcon1')">
                     <img id="eyeIcon1" src="images/closed-eye.svg" alt="">
                 </button>
             </div>
         </div>
-        <div class="confirm-password">
-            <div class="confirm-password-input">
-                <input type="password" placeholder="Confirm your password" class="confirm-input-password input" id="confirmPasswordInput">
+        <div class="postinternship-confirm-password">
+            <div class="postinternship-confirm-password-input">
+                <input type="password" placeholder="Confirm your password" class="postinternship-confirm-input-password input" id="confirmPasswordInput">
                 <button class="password-toggle-button" onclick="togglePasswordVisibility('confirmPasswordInput', 'eyeIcon2')">
                     <img id="eyeIcon2" src="images/closed-eye.svg" alt="">
                 </button>
             </div>
         </div>
-        <button class="newaccount-signup"><a href="#" class="sign">Sign up</a></button>
-        <div class="have-account">Do you already have an account?<a href="#" class="new-account"> Login</a></div>
+        <div class="postinternship-name-company">
+            <div class="postinternship-name-company-input">
+                <input type="text" placeholder="Name of the company" class="postinternship-input-name-company input">
+            </div>
+        </div>
+        <button class="postinternship-register"><a href="#" class="sign">Register</a></button>
         <script>
             function togglePasswordVisibility(passwordInputId, eyeIconId) {
                 var passwordInput = document.getElementById(passwordInputId);
