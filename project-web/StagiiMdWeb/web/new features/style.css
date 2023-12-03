@@ -1,0 +1,484 @@
+:root {
+    --BG: #FFFCF2;
+    --ACCENT: #D5FA51;
+    --TEXT: #0c0c0e;
+    --COMPONENTS: #FFFFFF;
+    --TEXT2: #AEB4C1;
+    --ACCENT2: #C2EA33;
+}
+
+
+
+body {
+    margin: 0;
+    font-family: "Onest";
+    background: var(--BG, #FFFCF2);
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1134 px;
+    top: 36px;
+    z-index: 100;
+}
+
+nav .logo {
+    color: var(--TEXT, #0C0C0E);
+    font-family: "HelveticaNeue";
+    font-size: 30px;
+    font-weight: 400;
+    padding-left: 122px;
+    padding-top: 62px;
+}
+
+.vector {
+    width: 35px;
+    height: 23.798px;
+    flex-shrink: 0;
+    transform: translate(-10%, 5%);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+    list-style: none;
+    margin: 0;
+    padding-right: 220px;
+    padding-top: 69px;
+}
+
+nav ul li a {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+
+}
+
+.logo-button {
+    text-decoration: none;
+}
+
+.styled-link {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.signup {
+    background-color: var(--BG);
+    color: var(--TEXT);
+    flex-shrink: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 5px;
+    border: 1.5px solid var(--TEXT);
+}
+
+.post {
+    background-color: var(--TEXT);
+    flex-shrink: 0;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.post-internship {
+    color: var(--COMPONENTS);
+
+}
+
+.text-signin {
+    text-align: center;
+    margin-top: 200px;
+    font-family: Stolzl;
+    font-size: 30px;
+    z-index: 1;
+}
+
+.element-signin {
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.enter-email {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+.input-email {
+    width: 430px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+
+.enter-password {
+    position: absolute;
+    top: 55%;
+    left: 51.70%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+.input-password {
+    width: 430px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+
+.input {
+    color: var(--TEXT);
+}
+
+.forgot {
+    position: absolute;
+    top: 60%;
+    left: 51.5%;
+}
+
+.signinaccount {
+    font-family: Montserrat;
+    background-color: var(--TEXT);
+    flex-shrink: 0;
+    border-radius: 5px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.sign {
+    color: var(--COMPONENTS);
+    text-decoration: none;
+}
+
+.new-account-link {
+    position: absolute;
+    top: 73%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.new-account {
+    text-decoration: none;
+    color: var(--TEXT);
+}
+
+.forgot-password {
+    text-decoration: none;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+}
+
+.text-newaccount {
+    text-align: center;
+    margin-top: 150px;
+    font-family: Stolzl;
+    font-size: 30px;
+    z-index: 1;
+}
+
+.element-newaccount {
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.new-account-enter-email {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+.new-account-input-email {
+    width: 445px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+
+    font-size: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-left: 12px;
+    text-indent: 0;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+    box-sizing: border-box;
+    /* Ensures padding is included in the total width */
+}
+
+::placeholder {
+    /* Style your placeholder text here */
+    overflow: visible;
+    /* Ensure that text overflow is visible */
+    white-space: nowrap;
+    /* Prevents the text from wrapping */
+}
+
+.new-account-enter-password {
+    position: absolute;
+    top: 50%;
+    left: 51.7%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+.new-account-input-password {
+    width: 430px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+
+.confirm-password {
+    position: absolute;
+    top: 60%;
+    left: 51.7%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+.confirm-input-password {
+    width: 430px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+
+.col-md-4 {
+    top: 68%;
+    left: 50%;
+    position: absolute;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    font-family: "Montserrat";
+}
+
+.newaccount-signup {
+    font-family: Montserrat;
+    background-color: var(--TEXT);
+    flex-shrink: 0;
+    border-radius: 5px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+.have-account {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: var(--TEXT2, #AEB4C1);
+
+    font-family: Montserrat;
+    font-size: 18px;
+}
+
+.new-account {
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 18px;
+}
+
+.input {
+    color: var(--TEXT);
+
+}
+
+.password-toggle-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding-left: 20px;
+    /* Remove padding */
+}
+
+.text-postinternship {
+    text-align: center;
+    margin-top: 150px;
+    font-family: Stolzl;
+    font-size: 30px;
+    z-index: 1;
+}
+
+.element-postinternship {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.postinternship-enter-email {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+.postinternship-input-email {
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-right: 216px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+
+.postinternship-enter-password {
+    position: absolute;
+    top: 48%;
+    left: 51.7%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+.postinternship-input-password {
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-right: 216px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+
+.postinternship-confirm-password {
+    position: absolute;
+    top: 58%;
+    left: 51.7%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+.postinternship-confirm-input-password {
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-right: 216px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+
+.postinternship-name-company {
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+.postinternship-input-name-company {
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-right: 216px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+
+.postinternship-register {
+    font-family: Montserrat;
+    background-color: var(--TEXT);
+    flex-shrink: 0;
+    border-radius: 5px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    position: absolute;
+    top: 78%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
