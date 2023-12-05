@@ -1,5 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style5.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Onest:wght@400;700&display=swap"
@@ -54,7 +53,7 @@
         </div>
         <div class="new-account-enter-email">
             <div class="new-account-email-input">
-                <input type="text" placeholder="Enter your email" class="new-account-input-email input">
+                <input id="textinput" name="textinput" type="text" placeholder="Enter your email or username" class="new-account-input-email input" >
             </div>
         </div>
         <div class="new-account-enter-password">
@@ -73,6 +72,20 @@
                 </button>
             </div>
         </div>
+        <div class="choice-form-group">
+            <div class="col-md-4">
+              <label class="radio-inline" for="radios-0">
+                <input type="radio" name="radios" id="radios-0" value="1">
+                Looking for internships
+              </label>
+              <label class="radio-inline" for="radios-1">
+                <input type="radio" name="radios" id="radios-1" value="2">
+                Looking for interns
+              </label>
+            </div>
+          </div>
+          
+          
         <button class="newaccount-signup"><a href="#" class="sign">Sign up</a></button>
         <div class="have-account">Do you already have an account?<a href="#" class="new-account"> Login</a></div>
         <script>
