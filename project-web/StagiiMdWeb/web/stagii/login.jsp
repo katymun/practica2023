@@ -1,13 +1,13 @@
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/stagii/style2.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Onest:wght@400;700&display=swap"
@@ -54,7 +54,7 @@
     </div>
 <div class="enter-email">
     <div class="email-input">
-    <input id="" name="" type="text" placeholder="Enter your email" class="input-email input">
+    <input id="" name="" type="text" placeholder="Enter your email or username" class="input-email input">
     </div>
   </div>
   <div class="enter-password">
@@ -75,10 +75,10 @@
 
         if (passwordInput.type === "password") {
             passwordInput.type = "text";
-            eyeIcon.src = "images/open-eye.svg"; // Change to your open eye image path
+            eyeIcon.src = "images/open-eye.svg"; 
         } else {
             passwordInput.type = "password";
-            eyeIcon.src = "images/closed-eye.svg"; // Change to your closed eye image path
+            eyeIcon.src = "images/closed-eye.svg"; 
         }
     }
     </script>

@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.iucosoft.stagiimdweb.servlets;
+package com.iucosoft.stagiimdweb.servlets.cms;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author munka
  */
-public class DispatcherServlet extends HttpServlet {
+@WebServlet(name = "cmsadminhomeserv", urlPatterns = {"/cms/cmsadminhomeserv"})
+public class cmsadminhomeserv extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,23 +31,19 @@ public class DispatcherServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String page = "index.jsp";
-        String path = request.getServletPath();
-        log("path = " + path);
-        
-        switch(path) {
-            case "/home.html": page = "/homeserv"; break;
-            case "/internships.html": page = "/internshipserv";  break;
-            case "/companies.html": page = "/companiesserv"; break;
-            case "/internship_details.html": page = "/internshipdetailsserv"; break;
-            case "/companies_details.html": page = "/companydetailsserv"; break;
-            case "/newaccount.html": page = "/newaccountserv"; break;
-            default: page = "index.jsp";
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet cmsadminhome</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet cmsadminhome at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
-        log("page = " + page);
-        
-        request.getRequestDispatcher(page).forward(request, response);
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

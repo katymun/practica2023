@@ -1,5 +1,4 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/stagii/style2.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Onest:wght@400;700&display=swap"
@@ -29,7 +28,7 @@
         </div>
         <div class="postinternship-enter-email">
             <div class="postinternship-email-input">
-                <input type="text" placeholder="Enter your email" class="postinternship-input-email input">
+                <input type="text" placeholder="Enter your email or username" class="postinternship-input-email input">
             </div>
         </div>
         <div class="postinternship-enter-password">

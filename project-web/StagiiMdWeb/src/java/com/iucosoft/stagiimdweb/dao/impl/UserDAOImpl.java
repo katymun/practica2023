@@ -135,5 +135,32 @@ public class UserDAOImpl implements UserDAOIntf {
             }
         }
     }
+
+    @Override
+    public User findByUsername(String username) throws SQLException {
+        ResultSet rs = null;
+        try (Connection conn = ds.getConnection();
+                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_USER_BY_USERNAME);) {
+            pstat.setString(1, username);
+            rs = pstat.executeQuery();
+            if (rs.next()) {
+                int id = rs.getInt(1);
+                String password = rs.getString(3);
+                Date registerDate = DateConverter.convert(rs.getDate(4));
+                Role role = Role.valueOf(rs.getString(5));
+
+                User user = new User(id, username, password, registerDate, role);
+                return user;
+            }
+            throw new UserNotFoundException("Find by username = " + username + " failed!");
+        } catch (SQLException ex) {
+            LOG.severe(ex.toString());
+            throw ex;
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+        }
+    }
     
 }
