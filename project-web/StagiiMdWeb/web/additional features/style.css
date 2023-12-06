@@ -1,0 +1,632 @@
+:root {
+    --BG: #FFFCF2;
+    --ACCENT: #D5FA51;
+    --TEXT: #0c0c0e;
+    --COMPONENTS: #FFFFFF;
+    --TEXT2: #AEB4C1;
+    --ACCENT2: #C2EA33;
+}
+
+
+
+body {
+    margin: 0;
+    font-family: "Onest";
+    background: var(--BG, #FFFCF2);
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1134 px;
+    top: 36px;
+    z-index: 100;
+}
+
+nav .logo {
+    color: var(--TEXT, #0C0C0E);
+    font-family: "HelveticaNeue";
+    font-size: 30px;
+    font-weight: 400;
+    padding-left: 122px;
+    padding-top: 62px;
+}
+
+.vector {
+    width: 35px;
+    height: 23.798px;
+    flex-shrink: 0;
+    transform: translate(-10%, 5%);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+    list-style: none;
+    margin: 0;
+    padding-right: 220px;
+    padding-top: 69px;
+}
+
+nav ul li a {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+
+}
+
+.logo-button {
+    text-decoration: none;
+}
+
+.styled-link {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.signup {
+    background-color: var(--BG);
+    color: var(--TEXT);
+    flex-shrink: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 5px;
+    border: 1.5px solid var(--TEXT);
+}
+
+.post {
+    background-color: var(--TEXT);
+    flex-shrink: 0;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.post-internship {
+    color: var(--COMPONENTS);
+
+}
+.password-toggle-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding-left: 20px;
+    /* Remove padding */
+}
+.text-postinternship {
+    text-align: center;
+    margin-top: 150px;
+    font-family: Stolzl;
+    font-size: 30px;
+    z-index: 1;
+}
+.register-button-post{
+    color: var(--COMPONENTS);
+    text-decoration: none;
+}
+
+.element-postinternship {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.postinternship-enter-email {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+.postinternship-input-email {
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-right: 216px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+
+.postinternship-enter-password {
+    position: absolute;
+    top: 48%;
+    left: 51.7%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+.postinternship-input-password {
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-right: 216px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+
+.postinternship-confirm-password {
+    position: absolute;
+    top: 58%;
+    left: 51.7%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+.postinternship-confirm-input-password {
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-right: 216px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+
+.postinternship-name-company {
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+.postinternship-input-name-company {
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-right: 216px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+
+.postinternship-register {
+    font-family: Montserrat;
+    background-color: var(--TEXT);
+    flex-shrink: 0;
+    border-radius: 5px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    position: absolute;
+    top: 78%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+.createaccount-input-firstname{
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-right: 216px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+.createaccount-enter-firstname
+{
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.createaccount-input-lastname{
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-right: 216px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+.createaccount-enter-lastname
+{
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.createaccount-input-age{
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-right: 216px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+.createaccount-enter-age{
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.createaccount-option-status  {
+margin-left: 122px;
+width: 425px;
+color: var(--TEXT2, #AEB4C1);
+font-family: Montserrat;
+font-size: 16px;
+padding-top: 20px;
+padding-bottom: 20px;
+padding-left: 12px;
+border-radius: 5px;
+border: 1px solid var(--TEXT2, #AEB4C1);
+background: var(--COMPONENTS, #FFF);
+box-sizing: border-box;
+}
+
+.createaccount-chooseoption{
+    position: absolute;
+    top: 68%;
+    left: 46.60%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.createaccount-input-phone{
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-right: 216px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+.createaccount-enter-phonenumber{
+    position: absolute;
+    top: 78%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.createaccount-cv {
+    position: absolute;
+    top: 85%;
+    left: 30%;
+    color: var(--TEXT2, #AEB4C1);
+    font-size: 18px;
+}
+
+.input-cv {
+    display: none;
+}
+.file-name-container {
+    position: absolute;
+    top: 86%;
+    left: 55%;
+    transform: translateX(-50%);
+    color: var(--TEXT);
+    font-size: 18px;
+}
+.createaccount-signup{
+    background-color: var(--TEXT);
+    color: var(--TEXT);
+    flex-shrink: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 5px;
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: fixed;
+}
+.createaccount-sign{
+   color: var(--COMPONENTS);
+   text-decoration: none;
+   font-family: Montserrat;
+}
+.text-createaccount{
+    text-align: center;
+    margin-top: 150px;
+    font-family: Stolzl;
+    font-size: 30px;
+}
+.vector-company-image1{
+    padding-left: 122px;
+    padding-top: 5%;
+}
+label {
+    display: block;
+    padding-left: 122px;
+    padding-top: 10px;
+    font-size: 15px;
+    color: var(--TEXT2);
+}
+
+.input-file1 {
+    display: none;;
+}
+
+.general-information-text1 {
+    padding-left: 122px;
+    font-size: 30px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 50px;
+}
+
+.resizable-textbox1 {
+    width: 730px;
+    /* Set a minimum height */
+    padding-left: 20px;
+    padding-top: 10px;
+    margin-left: 122px;
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    border: 1px solid var(--TEXT2);
+    border-radius: 5px;
+    resize: vertical;
+}
+.choice-form-group {
+    display: flex;
+    align-items: center;
+}
+
+.choice-form-group .col-md-4 {
+    display: flex;
+}
+
+.choice-form-group label {
+    margin-left: 10px; /* Adjust the margin as needed */
+    white-space: nowrap; /* Prevent wrapping onto a new line */
+}
+
+.choice-form-group label input {
+    margin-right: px; /* Adjust the margin between radio button and text */
+}
+
+
+.company-mail-text1 {
+    padding-left: 122px;
+    font-size: 30px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 50px;
+}
+
+.input-email-company1 {
+    margin-left: 122px;
+    width: 500px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+    box-sizing: border-box;
+    /* Ensures padding is included in the total width */
+}
+.company-phone-text1 {
+    padding-left: 122px;
+    font-size: 30px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 50px;
+}
+
+.input-phone-company1 {
+    margin-left: 122px;
+    width: 490px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+
+}
+.companyname-text1{
+    padding-left: 122px;
+    font-size: 30px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 50px;
+}
+.input-company-name1{
+    margin-top: 20px;
+    margin-left: 122px;
+    width: 490px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+.next-company-button{
+    background-color: var(--TEXT);
+    flex-shrink: 0;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    display: fixed;
+    
+}
+.next-company1{
+    color: var(--COMPONENTS);
+    text-decoration: none;
+    font-family: Montserrat;
+
+}
+
+.next-company-button{
+    position: absolute;
+    top: 130%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.company-domain-text{
+    padding-left: 122px;
+    font-size: 30px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 50px;
+}
+.company-domain-input{
+    margin-top: 20px;
+    margin-left: 122px;
+    width: 490px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+.input{
+    color: var(--TEXT);
+}
+.create-recruiter-text{
+    text-align: center;
+    margin-top: 150px;
+    font-family: Stolzl;
+    font-size: 30px;
+    z-index: 1;
+}
+.input-recruiter-firstname{
+    margin-top: 20px;
+    width: 450px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+.input-recruiter-lastname{
+    margin-top: 20px;
+    width: 450px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+.enter-recruiter-firstname{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.create-recruiter-lastname{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.create-recruiter-email{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.input-recruiter-email {
+    margin-top: 20px;
+    width: 450px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+.register-company-button{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: var(--TEXT);
+    flex-shrink: 0;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.register-company1{
+    color: var(--COMPONENTS);
+    text-decoration: none;
+    font-family: Montserrat;
+}
