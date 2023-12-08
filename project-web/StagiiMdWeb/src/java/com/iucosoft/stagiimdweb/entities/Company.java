@@ -12,6 +12,7 @@ import java.util.Objects;
  *
  * @author munka
  */
+
 public class Company {
     private int id;
     private String title;

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Onest:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <nav>
+            <a href="" class="logo-button">
+                <div class="logo">
+                    ST <img class="vector" src="images/logo.svg" />GII.MD
+                </div>
+            </a>
+            <ul>
+                <li>
+                    <button class="applicants">
+                        <a href="#" class="see-applicants">See applicants</a>
+                    </button>
+                </li>
+                <li>
+                    <a href="" class="company-internships">Internships</a>
+                </li>
+            </ul>
+            <a href="" class="company-logo">
+                <div class="company-logo">
+                    <img class="vector-company" src="images/companylogo.svg" id="company-pic-right-corner" />
+                </div>
+            </a>
+        </nav>
+    </div>
+    
+    <div class="company-name">
+        <img class="vector-company-image" src="images/companylogo.svg" id="company-pic"/>  Company name
+    </div>
+    <div class="update-file">
+        <label class="upload-logo" for="filebutton">Upload company's logo</label>
+        <div class="update-dompany-image">
+            <input id="filebutton" name="filebutton" class="input-file" type="file" >
+        </div>
+    </div>
+
+    <div class="general-information-text">General information:</div>
+    <!-- Add your new element after the General Information text -->
+    <div class="button-container-general">
+        <button class="edit"><img src="images/edit.svg" alt="Edit"></button>
+        <button class="delete"><img src="images/delete.svg" alt="Delete"></button>
+    </div>
+    <textarea class="resizable-textbox" placeholder="Write a company's overview..."></textarea>
+
+    <div class="company-mail-text">Mail:</div>
+    <div class="button-container-mail">
+        <button class="edit"><img src="images/edit.svg" alt="Edit"></button>
+        <button class="delete"><img src="images/delete.svg" alt="Delete"></button>
+    </div>
+    <form class="form-horizontal">
+        <div class="company-email">
+            <label class="email-company" for=""></label>
+            <div class="company-email-input">
+                <input id="" name="" type="text" placeholder="Enter company's mail" class="input-email-company input">
+            </div>
+        </div>
+    </form>
+    <div class="company-phone-text">Phone Number:</div>
+    <div class="button-container-phone">
+        <button class="edit"><img src="images/edit.svg" alt="Edit"></button>
+        <button class="delete"><img src="images/delete.svg" alt="Delete"></button>
+    </div>
+    <form class="form-horizontal">
+        <div class="company-phone">
+          <label class="phone-company" for=""></label>  
+          <div class="company-phone-input">
+          <input id="" name="" type="text" placeholder="Enter company's phone number" class="input-phone-company input">
+            
+          </div>
+        </div>
+        </form>
+        <div class="save">
+            <button class="save-button">
+                <a href="#" class="save-internship">Save</a>
+            </button>
+            <button class="cancel-button">
+                <a href="#" class="cancel-internship">Cancel</a>
+            </button>
+        </div>
+
+    <script>
+        let companyPic = document.getElementById("company-pic");
+        let companyPicRightCorner = document.getElementById("company-pic-right-corner");
+        let inputFile = document.getElementById("filebutton");
+
+        inputFile.onchange = function () {
+            let file = inputFile.files[0];
+            companyPic.src = URL.createObjectURL(file);
+            companyPicRightCorner.src = URL.createObjectURL(file);
+        }
+
+        const textarea = document.querySelector(".resizable-textbox");
+
+        textarea.addEventListener("input", function () {
+            this.style.height = "auto";
+            this.style.height = (this.scrollHeight) + "px";
+        });
+    </script>
+    <!-- <script src="footer.js"></script> -->
+</body>
+
+</html>

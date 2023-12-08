@@ -14,6 +14,7 @@ import java.util.Objects;
  *
  * @author munka
  */
+
 public class Applicant extends User {
     private int id;
     private String aName;

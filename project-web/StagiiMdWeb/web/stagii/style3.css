@@ -1,0 +1,601 @@
+:root {
+    --BG: #FFFCF2;
+    --ACCENT: #D5FA51;
+    --TEXT: #0c0c0e;
+    --COMPONENTS: #FFFFFF;
+    --TEXT2: #AEB4C1;
+    --ACCENT2: #C2EA33;
+}
+
+
+
+body {
+    margin: 0;
+    font-family: "Onest";
+    background: var(--BG, #FFFCF2);
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1134 px;
+    top: 36px;
+    z-index: 100;
+}
+
+nav .logo {
+    color: var(--TEXT, #0C0C0E);
+    font-family: "HelveticaNeue";
+    font-size: 30px;
+    font-weight: 400;
+    padding-left: 122px;
+    padding-top: 62px;
+}
+
+.vector {
+    width: 35px;
+    height: 23.798px;
+    flex-shrink: 0;
+    transform: translate(-10%, 5%);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+    list-style: none;
+    padding-left: 700px;
+    margin: 0;
+    padding-top: 69px;
+}
+
+nav ul li a {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+
+}
+
+.logo-button {
+    text-decoration: none;
+}
+
+img.vector-company {
+    width: 80px;
+    height: 80px;
+    padding-right: 100px;
+    padding-top: 50px;
+
+}
+
+.applicants {
+    background-color: var(--TEXT);
+    flex-shrink: 0;
+    border-radius: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.see-applicants {
+    color: var(--COMPONENTS);
+}
+
+.published-internships-text {
+    color: var(--TEXT);
+    font-family: Stolzl;
+    font-size: 35px;
+    font-weight: 400;
+    padding-left: 122px;
+    padding-top: 50px;
+}
+
+.add-internship-button {
+    position: absolute;
+    background-color: var(--TEXT);
+    border-radius: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    top: 30%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+.add-an-internship {
+    color: var(--COMPONENTS);
+    font-family: Stolzl;
+    text-decoration: none;
+}
+
+.vector-company-image {
+    padding-left: 122px;
+    padding-top: 5%;
+}
+
+label {
+    display: block;
+    padding-left: 122px;
+    padding-top: 10px;
+    font-size: 15px;
+    color: var(--TEXT2);
+}
+
+.input-file {
+    display: none;;
+}
+
+.general-information-text {
+    padding-left: 122px;
+    font-size: 30px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 100px;
+}
+
+.resizable-textbox {
+    width: 730px;
+    /* Set a minimum height */
+    padding-left: 20px;
+    padding-top: 10px;
+    margin-left: 122px;
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    border: 1px solid var(--TEXT2);
+    border-radius: 5px;
+    resize: vertical;
+}
+
+.edit {
+    border: none;
+    /* Remove any existing borders on the image */
+    background: none;
+    /* Remove any background color */
+
+}
+
+.delete {
+    border: none;
+    /* Remove any existing borders on the image */
+    background: none;
+    /* Remove any background color */
+
+}
+
+.button-container-general {
+    display: flex;
+    align-items: center;
+    padding-left: 45%;
+}
+
+/* Style the button */
+.button-container-general button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    /* Adjust the margin between buttons */
+}
+
+.company-mail-text {
+    padding-left: 122px;
+    font-size: 30px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 50px;
+}
+
+.input-email-company {
+    margin-left: 122px;
+    width: 500px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+    box-sizing: border-box;
+    /* Ensures padding is included in the total width */
+}
+
+.button-container-mail {
+    display: flex;
+    align-items: center;
+    padding-left: 30%;
+}
+
+/* Style the edit and delete buttons */
+.button-container-mail button {
+    margin-right: 10px;
+}
+
+.company-phone-text {
+    padding-left: 122px;
+    font-size: 30px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 50px;
+}
+
+.input-phone-company {
+    margin-left: 122px;
+    width: 490px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+
+}
+
+.button-container-phone {
+    display: flex;
+    align-items: center;
+    padding-left: 30%;
+}
+
+/* Style the edit and delete buttons */
+.button-container-phone button {
+    margin-right: 10px;
+}
+
+
+.save-button{
+    background-color: var(--TEXT);
+    flex-shrink: 0;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    
+}
+.save-internship{
+    color: var(--COMPONENTS);
+    text-decoration: none;
+    font-family: Montserrat;
+
+}
+.cancel-button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 50px;
+    font-size: 15px;
+}
+.cancel-internship{
+    text-decoration: none;
+    color: var(--TEXT, #AEB4C1);
+    font-family: Montserrat;
+}
+.save{
+    position: absolute;
+    top: 115%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.new-internship-text{
+    padding-left: 122px;
+    font-size: 30px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 100px;
+}
+.general-text{
+    padding-left: 122px;
+    font-size: 25px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 50px;
+}
+.requirements-text1{
+    padding-left: 122px;
+    font-size: 20px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 50px;
+}
+.add-button1{
+    margin-left: 20px;
+    background-color: var(--TEXT);
+    flex-shrink: 0;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: var(--COMPONENTS);
+    text-decoration: none;
+    font-family: Montserrat;
+}
+.input-requirement1{
+    margin-left: 122px;
+    width: 430px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+    box-sizing: border-box;
+}
+.requirements-text2{
+    padding-left: 122px;
+    font-size: 20px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 50px;
+}
+.add-button2{
+    margin-left: 20px;
+    background-color: var(--TEXT);
+    flex-shrink: 0;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: var(--COMPONENTS);
+    text-decoration: none;
+    font-family: Montserrat;
+}
+.input-requirement2{
+    margin-left: 122px;
+    width: 430px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+    box-sizing: border-box;
+}
+.requirements-text3{
+    padding-left: 122px;
+    font-size: 20px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 50px;
+}
+.add-button3{
+    margin-left: 20px;
+    background-color: var(--TEXT);
+    flex-shrink: 0;
+    border-radius: 5px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: var(--COMPONENTS);
+    text-decoration: none;
+    font-family: Montserrat;
+}
+.input-requirement3{
+    margin-left: 122px;
+    width: 430px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+    box-sizing: border-box;
+}
+.details-text{
+    padding-left: 122px;
+    font-size: 25px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 70px;
+}
+.paid-text{
+    padding-left: 122px;
+    font-size: 20px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 50px; 
+}
+.choose-option-paid{
+    margin-left: 122px;
+    width: 430px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+    box-sizing: border-box;
+}
+.input {
+    color: var(--TEXT);
+}
+.schedule-text{
+    padding-left: 122px;
+    font-size: 20px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 50px; 
+}
+.choose-option-schedule{
+    margin-left: 122px;
+    width: 430px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+    box-sizing: border-box;
+}
+.location-text{
+    padding-left: 122px;
+    font-size: 20px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 50px; 
+}
+.input-location{
+    margin-left: 122px;
+    width: 430px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+    box-sizing: border-box;
+}
+.company-mail-text1{
+    padding-left: 122px;
+    font-size: 20px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 50px;
+}
+.company-phone-text1{
+    padding-left: 122px;
+    font-size: 20px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 50px;
+}
+.input-email-company1{
+    margin-left: 122px;
+    width: 430px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+    box-sizing: border-box;
+}
+.input-phone-company1{
+    margin-left: 122px;
+    width: 430px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+    box-sizing: border-box;
+}
+.duration-text{
+    padding-left: 122px;
+    font-size:family 20px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 50px;
+}
+.choose-duration{
+    margin-left: 122px;
+    width: 430px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+    box-sizing: border-box;
+}
+.start-text{
+    padding-left: 122px;
+    font-size: 20px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 50px;
+}
+.start-date-input{
+    margin-left: 122px;
+    width: 430px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+    box-sizing: border-box;
+}
+.add-internship-button{
+    background-color: var(--TEXT);
+    flex-shrink: 0;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    
+}
+.add-internship{
+    color: var(--COMPONENTS);
+    text-decoration: none;
+    font-family: Montserrat;
+
+}
+.cancel-button1{
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left:400px;
+    font-size: 15px;
+}
+.cancel-internship1{
+    text-decoration: none;
+    color: var(--TEXT, #AEB4C1);
+    font-family: Montserrat;
+}
+.add-internship1{
+    position: absolute;
+    top: 205%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}

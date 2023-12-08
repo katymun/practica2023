@@ -5,18 +5,28 @@
  */
 package com.iucosoft.stagiimdweb.servlets;
 
+import com.iucosoft.stagiimdweb.dao.impl.UserDAOImpl;
+import com.iucosoft.stagiimdweb.dao.intf.UserDAOIntf;
+import com.iucosoft.stagiimdweb.entities.User;
+import com.iucosoft.stagiimdweb.utility.Authenticator;
+import com.iucosoft.stagiimdweb.utility.Role;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author munka
  */
-public class DispatcherServlet extends HttpServlet {
+@WebServlet(name = "loginserv", urlPatterns = {"/loginserv"})
+public class loginserv extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,23 +39,31 @@ public class DispatcherServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String page = "index.jsp";
-        String path = request.getServletPath();
-        log("path = " + path);
-        
-        switch(path) {
-            case "/home.html": page = "/homeserv"; break;
-            case "/internships.html": page = "/internshipserv";  break;
-            case "/companies.html": page = "/companiesserv"; break;
-            case "/internship_details.html": page = "/internshipdetailsserv"; break;
-            case "/companies_details.html": page = "/companydetailsserv"; break;
-            case "/newaccount.html": page = "/newaccountserv"; break;
-            default: page = "index.jsp";
+        String username = request.getParameter("USERNAME");
+        String password = request.getParameter("PASSWORD"); //add encryption later
+        UserDAOIntf userDao = (UserDAOImpl) request.getServletContext().getAttribute("userDao");
+        try {
+            User mainUser = Authenticator.authenticate(username, password, userDao);
+            
+            HttpSession session = request.getSession(true);
+            session.setAttribute("mainUser", mainUser);
+            
+            String pageRedirect = "";
+            Role role = mainUser.getRole();
+            switch (role) {
+                case ADMIN: pageRedirect = "cms/cmsadminhomeserv"; break;
+                case APPLICANT: pageRedirect = "cms/cmsapplicanthomeserv"; break;
+                case RECRUITER: pageRedirect = "cms/cmsrecruiterhomeserv"; break;
+                default: pageRedirect = "homeserv";  // de trimis la logoutserv pentru a distruge sesiunea
+            }
+            
+            response.sendRedirect(pageRedirect);
+        } catch (Exception ex) {
+            request.setAttribute("error", "Exceptie in login " + ex.getMessage());
+            log("eroare" + ex.toString());
+            request.getRequestDispatcher("showloginserv").forward(request, response);
+            //throw new IOException(ex);
         }
-        log("page = " + page);
-        
-        request.getRequestDispatcher(page).forward(request, response);
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
