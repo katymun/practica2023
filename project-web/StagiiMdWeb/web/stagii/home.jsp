@@ -8,15 +8,19 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>STAGII.MD</title>
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/stagii/style.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/stagii/stylemain.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Onest:wght@400;700&display=swap"
               rel="stylesheet">
     </head>
+    <style>            .homepage-accent3{
+    width: 147px;
+    transform: translate(500%, -4600%);
+}</style>
     <body>
         <!--<script src="stagii/header_home.js"></script>-->
-        <jsp:include page="common/header_home.jspf" flush="true" />
+        <jsp:include page="common/guest_header.jspf" flush="true" />
         <%--<%@include file="common/header_home.jspf" %>--%>
         <div class="homepage-hero-section">
             <div class="homepage-left">
@@ -69,27 +73,30 @@
 
 
 <div class="homepage-white-boxes">
-    <a href="internshipsbydomainserv?domain=IT" class="homepage-white-box-link">
+    <a href="internshipsbydomainserv?domain=IT" class="homepage-white-box-link" onmouseover="changeITImage()" onmouseout="revertITImage()">
         <div class="homepage-white-box">
-            <img src="images/IT sign.svg"  class="homepage-box-image1">
+            <img id="IT" src="images/IT sign.svg" class="homepage-box-image1">
             <p class="homepage-box-text1">IT</p>
         </div>
     </a>
-    <a href="internshipsbydomainserv?domain=Design" class="homepage-white-box-link">
+
+    <a href="internshipsbydomainserv?domain=Design" class="homepage-white-box-link" onmouseover="changeDesignImage()" onmouseout="revertDesignImage()">
         <div class="homepage-white-box">
-            <img src="images/Design sign.svg"  class="homepage-box-image2">
+            <img id="Design" src="images/Design sign.svg" class="homepage-box-image2">
             <p class="homepage-box-text">Design</p>
         </div>
     </a>
-    <a href="internshipsbydomainserv?domain=Marketing" class="homepage-white-box-link">
+
+    <a href="internshipsbydomainserv?domain=Marketing" class="homepage-white-box-link" onmouseover="changeMarketingImage()" onmouseout="revertMarketingImage()">
         <div class="homepage-white-box">
-            <img src="images/Marketing sign.svg"  class="homepage-box-image3">
+            <img id="Marketing" src="images/Marketing sign.svg" class="homepage-box-image3">
             <p class="homepage-box-text">Marketing</p>
         </div>
     </a>
-    <a href="internshipsbydomainserv?domain=Management" class="homepage-white-box-link">
+
+    <a href="internshipsbydomainserv?domain=Management" class="homepage-white-box-link" onmouseover="changeManagementImage()" onmouseout="revertManagementImage()">
         <div class="homepage-white-box">
-            <img src="images/Management sign.svg"  class="homepage-box-image4">
+            <img id="Management" src="images/Management sign.svg" class="homepage-box-image4">
             <p class="homepage-box-text2">Management</p>
         </div>
     </a>
@@ -208,7 +215,46 @@
     </form>
 
 </div>
-<jsp:include page="common/footer.jspf" />
-</body>
+   <script>
+       
+    function changeITImage() {
+        document.getElementById('IT').src = "images/IT_white.svg";
+    }
 
+    function revertITImage() {
+        document.getElementById('IT').src = "images/IT sign.svg";
+    }
+        function changeDesignImage() {
+            document.getElementById('Design').src = "images/Design_white.svg";
+        }
+
+        function revertDesignImage() {
+            document.getElementById('Design').src = "images/Design sign.svg";
+        }
+
+        function changeMarketingImage() {
+            document.getElementById('Marketing').src = "images/Marketing_white.svg";
+        }
+
+        function revertMarketingImage() {
+            document.getElementById('Marketing').src = "images/Marketing sign.svg";
+        }
+
+        function changeManagementImage() {
+            document.getElementById('Management').src = "images/Management_white.svg";
+        }
+
+        function revertManagementImage() {
+            document.getElementById('Management').src = "images/Management sign.svg";
+        }
+    </script>
+</body>
+<footer>
+    <div class="footer">
+        <div class="logo1">
+            ST<img src="images/logo.svg" class="logo3" />GII.MD
+        </div>
+        <p class="copyright">This website was developed by Team04 © 2023</p>
+    </div>
+</footer>
 </html>

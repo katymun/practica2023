@@ -6,20 +6,55 @@
 package com.iucosoft.stagiimdweb.utility;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 
 /**
  *
  * @author munka
  */
 public class ImageUtil {
-    public static byte[] readImageData(String imagePath) throws IOException {
-        InputStream is = new FileInputStream(imagePath);
-        int size = is.available();
-        byte[] imgData = new byte[size];
-        is.read(imgData);
-        is.close();
-        return imgData;
+    public static void saveBytesToFile(InputStream filecontent, String fullPath)
+            throws IOException {
+        OutputStream out = null;
+
+        int read = 0;
+        final byte[] bytes = new byte[1024];
+
+        out = new FileOutputStream(fullPath);
+
+        while ((read = filecontent.read(bytes)) != -1) {
+            out.write(bytes, 0, read);
+
+        }
+        out.close();
+    }
+
+    public static void saveBytesToFile(byte[] bytes, String fullPath)
+            throws IOException {
+        OutputStream out = null;
+
+        int read = 0;
+        //  final byte[] bytes = new byte[1024];
+
+        out = new FileOutputStream(fullPath);
+
+        out.write(bytes);
+
+        out.close();
+    }
+
+    public static byte[] readBytesFromFile(String fullPath) throws IOException {
+
+        FileInputStream fis = new FileInputStream(fullPath);
+        byte[] imageBytes = new byte[fis.available()];
+
+        fis.read(imageBytes);
+        fis.close();
+
+        return imageBytes;
+
     }
 }

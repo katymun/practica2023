@@ -1,0 +1,38 @@
+<header>
+    <div class="wrapper">
+        <nav>
+            <a href="cmsapplicanthomeserv" class="logo-button">
+                <div class="logo">
+                    ST <img class="vector" src="../images/logo.svg" />GII.MD
+                </div>
+            </a>
+            <ul>
+                <li>
+                    <a class="" href="cmsapplicanthomeserv">Home</a>
+                </li>
+                <li>
+                    <a href="cmsapplicantinternshipsserv">Internships</a>
+                </li>
+                <li>
+                    <a href="cmsapplicantcompaniesserv">Companies</a>
+                </li>
+                <li>
+                    <div class="profile-container">
+                        <!-- Icon -->
+                        <div class="profile-icon">
+                            <img src="../images/see-profile.svg">
+                        </div>
+
+                        <!-- Dropdown content -->
+                        <div class="dropdown-content">
+                            <!-- Profile link -->
+                            <a href="cmsseeprofileserv" class="dropdown-item">View Profile</a>
+
+                            <!-- Logout link -->
+                            <a href="cmslogoutserv" class="dropdown-item">Logout</a>
+                        </div>
+                    </div>
+            </ul>
+        </nav>
+    </div>
+</header>

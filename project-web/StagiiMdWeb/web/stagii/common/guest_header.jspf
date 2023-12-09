@@ -2,7 +2,7 @@
     
     <div class="wrapper">
         <nav>
-            <a href="" class="logo-button">
+            <a href="home.html" class="logo-button">
                 <div class="logo">
                     ST <img class="vector" src="images/logo.svg" />GII.MD
                 </div>
@@ -18,7 +18,7 @@
                     <a href="companies.html">Companies</a>
                 </li>
                 <li>
-                    <a href="login.html" class="signin">Sign in</a>
+                    <a href="signin.html" class="signin">Sign in</a>
                 </li>
                 <li>
                     <button class="signup">
@@ -27,7 +27,7 @@
                 </li>
                 <li>
                     <button class="post">
-                    <a href="#" class="post-internship">Post internship</a>
+                    <a href="signin.html" class="post-internship">Post internship</a>
                 </button>
                 </li>
                 </ul>

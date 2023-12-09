@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <filter>
+        <filter-name>AuthenticationFilter</filter-name>
+        <filter-class>com.iucosoft.stagiimdweb.filters.AuthenticationFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/cms/*</url-pattern>
+    </filter-mapping>
     <listener>
         <description>ServletContextListener</description>
         <listener-class>com.iucosoft.stagiimdweb.weblisteners.PracticaWebApplicationContextListener</listener-class>
@@ -12,6 +20,10 @@
         <servlet-name>internshipdetailsserv</servlet-name>
         <servlet-class>com.iucosoft.stagiimdweb.servlets.internshipdetailsserv</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>newaccount2serv</servlet-name>
+        <servlet-class>com.iucosoft.stagiimdweb.servlets.newaccount2serv</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DispatcherServlet</servlet-name>
         <url-pattern>*.html</url-pattern>
@@ -19,6 +31,10 @@
     <servlet-mapping>
         <servlet-name>internshipdetailsserv</servlet-name>
         <url-pattern>/internshipdetailsserv</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>newaccount2serv</servlet-name>
+        <url-pattern>/newaccount2serv</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

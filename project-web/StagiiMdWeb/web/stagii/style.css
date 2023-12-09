@@ -20,7 +20,6 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /*position: fixed;*/
     width: 1134 px;
     top: 36px;
     z-index: 100;
@@ -28,7 +27,7 @@ nav {
 
 nav .logo {
     color: var(--TEXT, #0C0C0E);
-    font-family: Stolzl;
+    font-family: "HelveticaNeue";
     font-size: 30px;
     font-weight: 400;
     padding-left: 122px;
@@ -39,7 +38,7 @@ nav .logo {
     width: 35px;
     height: 23.798px;
     flex-shrink: 0;
-    transform: translate(-10%,5%);
+    transform: translate(-10%, 5%);
 }
 
 nav ul {
@@ -60,441 +59,540 @@ nav ul li a {
     text-decoration: none;
 
 }
-.logo-button{
+
+.logo-button {
     text-decoration: none;
-    color: inherit;
 }
+
 .styled-link {
     font-weight: bold;
     text-decoration: underline;
-
 }
 
+.signup {
+    background-color: var(--BG);
+    color: var(--TEXT);
+    flex-shrink: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 5px;
+    border: 1.5px solid var(--TEXT);
+}
 
-h1 {
+.post {
+    background-color: var(--TEXT);
+    flex-shrink: 0;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.post-internship {
+    color: var(--COMPONENTS);
+
+}
+newaccount-applicant-form{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
-
-.homepage-accent{
-    width: 492px;
-    transform: translate(45%,30%);
-    z-index: 1;
-}
-/*.homepage-details{
-    transform: translate(1000%,-400%);
-}*/
-
-.homepage-find-internships {
-    transform: translate(-10%,-100%);
-    position:absolute;
-    color: #000;
-    font-family: Stolzl;
-    font-size: 80px;
-    font-style: normal;
-    font-weight: 400;
-    padding-left: 118px;
-}
-
-.homepage-button {
-    width: 300px;
-    position: relative;
-}
-.homepage-search{
-    top: 58%; /* Align the button vertically in the middle */
-    left:680px; /* Adjust the distance from the right edge */
-    transform: translate(80%,-170%);
-}
-.homepage-search-button {
-    position: absolute;
-    top: 58%; /* Align the button vertically in the middle */
-    left:680px; /* Adjust the distance from the right edge */
-    transform: translate(-93%,-170%); /* Center the button vertically */
-    border-radius: 5px;
-    z-index: 2;
-    width: 135px;
-    height: 62px;
-    flex-shrink: 0;
-    background: var(--TEXT, #0C0C0E);
-    color: var(--COMPONENTS, #FFF);
-    font-family: Montserrat;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.homepage-col{
-    padding-left: 122px;
-}
-
-.homepage-input {
-    width: 590px;
-    height: 98px;
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    padding-left: 122px;
-}
-
-.homepage-custom-input {
-    color: var(--TEXT2, #AEB4C1);
-    font-family: Montserrat;
-    font-size: 25px;
-    padding-left: 120px;
-    margin-right: 10px;
-}
-
-.homepage-custom-input:focus {
-    color: #000;
-}
-
-.homepage-container {
-    position: relative;
-}
-
-/*Hero Section*/
-.homepage-hero-section {
-    display: flex;
-    height: 100vh;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-
-}
-
-.homepage-examples {
-    color: var(--TEXT2, #AEB4C1);
-    font-family: Montserrat;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    padding-left: 80px;
-    transform: translateY(-45%);
-
-}
-
-.homepage-examples ul {
-    display: flex;
-    align-items: center;
-    gap: 17px;
-    list-style: none;
-    margin: 0;
-    position: relative;
-
-
-}
-
-.homepage-examples ul li {
-    width: 118px;
-    height: 47px;
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    font-family: Montserrat;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    text-align: center;
-
-}
-.homepage-examples-front {
-    font-size: 16px;
-    font-family: "Montserrat";
-    color: var(--TEXT2, #AEB4C1);
-    padding-top: 15px;
-    display: flex;
-    justify-content: center
-
-}
-.homepage-examples-back{
-    font-size: 16px;
-    font-family: "Montserrat";
-    color: var(--TEXT2, #AEB4C1);
-    padding-top: 15px;
-    display: flex;
-    justify-content: center
-
-}
-.homepage-examples-design{
-    font-size: 16px;
-    font-family: "Montserrat";
-    color: var(--TEXT2, #AEB4C1);
-    padding-top: 15px;
-    display: flex;
-    justify-content: center
-
-}
-
-.homepage-right-image {
-
-    padding-right: 50px;
-}
-
-.homepage-accent2{
-    width: 130px;
-    transform: translate(165%,500%);
-
-}
-
-.homepage-internships-text{
-    position: relative;
-}
-.homepage-text-category {
-    font-size: 25px;
-    font-family: Stolzl;
-    font-weight: 400;
-    color: var(--TEXT);
-    font-style: normal;
-    font-weight: 400;
-    padding-left: 118px;
-    position: relative;
-}
-
-
-.homepage-white-boxes {
-    width: calc((196px + 40px) * 5); /* Width of one box + its margin multiplied by 5 */
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    display: flex;
-    flex-wrap: wrap; /* Allow items to wrap to the next row */
-    justify-content: space-between; /* Distribute space between items */
-    /* margin-top: 20px; /* Spacing between the examples and white boxes */
-}
-
-.homepage-white-box{
-    width: 192px; /* Width of the individual box */
-    height: 192px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    display: flex; /* This will turn it into a flex container */
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center items vertically */
-    align-items: center; /* Center items horizontally */
-    margin-bottom: 20px; /* Space between rows */
-    transition: all 0.2s ease-out;
-}
-
-.homepage-white-box-link {
-    text-decoration: none; /* Removes the underline from anchor tags */
-    display: block; /* Makes the entire area clickable */
-}
-
-.homepage-white-box:hover {
-    background-color: #D5FA51; /* A light green color upon hover */
+.password-toggle-button {
+    background: none;
+    border: none;
     cursor: pointer;
-    transform: scale(1.1);
+    padding-left: 20px;
+    /* Remove padding */
 }
-.homepage-white-box-link:hover .homepage-box-image1 {
-    background-image: url('images/IT_white.svg');
-    transform: scale(1.1);
-}
-
-.homepage-white-box-link:hover .homepage-box-image2 {
-    background-image: url('images/Design_white.svg');
-    transform: scale(1.1);
-}
-
-.homepage-white-box-link:hover .homepage-box-image3 {
-    background-image: url('images/Marketing_white.svg');
-    transform: scale(1.1);
-}
-
-.homepage-white-box-link:hover .homepage-box-image4 {
-    background-image: url('images/Management_white.svg');
-    transform: scale(1.1);
-}
-
-.homepage-box-text1{
-    font-size: 25px;
-    font-family: "Montserrat";
-    font-weight: 400;
-    color: var(--TEXT);
-    width: 22px;
-    height: 30px;
-    text-decoration: underline;
-}
-
-.homepage-box-text2{
-    font-size: 20px;
-    font-family: "Montserrat";
-    font-weight: 400;
-    color: var(--TEXT);
-    text-decoration: underline;
-}
-
-
-.homepage-box-text{
-    font-size: 20px;
-    font-family: "Montserrat";
-    font-weight: 400;
-    color: var(--TEXT);
-    width: 104px;
-    height: 24px;
+.text-postinternship {
     text-align: center;
-    text-decoration: underline;
-}
-.homepage-box-text3{
-    font-size: 20px;
-    font-family: "Montserrat";
-    font-weight: 400;
-    color: var(--TEXT2);
-    width: 104px;
-    text-align: center;
-}
-.homepage-white-box-link:hover .homepage-box-text3 {
-    color: var(--TEXT); /* Change text color to black on hover */
-}
-
-.homepage-more-internships{
-    font-size: 25px;
-    font-family: "Stolzl";
-    font-weight: 400;
-    color: var(--TEXT);
-    padding-left: 118px;
-    margin-top: 50px;
-}
-
-
-.homepage-container1 {
-    display: flex;
-    justify-content: center; 
-    padding:10px;
-    padding-right: 125px;/* Center content horizontally */
-}
-
-
-
-.homepage-more-button {
-    width: 332px;
-    height: 62px;
-    border-radius: 5px;
-    flex-shrink: 0;
-    background: var(--TEXT, #0C0C0E);
-    color: var(--COMPONENTS, #FFF);
-    font-family: Montserrat;
-    font-size: 20px;
-
-}
-.homepage-news{
-    margin-top: 50px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 1100px;
-}
-
-.homepage-accent3{
-    width: 147px;
-    transform: translate(455%, -4920%);
-}
-.homepage-container2 {
-    position: relative;
-    margin-bottom: -120px;
-}
-
-.homepage-receive {
-    position: absolute;
-    top: 15%;
-    /* Positions elements vertically at the center of the container */
-    left: 50%;
-    /* Positions elements horizontally at the center of the container */
-    transform: translate(-50%, -50%);
-    /* Centers the element precisely */
+    margin-top: 150px;
+    font-family: Stolzl;
+    font-size: 30px;
     z-index: 1;
-    /* Ensures the elements are positioned above the image */
-    font-size: 25px;
-    font-family: "Stolzl";
-
+}
+.register-button-post{
     color: var(--COMPONENTS);
-    width: 386px;
-    height: 30px;
-}
-.homepage-form-control1{
-    position: absolute;
-    top: 28%; /* Positions elements vertically at the center of the container */
-    left: 50%; /* Positions elements horizontally at the center of the container */
-    transform: translate(-50%, -50%); /* Centers the element precisely */
-    z-index: 1; /* Ensures the elements are positioned above the image */
-    width: 374px;
-    height: 73px;
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    padding-left: 122px;
-}
-.homepage-input1 {
-    font-size: 18px;
-    font-family: "Montserrat";
-    font-weight: 400;
-    color: var(--TEXT);
-    padding-left: 18px;
-}
-.homepage-form-control2{
-    position: absolute;
-    top: 40%; /* Positions elements vertically at the center of the container */
-    left: 50%; /* Positions elements horizontally at the center of the container */
-    transform: translate(-50%, -50%); /* Centers the element precisely */
-    z-index: 1; /* Ensures the elements are positioned above the image */
-    width: 374px;
-    height: 73px;
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    padding-left: 122px;
-}
-.homepage-input2 {
-    font-size: 18px;
-    font-family: "Montserrat";
-    font-weight: 400;
-    color: var(--TEXT);
-    padding-left: 18px;
-}
-.homepage-form-control3{
-    position: absolute;
-    top: 52%; /* Positions elements vertically at the center of the container */
-    left: 50%; /* Positions elements horizontally at the center of the container */
-    transform: translate(-50%, -50%); /* Centers the element precisely */
-    z-index: 1; /* Ensures the elements are positioned above the image */
-    width: 374px;
-    height: 73px;
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    padding-left: 122px;
-}
-.homepage-input3 {
-    font-size: 18px;
-    font-family: "Montserrat";
-    font-weight: 400;
-    color: var(--TEXT);
-    padding-left: 18px;
+    text-decoration: none;
 }
 
-.homepage-subscribe-button{
-    position: absolute;
-    top: 64%; /* Positions elements vertically at the center of the container */
-    left: 50%; /* Positions elements horizontally at the center of the container */
-    transform: translate(-50%, -50%);
-    border-radius: 5px;
-    width: 160px;
-    height: 56px;
-    flex-shrink: 0;
-    background: var(--ACCENT);
-    color: var(--TEXT);
-    font-family: Montserrat;
-    font-size: 20px;
+.element-postinternship {
+
+    z-index: -1;
 }
+
+.postinternship-enter-email {
+
+}
+
+.postinternship-input-email {
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-right: 216px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+
+.postinternship-enter-password {
+    
+
+}
+
+.postinternship-input-password {
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-right: 216px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+
+.postinternship-confirm-password {
+
+
+}
+
+.postinternship-confirm-input-password {
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-right: 216px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+
+.postinternship-name-company {
+
+
+}
+
+.postinternship-input-name-company {
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-right: 216px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+
+.postinternship-register {
+    font-family: Montserrat;
+    background-color: var(--TEXT);
+    flex-shrink: 0;
+    border-radius: 5px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    position: absolute;
+    top: 78%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+.newaccount-applicant-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.createaccount-input-firstname{
+    margin-top: 80px;
+    color: var(--TEXT2, #AEB4C1);
+    width:420px;
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+
+.createaccount-input-lastname{
+    margin-top: 20px;
+    color: var(--TEXT2, #AEB4C1);
+    width: 420px;
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+.createaccount-input-email{
+    margin-top: 20px;
+     color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    width: 420px;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+
+.createaccount-input-age{
+    margin-top: 20px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    width: 420px;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+.createaccount-enter-age{
+}
+.createaccount-input-email{
+    margin-top: 20px;
+    width: 420px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+
+.createaccount-option-status  {
+margin-top: 20px;
+width: 435px;
+color: var(--TEXT2, #AEB4C1);
+font-family: Montserrat;
+font-size: 16px;
+padding-top: 20px;
+padding-bottom: 20px;
+padding-left: 12px;
+border-radius: 5px;
+border: 1px solid var(--TEXT2, #AEB4C1);
+background: var(--COMPONENTS, #FFF);
+box-sizing: border-box;
+}
+
+.createaccount-input-phone{
+    color: var(--TEXT2, #AEB4C1);
+     margin-top: 20px;
+     width:420px;
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+.createaccount-cv{
+ font-size: 18px;  
+}
+.input-cv {
+    display: none;
+}
+.file-name-container {
+    
+    color: var(--TEXT);
+    font-size: 18px;
+}
+.createaccount-signup{
+    margin-top: 50px;
+    background-color: var(--TEXT);
+    color: var(--TEXT);
+    flex-shrink: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+.createaccount-sign{
+   color: var(--COMPONENTS);
+   text-decoration: none;
+   font-family: Montserrat;
+}
+.text-createaccount{
+    text-align: center;
+    margin-top: 100px;
+    font-family: Stolzl;
+    font-size: 30px;
+}
+.vector-company-image1{
+    padding-left: 122px;
+    padding-top: 5%;
+}
+label {
+    display: block;
+/*    padding-left: 122px;*/
+    padding-top: 10px;
+    font-size: 15px;
+    color: var(--TEXT2);
+}
+
+.input-file1 {
+    display: none;;
+}
+
+.general-information-text1 {
+    padding-left: 122px;
+    font-size: 30px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 50px;
+}
+
+.resizable-textbox1 {
+    width: 730px;
+    /* Set a minimum height */
+    padding-left: 20px;
+    padding-top: 10px;
+    margin-left: 122px;
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    border: 1px solid var(--TEXT2);
+    border-radius: 5px;
+    resize: vertical;
+}
+.choice-form-group {
+    display: flex;
+    align-items: center;
+}
+
+.choice-form-group .col-md-4 {
+    display: flex;
+}
+
+.choice-form-group label {
+    margin-left: 10px; /* Adjust the margin as needed */
+    white-space: nowrap; /* Prevent wrapping onto a new line */
+}
+
+.choice-form-group label input {
+    margin-right: px; /* Adjust the margin between radio button and text */
+}
+
+
+.company-mail-text1 {
+    padding-left: 122px;
+    font-size: 30px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 50px;
+}
+
+.input-email-company1 {
+    margin-left: 122px;
+    width: 500px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+    box-sizing: border-box;
+    /* Ensures padding is included in the total width */
+}
+.company-phone-text1 {
+    padding-left: 122px;
+    font-size: 30px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 50px;
+}
+
+.input-phone-company1 {
+    margin-left: 122px;
+    width: 490px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+
+}
+.companyname-text1{
+    padding-left: 122px;
+    font-size: 30px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 50px;
+}
+.input-company-name1{
+    margin-top: 20px;
+    margin-left: 122px;
+    width: 490px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+
+.company-domain-text{
+    padding-left: 122px;
+    font-size: 30px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 50px;
+}
+.company-domain-input{
+    margin-top: 20px;
+    margin-left: 122px;
+    width: 490px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+.input{
+    color: var(--TEXT);
+}
+.create-recruiter-text{
+    text-align: center;
+    margin-top: 150px;
+    font-family: Stolzl;
+    font-size: 30px;
+    z-index: 1;
+}
+.input-recruiter-firstname{
+    margin-top: 20px;
+    width: 450px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+.input-recruiter-lastname{
+    margin-top: 20px;
+    width: 450px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+.enter-recruiter-firstname{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.create-recruiter-lastname{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.create-recruiter-email{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.input-recruiter-email {
+    margin-top: 20px;
+    width: 450px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+.register-company-button{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: var(--TEXT);
+    flex-shrink: 0;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.register-company1{
+    color: var(--COMPONENTS);
+    text-decoration: none;
+    font-family: Montserrat;
+}
+
 .footer {
     background-color: var(--TEXT); 
     color: white;
     height: 200px;
     width: 100%;
-    margin-top: 7%;
-    bottom:0;
 }
-
+.logo-button{
+    color:white;
+}
 .logo1 {
     color: var(--COMPONENTS);
     font-family: Stolzl;
@@ -505,6 +603,7 @@ h1 {
 
 .logo3{
     transform: translate(2%,5%);
+    color:white;
 }
 .copyright {
     font-size: 12px;
@@ -512,1503 +611,4 @@ h1 {
     color: var(--COMPONENTS);
     padding-left: 122px;
     padding-top: 30px;
-}
-
-.styled-link2 {
-    font-weight: bold;
-    text-decoration: underline;
-
-}
-.internship-best{
-    position: absolute;
-}
-.internship-section-title{
-    position: relative;
-    font-size: 20px;
-    font-family: "Stolzl";
-    font-weight: 400;
-    color: rgba(0, 0, 0, 1);
-    padding-left: 122px;
-    transform: translateY(600%);
-
-}
-.internship-best-accent{
-    width: 186px;
-    transform: translate(135%, 1800%);
-}
-
-.internship-button {
-    width: 300px;
-    position: relative;
-    padding-right: 510px;
-    padding-left: 510px;
-}
-
-.internship-search{
-    top: 58%; /* Align the button vertically in the middle */
-    left:680px; /* Adjust the distance from the right edge */
-    transform: translate(-80%,-190%);
-    width: 30px;
-}
-
-.internship-search-button {
-    position: absolute;
-    top: 100%; /* Align the button vertically in the middle */
-    left:680px; /* Adjust the distance from the right edge */
-    transform: translate(225%,-200%); /* Center the button vertically */
-    border-radius: 5px;
-    z-index: 2;
-    width: 110px;
-    height: 50px;
-    flex-shrink: 0;
-    background: var(--TEXT, #0C0C0E);
-    color: var(--COMPONENTS, #FFF);
-    font-family: Montserrat;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.internship-col {
-    padding-top:250px;
-}
-
-.internship-input {
-    width: 500px;
-    height: 80px;
-    border-radius: 5px;
-    transform: translate(-9%);
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    padding-left:122px;
-}
-
-.internship-custom-input {
-    color: var(--TEXT2, #AEB4C1);
-    font-family: Montserrat;
-    font-size: 20px;
-    padding-left: 100px;
-    margin-right: 10px;
-}
-
-.internship-custom-input:focus {
-    color: #000;
-}
-
-.internship-white-boxes {
-    width: calc((196px + 59px) * 5); /* Total width of 5 boxes with margins */
-    margin: 40px auto;
-    margin-top:100 ;  /* top margin as 20px, bottom margin as 40px, left and right as auto */
-    display: flex;
-    flex-wrap: wrap; /* Allow items to wrap to the next row */
-    justify-content: space-between; /* Distribute space between items */
-}
-.internship-white-boxes2 {
-    width: calc((196px + 59px) * 5); /* Total width of 5 boxes with margins */
-    margin:40px auto;  
-    display: flex;
-    flex-wrap: wrap; /* Allow items to wrap to the next row */
-    justify-content: space-between; /* Distribute space between items */
-}
-.internship-white-box{
-    width: 192px; /* Width of the individual box */
-    height: 192px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    display: flex; /* This will turn it into a flex container */
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center items vertically */
-    align-items: center; /* Center items horizontally */
-    margin-bottom: 20px; /* Space between rows */
-    transition: all 0.1s ease-out;
-}
-
-.internship-white-box-link {
-    text-decoration: none; /* Removes the underline from anchor tags */
-    display: block; /* Makes the entire area clickable */
-}
-
-.internship-white-box:hover {
-    background-color: #D5FA51; /* A light green color upon hover */
-    cursor: pointer;
-    transform: scale(1.1);
-}
-.internship-white-box:hover .internship-box-image2 {
-    background-image: url('images/IT_white.svg');
-    transform: scale(1.1);  /* Set the path to your hover image */
-}
-.internship-white-box:hover .internship-box-image2 {
-    backgroud-image: url('images/Design_white.svg');
-    transform: scale(1.1);  /* Set the path to your hover image */
-}
-.internship-white-box:hover .internship-box-image3 {
-    backgroud-image: url('images/Marketing_white.svg');
-    transform: scale(1.1);  /* Set the path to your hover image */
-}
-.internship-white-box:hover .internship-box-image4 {
-    backgroud-image: url('images/Management_white.svg');
-    transform: scale(1.1);  /* Set the path to your hover image */
-}
-.internship-white-box:hover .internship-box-image5 {
-    backgroud-image: url('images/Telecommunications_white.svg');
-    transform: scale(1.1);  /* Set the path to your hover image */
-}
-.internship-white-box:hover .internship-box-image6 {
-    background-image: url('images/Logistics_white.svg');
-    transform: scale(1.1);  /* Set the path to your hover image */
-}
-.internship-white-box:hover .internship-box-image7 {
-    background-image: url('images/Mail.svg');
-    transform: scale(1.1);  /* Set the path to your hover image */
-}
-.internship-white-box:hover .internship-box-image8 {
-    background-image: url('images/Accounting_white.svg');
-    transform: scale(1.1);  /* Set the path to your hover image */
-}
-.internship-white-box:hover .internship-box-image9 {
-    backgroud-image: url('images/Banks_white.svg');
-    transform: scale(1.1);  /* Set the path to your hover image */
-}
-.internship-white-box:hover .internship-box-image10 {
-    backgroud-image: url('images/Medicine_white.svg');
-    transform: scale(1.1);  /* Set the path to your hover image */
-}
-.internship-box-text1{
-    font-size: 16px;
-    font-family: "Montserrat";
-    font-weight: 400;
-    color: var(--TEXT);
-    text-decoration: underline;
-    text-align: center;
-}
-
-.internship-box-text{
-    font-size: 20px;
-    font-family: "Montserrat";
-    font-weight: 400;
-    color: var(--TEXT);
-    text-align: center;
-    text-decoration: underline;
-}
-
-.internship-white-box-link:hover .internship-box-text3 {
-    color: var(--TEXT); /* Change text color to black on hover */
-}
-
-.internship-footer {
-    background-color: var(--TEXT); 
-    color: white;
-    position: absolute;
-    height: 200px;
-    width: 100%;
-    margin-top: 150px;
-}
-
-.it-section-title{
-    position: relative;
-    font-size: 30px;
-    font-family: "Stolzl";
-    font-weight: 400;
-    color:var(--TEXT);
-    padding-left: 345px;
-    padding-top: 150px;
-}
-/*.it-companies1{
-    margin-top: 80px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 1000px;  Width of the individual box 
-    height: 150px;  Height of the individual box 
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}*/
-
-.internships-info-box-details{
-    margin-top: 50px;
-    width: 1000px;
-}
-
-
-.internships-found-company {
-    text-decoration: none;  /* Remove the underline */
-    color: inherit;  /* Ensure the text inside uses its original color and not the typical blue link color */
-}
-
-
-/* If you want a subtle transition effect when hovering */
-.internships-found-company {
-    transition: background-color 0.3s ease;
-}
-
-.it-companies1{
-    margin-top: 40px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 1000px;
-    height: 150px;
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    display: flex; /* Change display to flex for layout */
-    align-items: center; /* Vertically align the items */
-    justify-content: space-between; /* Even spacing between items */
-    padding: 0 20px; /* Add padding to the sides */
-    transition: transform 0.3s ease; align-content: }
-
-.it-companies1:hover{
-    transform:scale(1.03);
-}
-
-.it-companies2{
-    margin-top: 130px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 957px;
-    height: 150px;
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    display: flex; /* Change display to flex for layout */
-    align-items: center; /* Vertically align the items */
-    justify-content: space-between; /* Even spacing between items */
-    padding: 0 20px; /* Add padding to the sides */ }
-
-.avatar{
-    width: 80px;
-    height: 80px;
-    background-color: grey; /* Placeholder color, change to a background image or different color */
-    border-radius: 50%;
-    margin-right: 60px;
-    margin-left: 20px;
-}
-.company-info{
-    flex-grow: 1;
-    padding-left: 20px;
-}
-
-.company-name, .company-detail{
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.company-name {
-    font-size: 18px; /* Adjust the size as per your requirements */
-    font-weight: 500; /* This will make it medium weight */
-    margin-bottom: 20px;
-}
-
-.company-detail {
-    font-size: 16px; /* Adjust the size as per your requirements */
-}
-
-.date-info1 div {
-    padding: 5px;
-    border: 2px solid var(--TEXT2);
-    border-radius: 5px;
-    height: 20px; /* You can adjust this to your needs */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px; /* Adding space between the two boxes */
-    margin-right: 10px;
-    margin-top: 20px;
-    font-size: 18px;
-    color: solid var(--TEXT2);
-}
-
-.date-duration1{
-    color: red;
-}
-
-.date-info2 div {
-    height: 20px; /* You can adjust this to your needs */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 33px; /* Adding space between the two boxes */
-    margin-right: 10px;
-    margin-top: 34px;
-    margin-left: 30px;
-    color: solid var(--TEXT2);
-    width: 150px;
-}
-
-
-
-.it-footer {
-    background-color: var(--TEXT); 
-    color: white;
-    position: absolute;
-    height: 200px;
-    width: 100%;
-    margin-top: 150px;
-}
-.accounting-section-title{
-    position: relative;
-    font-size: 30px;
-    font-family: "Stolzl";
-    font-weight: 400;
-    color:var(--TEXT);
-    padding-left: 345px;
-    padding-top: 150px;
-}
-.accounting-companies1{
-    margin-top: 80px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.accounting-companies2{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.accounting-companies3{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.accounting-companies3{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.accounting-companies4{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.accounting-companies5{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-
-.banks-section-title{
-    position: relative;
-    font-size: 30px;
-    font-family: "Stolzl";
-    font-weight: 400;
-    color:var(--TEXT);
-    padding-left: 345px;
-    padding-top: 150px;
-}
-.banks-companies1{
-    margin-top: 80px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.banks-companies2{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.banks-companies3{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.banks-companies3{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.banks-companies4{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.banks-companies5{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-
-.management-section-title{
-    position: relative;
-    font-size: 30px;
-    font-family: "Stolzl";
-    font-weight: 400;
-    color:var(--TEXT);
-    padding-left: 345px;
-    padding-top: 150px;
-}
-.management-companies1{
-    margin-top: 80px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.management-companies2{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.management-companies3{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.management-companies3{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.management-companies4{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.management-companies5{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.marketing-section-title{
-    position: relative;
-    font-size: 30px;
-    font-family: "Stolzl";
-    font-weight: 400;
-    color:var(--TEXT);
-    padding-left: 345px;
-    padding-top: 150px;
-}
-.marketing-companies1{
-    margin-top: 80px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.marketing-companies2{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.marketing-companies3{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.marketing-companies3{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.marketing-companies4{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.marketing-companies5{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.medicine-section-title{
-    position: relative;
-    font-size: 30px;
-    font-family: "Stolzl";
-    font-weight: 400;
-    color:var(--TEXT);
-    padding-left: 345px;
-    padding-top: 150px;
-}
-.medicine-companies1{
-    margin-top: 80px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.medicine-companies2{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.medicine-companies3{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.medicine-companies3{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.medicine-companies4{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.medicine-companies5{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.sales-section-title{
-    position: relative;
-    font-size: 30px;
-    font-family: "Stolzl";
-    font-weight: 400;
-    color:var(--TEXT);
-    padding-left: 345px;
-    padding-top: 150px;
-}
-.sales-companies1{
-    margin-top: 80px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.sales-companies2{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.sales-companies3{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.sales-companies3{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.sales-companies4{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.sales-companies5{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.telecommunications-section-title{
-    position: relative;
-    font-size: 30px;
-    font-family: "Stolzl";
-    font-weight: 400;
-    color:var(--TEXT);
-    padding-left: 345px;
-    padding-top: 150px;
-}
-.telecommunications-companies1{
-    margin-top: 80px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.telecommunications-companies2{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.telecommunications-companies3{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.telecommunications-companies3{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.telecommunications-companies4{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.telecommunications-companies5{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-
-.internship-details-main {
-    width: 100%;
-    max-width: 1000px;
-    margin:  auto;
-    display: flex;
-    justify-content: space-between;
-    padding-top: 20px;
-    box-sizing: border-box;
-}
-
-.internship-details-white-box1{
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    margin-top: 150px;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-}
-.internship-details-box-text{
-    font-size: 18px;
-    font-family: "Stolzl";
-    font-weight: 400;
-    color: var(--TEXT);
-    padding-left: 25px;
-    padding-top: 28px;
-    padding-bottom: 12px;
-    text-decoration: underline;
-}
-.internship-details-box1{
-    font-size: 16px;
-    font-family: "Stolzl";
-    font-weight: 400;
-    color: var(--TEXT);
-    padding-left: 25px;
-    padding-top: 15px;
-    padding-right: 20px;
-    text-indent: 20px;
-}
-
-.internship-details-container2{
-    display: flex;
-    align-items: center;
-}
-.internship-details-box2{
-    margin-left: 25px;
-    margin-top: 25px;
-    font-size: 15px;
-    font-family: "Stolzl";
-    color: var(--TEXT2);
-    transform: translateX(25%, -300%);
-}
-
-.part-time{
-    text-decoration: none;
-}
-
-.internship-details-studies{
-    margin-left: 25px;
-    margin-top: 25px;
-}
-.internship-details-paid{
-    margin-left: 25px;
-    margin-top: 25px;
-}
-.internship-details-container3{
-    display: flex;
-    align-items: center;
-}
-.internship-details-box3{
-    margin-left: 25px;
-    margin-top: 25px;
-    font-size: 15px;
-    font-family: "Stolzl";
-    color: var(--TEXT2);
-    transform: translateX(25%, -300%);
-}
-.internship-details-schedule{
-    margin-left: 25px;
-    margin-top: 25px;
-}
-.internship-details-container4{
-    display: flex;
-    align-items: center;
-}
-.internship-details-box4{
-    margin-left: 25px;
-    margin-top: 25px;
-    font-size: 15px;
-    font-family: "Stolzl";
-    color: var(--TEXT2);
-    /*text-decoration: underline;*/
-    transform: translateX(25%, -300%);
-}
-.internship-details-location{
-    margin-left: 25px;
-    margin-top: 25px;
-}
-.internship-details-container5{
-    display: flex;
-    align-items: center;
-}
-.internship-details-box5{
-    margin-left: 25px;
-    margin-top: 25px;
-    font-size: 15px;
-    font-family: "Stolzl";
-    color: var(--TEXT2);
-    transform: translateX(25%, -300%);
-}
-.internship-details-phone{
-    margin-left: 25px;
-    margin-top: 25px;
-}
-.internship-details-container6{
-    display: flex;
-    align-items: center;
-}
-.internship-details-box6{
-    margin-left: 25px;
-    margin-top: 25px;
-    font-size: 15px;
-    font-family: "Stolzl";
-    color: var(--TEXT2);
-    transform: translateX(25%, -300%);
-}
-.internship-details-container7{
-    display: flex;
-    align-items: center;
-}
-.internship-details-box7{
-    margin-left: 25px;
-    margin-top: 25px;
-    font-size: 15px;
-    font-family: "Stolzl";
-    color: var(--TEXT2);
-    transform: translateX(25%, -300%);
-}
-.internship-details-mail{
-    margin-left: 25px;
-    margin-top: 25px;
-}
-
-.internship-details-container1{
-    
-
-}
-
-.internship-details-description-internship {
-    width: 650px;
-    height: 750px;
-    border-radius: 5px;
-    display: inline-block;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    vertical-align: top;
-}
-
-.internship-details-details-internship {
-    width: 322px;
-    height: 402px;
-    border-radius: 5px;
-    display: inline-block;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    vertical-align: top;
-    margin-left: 20px;
-}
-
-.internship-details-company-mail{
-    width: 650px;
-    height: 80px;
-    background: var(--TEXT, #FFF);
-    border-radius: 5px;
-    margin-top: 10px;   
-}
-
-.internship-details-mail1{
-    width: 100%;
-    max-width: 1000px;
-    margin: auto;
-    display: flex;
-    flex-direction: row; /* Set flex-direction to row to align children horizontally */
-    align-items: center;
-    align-items: flex-start;
-    justify-content: space-between; /* Align children with space between them */
-    box-sizing: border-box;
-
-}
-
-.internship-details-invisible{
-    width: 340px;
-    height: 80px;
-    margin-top: 50px;
-}
-
-.internship-details-email{
-    font-size: 20px;
-    font-family: "Stolzl";
-    font-weight: 400;
-    color: rgba(255, 255, 255, 1);
-    padding-top: 30px;
-    padding-left: 50px;
-}
-
-.internship-details-other{
-    font-size: 20px;
-    font-family: "Stolzl";
-    color: var(--TEXT);
-    margin-top: 150px;
-    text-align: center;
-}
-.internship-details-other-box1{
-    width: 500px;
-    height: 200px;
-    border-radius: 5px;
-    display: inline-block;
-    margin-left: 345px;
-    margin-top: 50px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-}
-.internship-details-other-box2{
-    width: 500px;
-    height: 200px;
-    margin-left: 10px;
-    border-radius: 5px;
-    display: inline-block;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-}
-
-.internship-details-similar{
-    font-size: 20px;
-    font-family: "Stolzl";
-    font-weight: 400;
-    color: var(--TEXT);
-    text-align: center;
-    margin-top: 150px;
-
-}
-.internship-details-similar-box1{
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-
-}
-.internship-details-similar-box2{
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-}
-
-.internship-details-footer {
-    background-color: var(--TEXT); 
-    color: white;
-    position: absolute;
-    height: 200px;
-    width: 100%;
-    margin-top: 150px;
-}
-
-.internship-details-logo1 {
-    color: var(--COMPONENTS);
-    font-family: "HelveticaNeue";
-    font-size: 30px;
-    padding-left: 122px;
-    padding-top: 50px;
-}
-
-.internship-details-logo3{
-    transform: translate(2%,5%);
-}
-.internship-details-copyright {
-    font-size: 12px;
-    font-family: "Stolzl";
-    color: var(--COMPONENTS);
-    padding-left: 122px;
-    padding-top: 30px;
-}
-.internship-details-styled-link{
-    text-decoration: none;
-}
-.styled-link3 {
-    font-weight: bold;
-    text-decoration: underline;
-
-}
-.companies-best{
-    position: absolute;
-}
-.companies-section-title{
-    position: relative;
-    font-size: 20px;
-    font-family: "Stolzl";
-    font-weight: 400;
-    color: rgba(0, 0, 0, 1);
-    padding-left: 122px;
-    transform: translateY(600%);
-
-}
-
-.companies-accent{
-    width: 125px;
-    transform: translate(130%, 2500%);
-}
-
-.companies-button {
-    width: 300px;
-    position: relative;
-    padding-right: 510px;
-    padding-left: 510px;
-}
-
-.companies-search{
-    top: 58%; /* Align the button vertically in the middle */
-    left:680px; /* Adjust the distance from the right edge */
-    transform: translate(-80%,-190%);
-    width: 30px;
-}
-
-.companies-search-button {
-    position: absolute;
-    top: 100%; /* Align the button vertically in the middle */
-    left:680px; /* Adjust the distance from the right edge */
-    transform: translate(225%,-200%);; /* Center the button vertically */
-    border-radius: 5px;
-    z-index: 2;
-    width: 110px;
-    height: 50px;
-    flex-shrink: 0;
-    background: var(--TEXT, #0C0C0E);
-    color: var(--COMPONENTS, #FFF);
-    font-family: Montserrat;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.companies-col {
-    padding-top:250px;
-}
-
-.companies-form-control-input {
-    width: 500px;
-    height: 80px;
-    border-radius: 5px;
-    transform: translate(-9%);
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    padding-left:122px;
-}
-
-.companies-custom-input {
-    color: var(--TEXT2, #AEB4C1);
-    font-family: Montserrat;
-    font-size: 20px;
-    padding-left: 100px;
-    margin-right: 10px;
-}
-
-.companies-custom-input:focus {
-    color: #000;
-}
-
-
-.companies-white-boxes {
-    width: calc((196px + 59px) * 5); /* Total width of 5 boxes with margins */
-    margin: 40px auto;
-    margin-top:100 ;  /* top margin as 20px, bottom margin as 40px, left and right as auto */
-    display: flex;
-    flex-wrap: wrap; /* Allow items to wrap to the next row */
-    justify-content: space-between; /* Distribute space between items */
-}
-.companies-white-boxes2 {
-    width: calc((196px + 59px) * 5); /* Total width of 5 boxes with margins */
-    margin:40px auto;  
-    display: flex;
-    flex-wrap: wrap; /* Allow items to wrap to the next row */
-    justify-content: space-between; /* Distribute space between items */
-}
-.companies-white-box{
-    width: 192px; /* Width of the individual box */
-    height: 192px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    display: flex; /* This will turn it into a flex container */
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center items vertically */
-    align-items: center; /* Center items horizontally */
-    margin-bottom: 20px; /* Space between rows */
-}
-.companies-white-box-link {
-    text-decoration: none; /* Removes the underline from anchor tags */
-    display: block; /* Makes the entire area clickable */
-}
-
-
-.companies-box-text{
-    font-size: 20px;
-    font-family: "Montserrat";
-    font-weight: 400;
-    color: var(--TEXT);
-    text-align: center;
-    text-decoration: underline;
-}
-
-.companies-white-box-link:hover .box-text3 {
-    color: var(--TEXT); /* Change text color to black on hover */
-}
-.companies-footer {
-    background-color: var(--TEXT); 
-    color: white;
-    position: absolute;
-    height: 200px;
-    width: 100%;
-    margin-top: 150px;
-}
-
-.companies-logo1 {
-    color: var(--COMPONENTS);
-    font-family: "HelveticaNeue";
-    font-size: 30px;
-    padding-left: 122px;
-    padding-top: 50px;
-}
-
-.companies-logo3{
-    transform: translate(2%,5%);
-}
-.companies-copyright {
-    font-size: 12px;
-    font-family: "Stolzl";
-    color: var(--COMPONENTS);
-    padding-left: 122px;
-    padding-top: 30px;
-}
-.companies-details-section-title{
-    position: relative;
-    font-size: 30px;
-    font-family: "Stolzl";
-    font-weight: 400;
-    color:var(--TEXT);
-    padding-left: 345px;
-    padding-top: 150px;
-}
-.companies-details-companies1{
-    width: 1037px; /* Width of the individual box */
-    height: 180px; /* Height of the individual box */
-    border-radius: 5px;
-    margin-top: 150px;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-}
-
-.company-description{
-    margin: 20px;
-    text-indent: 15px;
-    
-}
-
-.con{
-    margin-top: 10px;
-}
-.company-email{
-    margin-left: 25px;
-    padding-top: 10px;
-    font-size: 15px;
-    font-family: "Stolzl";
-    color: var(--TEXT2);
-}
-
-.company-phone{
-    margin-left: 25px;
-    font-size: 15px;
-    font-family: "Stolzl";
-    color: var(--TEXT2);
-}
-
-.companies-details-internships{
-    font-size: 25px;
-    font-family: "Montserrat";
-    font-weight: 400;
-    color:var(--TEXT);
-    text-align: center;
-    padding-top: 50px;
-}
-
-.companies-details-companies2{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1100px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-.companies-details-companies3{
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */
-    width: 1000px; /* Width of the individual box */
-    height: 150px; /* Height of the individual box */
-    border-radius: 5px;
-    border: 1px solid var(--TEXT2, #AEB4C1);
-    background: var(--COMPONENTS, #FFF);
-    flex-direction: column; 
-    display: block;
-}
-
-.companies-details-footer {
-    background-color: var(--TEXT); 
-    color: white;
-    position: absolute;
-    height: 200px;
-    width: 100%;
-    margin-top: 150px;
-}
-
-.companies-details-logo1 {
-    color: var(--COMPONENTS);
-    font-family: "HelveticaNeue";
-    font-size: 30px;
-    padding-left: 122px;
-    padding-top: 50px;
-}
-
-.companies-details-logo3{
-    transform: translate(2%,5%);
-}
-.companies-details-copyright {
-    font-size: 12px;
-    font-family: "Stolzl";
-    color: var(--COMPONENTS);
-    padding-left: 122px;
-    padding-top: 30px;
-}
-
-.internships-found-section-title{ 
-    position: relative; 
-    font-size: 30px; 
-    font-family: "Stolzl"; 
-    font-weight: 400; 
-    color:var(--TEXT); 
-    padding-left: 345px; 
-    padding-top: 150px; 
-} 
-.internships-found-companies1{ 
-    margin-top: 80px; 
-    margin-left: auto; 
-    margin-right: auto; 
-    width: 1000px; /* Width of the individual box */ 
-    height: 150px; /* Height of the individual box */ 
-    border-radius: 5px; 
-    border: 1px solid var(--TEXT2, #AEB4C1); 
-    background: var(--COMPONENTS, #FFF); 
-    flex-direction: column;  
-    display: block; 
-} 
-.internships-found-companies2{ 
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */ 
-    width: 1000px; /* Width of the individual box */ 
-    height: 150px; /* Height of the individual box */ 
-    border-radius: 5px; 
-    border: 1px solid var(--TEXT2, #AEB4C1); 
-    background: var(--COMPONENTS, #FFF); 
-    flex-direction: column;  
-    display: block; 
-} 
-
-.internships-found-companies3{ 
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */ 
-    width: 1000px; /* Width of the individual box */ 
-    height: 150px; /* Height of the individual box */ 
-    border-radius: 5px; 
-    border: 1px solid var(--TEXT2, #AEB4C1); 
-    background: var(--COMPONENTS, #FFF); 
-    flex-direction: column;  
-    display: block; 
-} 
-.internships-found-companies4{ 
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */ 
-    width: 1000px; /* Width of the individual box */ 
-    height: 150px; /* Height of the individual box */ 
-    border-radius: 5px; 
-    border: 1px solid var(--TEXT2, #AEB4C1); 
-    background: var(--COMPONENTS, #FFF); 
-    flex-direction: column;  
-    display: block; 
-} 
-.internships-found-companies5{ 
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */ 
-    width: 1000px; /* Width of the individual box */ 
-    height: 150px; /* Height of the individual box */ 
-    border-radius: 5px; 
-    border: 1px solid var(--TEXT2, #AEB4C1); 
-    background: var(--COMPONENTS, #FFF); 
-    flex-direction: column;  
-    display: block; 
-} 
-.internships-found-companies6{ 
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */ 
-    width: 1000px; /* Width of the individual box */ 
-    height: 150px; /* Height of the individual box */ 
-    border-radius: 5px; 
-    border: 1px solid var(--TEXT2, #AEB4C1); 
-    background: var(--COMPONENTS, #FFF); 
-    flex-direction: column;  
-    display: block; 
-} 
-.internships-found-companies7{ 
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */ 
-    width: 1000px; /* Width of the individual box */ 
-    height: 150px; /* Height of the individual box */ 
-    border-radius: 5px; 
-    border: 1px solid var(--TEXT2, #AEB4C1); 
-    background: var(--COMPONENTS, #FFF); 
-    flex-direction: column;  
-    display: block; 
-} 
-.internships-found-companies8{ 
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */ 
-    width: 1000px; /* Width of the individual box */ 
-    height: 150px; /* Height of the individual box */ 
-    border-radius: 5px; 
-    border: 1px solid var(--TEXT2, #AEB4C1); 
-    background: var(--COMPONENTS, #FFF); 
-    flex-direction: column;  
-    display: block; 
-} 
-.internships-found-companies9{ 
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */ 
-    width: 1000px; /* Width of the individual box */ 
-    height: 150px; /* Height of the individual box */ 
-    border-radius: 5px; 
-    border: 1px solid var(--TEXT2, #AEB4C1); 
-    background: var(--COMPONENTS, #FFF); 
-    flex-direction: column;  
-    display: block; 
-} 
-.internships-found-companies10{ 
-    margin: 40px auto;  /* top and bottom margin as 20px, left and right as auto */ 
-    width: 1000px; /* Width of the individual box */ 
-    height: 150px; /* Height of the individual box */ 
-    border-radius: 5px; 
-    border: 1px solid var(--TEXT2, #AEB4C1); 
-    background: var(--COMPONENTS, #FFF); 
-    flex-direction: column;
-    display: block; 
 }

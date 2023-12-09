@@ -9,7 +9,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>${domain} Internships</title>
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/stagii/style.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/stagii/stylemain.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/stagii/style5.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Onest:wght@400;700&display=swap"
@@ -17,7 +18,7 @@
     </head>
 
     <body>
-        <jsp:include page="common/header_internships.jspf" />
+        <jsp:include page="common/guest_header.jspf" />
         <!--internshipList-->
         <div class="it-section-title">${domain} <b>Internships</b></div>
         <section>

@@ -26,6 +26,7 @@ public class Applicant extends User {
     private int idUser;
     private String email;
     private String phoneNumber;
+    private byte[] fileBytes;
 
     public Applicant() {
     }
@@ -43,6 +44,20 @@ public class Applicant extends User {
         this.phoneNumber = phoneNumber;
     }
 
+    public Applicant(int id, String aName, String aSurname, int age, Status status, Domain domain, String cvFile,
+                     byte[] fileBytes ,String email, String phoneNumber) {
+        this.id = id;
+        this.aName = aName;
+        this.aSurname = aSurname;
+        this.age = age;
+        this.status = status;
+        this.domain = domain;
+        this.cvFile = cvFile;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.role = Role.APPLICANT;
+    }
+    
     public Applicant(String aName, String aSurname, int age, Status status, Domain domain, String cvFile,
                      String email, String phoneNumber) {
         this.aName = aName;
@@ -54,6 +69,20 @@ public class Applicant extends User {
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.role = Role.APPLICANT;
+    }
+    
+    public Applicant(String aName, String aSurname, int age, Status status, Domain domain, String cvFile, byte[] fileBytes,
+                     String email, String phoneNumber) {
+        this.aName = aName;
+        this.aSurname = aSurname;
+        this.age = age;
+        this.status = status;
+        this.domain = domain;
+        this.cvFile = cvFile;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.role = Role.APPLICANT;
+        this.fileBytes = fileBytes;
     }
 
     public int getId() {
@@ -136,6 +165,8 @@ public class Applicant extends User {
         this.phoneNumber = phoneNumber;
     }
     
+    
+    
     @Override
     public int hashCode() {
         int hash = 7;
@@ -196,5 +227,20 @@ public class Applicant extends User {
         }
         return true;
     }    
+
+    @Override
+    public String toString() {
+        return "Applicant{" + "id=" + id + ", aName=" + aName + ", aSurname=" + aSurname + ", age=" + age + ", status=" + status + ", domain=" + domain + ", cvFile=" + cvFile + ", idUser=" + idUser + ", email=" + email + ", phoneNumber=" + phoneNumber + '}';
+    }
+
+    public byte[] getFileBytes() {
+        return fileBytes;
+    }
+
+    public void setFileBytes(byte[] fileBytes) {
+        this.fileBytes = fileBytes;
+    }
+    
+    
     
 }

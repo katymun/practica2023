@@ -31,7 +31,11 @@ public class showloginserv extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        String error = request.getParameter("error");
+        //verifici daca vine de la filtru
+        if (error != null) {
+            request.setAttribute("error", error);
+        }
         request.getRequestDispatcher("stagii/login.jsp").forward(request, response);
     }
 

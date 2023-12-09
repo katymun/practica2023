@@ -119,6 +119,13 @@ nav ul li a {
     color: var(--TEXT);
     padding-top: 30px;
   }
+  .personal-information-cv-label{
+          padding-left: 122px;
+    font-size: 20px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 30px;
+  }
   .personal-information-lastname{
     padding-left: 122px;
     font-size: 20px;
@@ -217,27 +224,83 @@ nav ul li a {
     margin-left: 50px;
     font-size: 15px;
 }
-.cancel-internship{
-    text-decoration: none;
-    color: var(--TEXT, #AEB4C1);
+
+
+
+.personal-information-firstname-edit{
+     margin-left: 80px;
+    display: inline-block;
+    width: 250px;
+    color: var(--TEXT2, #AEB4C1);
     font-family: Montserrat;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+    box-sizing: border-box;
 }
-.save{
-    display: fixed;
-    position:fixed;
-    top: 85%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+.personal-information-lastname-edit{
+        margin-left: 80px;
+    display: inline-block;
+    width: 250px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+    box-sizing: border-box;
 }
-/* Assuming the text elements have class names like personal-information-firstname, personal-information-lastname, etc. */
-
-
-.personal-information-firstname-edit,
-.personal-information-lastname-edit,
-.personal-information-age-edit,
-.personal-information-status-edit,
-.personal-information-email-edit,
+.personal-information-age-edit{
+    display: inline-block;
+    width: 250px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+    box-sizing: border-box;
+}
+.personal-information-status-edit{
+        margin-left: 80px;
+    display: inline-block;
+    width: 250px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+    box-sizing: border-box;
+}
+.personal-information-email-edit{
+        margin-left: 80px;
+    display: inline-block;
+    width: 250px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+    box-sizing: border-box;
+}
 .personal-information-phone-edit {
     margin-left: 80px;
     display: inline-block;

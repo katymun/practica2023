@@ -67,6 +67,7 @@
                 }
             }
         </script>
+        <jsp:include page="common/footer.jspf" />
     </body>
     
     </html>
