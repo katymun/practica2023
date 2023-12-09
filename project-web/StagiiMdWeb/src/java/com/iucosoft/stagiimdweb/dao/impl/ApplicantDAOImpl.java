@@ -6,6 +6,7 @@ import com.iucosoft.stagiimdweb.entities.User;
 import com.iucosoft.stagiimdweb.sql.SQLS;
 import com.iucosoft.stagiimdweb.utility.DateConverter;
 import com.iucosoft.stagiimdweb.utility.Domain;
+import com.iucosoft.stagiimdweb.utility.MyFile;
 import com.iucosoft.stagiimdweb.utility.Status;
 import com.iucosoft.stagiimdweb.utility.exceptions.ApplicantNotFoundException;
 import java.sql.Connection;
@@ -14,6 +15,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Logger;
 import javax.sql.DataSource;
@@ -24,9 +26,9 @@ public class ApplicantDAOImpl implements ApplicantDAOIntf {
     private static final Logger LOG = Logger.getLogger(ApplicantDAOImpl.class.getName());
 
     public ApplicantDAOImpl(javax.sql.DataSource ds) {
-        this.ds = ds;   
+        this.ds = ds;
     }
-    
+
     @Override
     public boolean save(Applicant applicant) throws SQLException {
         return false;
@@ -43,9 +45,10 @@ public class ApplicantDAOImpl implements ApplicantDAOIntf {
             pstat.setString(2, applicant.getStatus().toString());
             pstat.setString(3, applicant.getDomain().toString());
             pstat.setString(4, applicant.getCvFile());
-            pstat.setString(5, applicant.getEmail());
-            pstat.setString(6, applicant.getPhoneNumber());
-            pstat.setInt(7, applicant.getId());
+            pstat.setBytes(5, applicant.getFileBytes());
+            pstat.setString(6, applicant.getEmail());
+            pstat.setString(7, applicant.getPhoneNumber());
+            pstat.setInt(8, applicant.getId());
 
             pstat.executeUpdate();
             return true;
@@ -159,9 +162,9 @@ public class ApplicantDAOImpl implements ApplicantDAOIntf {
             conn.setAutoCommit(false);
             pstat.setString(1, user.getUsername());
             pstat.setString(2, user.getPassword());
-            pstat.setDate(3, DateConverter.convert(user.getRegistDate()));
+            pstat.setDate(3, DateConverter.convert(new Date()));
             pstat.setString(4, user.getRole().toString());
-            
+
             int modificari = pstat.executeUpdate();
             System.out.println("Modificari = " + modificari);
             int modificari2 = 0; // la salvarea aplicantului
@@ -181,9 +184,10 @@ public class ApplicantDAOImpl implements ApplicantDAOIntf {
                     pstat2.setString(4, applicant.getStatus().toString());
                     pstat2.setString(5, applicant.getDomain().toString());
                     pstat2.setString(6, applicant.getCvFile());
-                    pstat2.setInt(7, applicant.getIdUser());
-                    pstat2.setString(8, applicant.getEmail());
-                    pstat2.setString(9, applicant.getPhoneNumber());
+                    pstat2.setBytes(7, applicant.getFileBytes());
+                    pstat2.setInt(8, applicant.getIdUser());
+                    pstat2.setString(9, applicant.getEmail());
+                    pstat2.setString(10, applicant.getPhoneNumber());
 
                     modificari2 = pstat2.executeUpdate();
                 }
@@ -242,5 +246,62 @@ public class ApplicantDAOImpl implements ApplicantDAOIntf {
             }
         }
         return applicants;
+    }
+
+    @Override
+    public Applicant findByUserId(int idUser) throws SQLException {
+        ResultSet rs = null;
+        try (Connection conn = ds.getConnection();
+                PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_APPLICANT_BY_USER_ID);) {
+
+            pstat.setInt(1, idUser);
+            rs = pstat.executeQuery();
+            if (rs.next()) {
+                int id = rs.getInt(1);
+                String aName = rs.getString(2);
+                String aSurname = rs.getString(3);
+                int age = rs.getInt(4);
+                Status status = Status.valueOf(rs.getString(5));
+                Domain domain = Domain.valueOf(rs.getString(6));
+                String cvFile = rs.getString(7);
+                byte[] fileBytes = rs.getBytes(8);
+                String email = rs.getString(10);
+                String phoneNumber = rs.getString(11);
+
+                Applicant applicant = new Applicant(id, aName, aSurname, age, status, domain, cvFile, fileBytes, email, phoneNumber);
+                return applicant;
+            }
+            throw new ApplicantNotFoundException("Find by idUser = " + idUser + " failed!");
+        } catch (SQLException ex) {
+            LOG.severe(ex.toString());
+            throw ex;
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+        }
+    }
+
+    @Override
+    public List<MyFile> getFiles() throws SQLException {
+        List<MyFile> files = new ArrayList<>();
+        try (Connection conn = ds.getConnection();
+                Statement stat = conn.createStatement();
+                ResultSet rs = stat.executeQuery(SQLS.FIND_ALL_APPLICANTS_FILES);) {
+
+            while (rs.next()) {
+                
+                String cvFile = rs.getString(1);
+                byte[] fileBytes = rs.getBytes(2);
+                
+                MyFile myFile = new MyFile(cvFile, fileBytes);
+                System.out.println("myFile = " + myFile);
+                files.add(myFile);
+            }
+            return files;
+        } catch (SQLException ex) {
+            LOG.severe(ex.toString());
+            throw ex;
+        }
     }
 }

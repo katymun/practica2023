@@ -2,8 +2,10 @@
 <Context antiJARLocking="true" path="/StagiiMdWeb">
   <Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver"
             maxActive="100" maxIdle="30" maxWait="10000"
-            name="jdbc/practica" password="Userdb1!"
+            name="jdbc/practica" 
+            password="jvtKUC34B39e"
             type="javax.sql.DataSource"
-            url="jdbc:mysql://localhost:3306/practica"
-            username="userdb1"/>
+            url="jdbc:mysql://localhost:3306/internetportal_md"
+            username="internetportal_md"/>
 </Context>
+<!--password="jvtKUC34B39e"-->

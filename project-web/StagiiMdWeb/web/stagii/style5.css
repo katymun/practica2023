@@ -1,0 +1,376 @@
+:root {
+    --BG: #FFFCF2;
+    --ACCENT: #D5FA51;
+    --TEXT: #0c0c0e;
+    --COMPONENTS: #FFFFFF;
+    --TEXT2: #AEB4C1;
+    --ACCENT2: #C2EA33;
+}
+
+
+
+body {
+    margin: 0;
+    font-family: "Onest";
+    background: var(--BG, #FFFCF2);
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1134 px;
+    top: 36px;
+    z-index: 100;
+}
+
+nav .logo {
+    color: var(--TEXT, #0C0C0E);
+    font-family: "HelveticaNeue";
+    font-size: 30px;
+    font-weight: 400;
+    padding-left: 122px;
+    padding-top: 62px;
+}
+
+.vector {
+    width: 35px;
+    height: 23.798px;
+    flex-shrink: 0;
+    transform: translate(-10%, 5%);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+    list-style: none;
+    margin: 0;
+    padding-right: 220px;
+    padding-top: 69px;
+}
+
+nav ul li a {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+
+}
+
+.logo-button {
+    text-decoration: none;
+}
+
+.styled-link {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.signup {
+    background-color: var(--BG);
+    color: var(--TEXT);
+    flex-shrink: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 5px;
+    border: 1.5px solid var(--TEXT);
+}
+
+.post {
+    background-color: var(--TEXT);
+    flex-shrink: 0;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.post-internship {
+    color: var(--COMPONENTS);
+
+}
+.newaccount-form{
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.text-signin {
+    text-align: center;
+    margin-top: 100px;
+    font-family: Stolzl;
+    font-size: 30px;
+    z-index: 1;
+}
+
+.element-signin {
+   display:flex;
+align-items: center;
+justify-content: center;
+    z-index: -1;
+}
+
+.enter-email {
+    padding-top: 50px;
+display:flex;
+align-items: center;
+justify-content: center;
+
+}
+
+.input-email {
+    width: 430px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+
+.enter-password {
+    padding-top: 20px;
+display:flex;
+align-items: center;
+justify-content: center;
+
+}
+
+.input-password {
+    width: 430px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+    margin-left:55px;
+}
+
+.input {
+    color: var(--TEXT);
+}
+
+.forgot {
+padding-top: 20px;
+    display:flex;
+align-items: center;
+justify-content: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.signinaccount {
+    font-family: Montserrat;
+    background-color: var(--TEXT);
+    flex-shrink: 0;
+    border-radius: 5px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    margin-top: 20px;
+}
+
+.sign {
+    color: var(--COMPONENTS);
+    text-decoration: none;
+    display:flex;
+align-items: center;
+justify-content: center;
+    
+}
+
+.new-account-link {
+    margin-top: 20px;
+display:flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 50px;
+}
+
+.new-account {
+    text-decoration: none;
+    color: var(--TEXT);
+}
+
+.forgot-password {
+    text-decoration: none;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+}
+
+.text-newaccount {
+    text-align: center;
+    padding-top: 100px;
+    font-family: Stolzl;
+    font-size: 30px;
+    z-index: 1;
+}
+
+.element-newaccount {
+    z-index: -1;
+}
+
+.new-account-enter-email {
+padding-top: 20px;
+
+}
+
+.new-account-input-email {
+    width: 445px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-left: 12px;
+    text-indent: 0;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+    box-sizing: border-box;
+    /* Ensures padding is included in the total width */
+}
+
+::placeholder {
+    /* Style your placeholder text here */
+    overflow: visible;
+    /* Ensure that text overflow is visible */
+    white-space: nowrap;
+    /* Prevents the text from wrapping */
+}
+
+.new-account-enter-password {
+padding-top: 20px;
+margin-left: 55px;
+
+}
+
+.new-account-input-password {
+    width: 430px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+
+.confirm-password {
+    margin-left: 55px;
+padding-top:20px;
+}
+
+.confirm-input-password {
+    width: 430px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+}
+
+.col-md-4 {
+    padding-top: 20px;
+    font-size: 15px;
+    font-family: "Montserrat";
+}
+
+.newaccount-signup {
+    font-family: Montserrat;
+    background-color: var(--TEXT);
+    flex-shrink: 0;
+    border-radius: 5px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    margin-top: 20px;
+    color:var(--COMPONENTS);
+}
+
+.have-account {
+    color:var(--TEXT2);
+    padding-top: 20px;
+display:flex;
+align-items: center;
+justify-content: center;
+    font-family: Montserrat;
+    font-size: 18px;
+}
+
+.new-account {
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 18px;
+}
+
+.input {
+    color: var(--TEXT);
+
+}
+
+.password-toggle-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding-left: 20px;
+    /* Remove padding */
+}
+
+
+.footer {
+    background-color: var(--TEXT); 
+    color: white;
+    height: 200px;
+    width: 100%;
+}
+.logo-button{
+    color:white;
+}
+.logo1 {
+    color: var(--COMPONENTS);
+    font-family: Stolzl;
+    font-size: 30px;
+    padding-left: 122px;
+    padding-top: 50px;
+}
+
+.logo3{
+    transform: translate(2%,5%);
+    color:white;
+}
+.copyright {
+    font-size: 12px;
+    font-family: "Stolzl";
+    color: var(--COMPONENTS);
+    padding-left: 122px;
+    padding-top: 30px;
+}
+

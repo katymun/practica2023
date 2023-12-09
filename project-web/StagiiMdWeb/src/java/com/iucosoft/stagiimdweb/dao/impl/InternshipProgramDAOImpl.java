@@ -277,6 +277,7 @@ public class InternshipProgramDAOImpl implements InternshipProgramDAOIntf {
             pstat.setString(2, "%"+keyword+"%");
             pstat.setString(3, "%"+keyword+"%");
             pstat.setString(4, "%"+keyword+"%");
+            pstat.setString(5, "%"+keyword+"%");
             ResultSet rs = pstat.executeQuery();
             
 

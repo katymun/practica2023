@@ -224,7 +224,7 @@ public class CompanyDAOImpl implements CompanyDAOIntf {
                 company.setImagePath(imagePath);
                 company.setImgData(imgData);
                 try {
-                    byte[] imgDataFile = ImageUtil.readImageData(company.getImagePath());
+                    byte[] imgDataFile = ImageUtil.readBytesFromFile(company.getImagePath());
                     String s = new String(imgDataFile);
                     System.out.println("imgData = " + s + "gata!");
                 } catch (IOException ex) {

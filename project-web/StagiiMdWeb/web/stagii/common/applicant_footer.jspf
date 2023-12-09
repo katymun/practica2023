@@ -1,0 +1,12 @@
+<footer>
+    <div class="footer">
+        <div class="logo1">
+            <a href="cmsapplicanthomeserv" class="logo-button">
+                <div class="logo" >
+                    ST <img class="vector" src="../images/logo.svg" />GII.MD
+                </div>
+            </a>
+        </div>
+        <p class="copyright">This website was developed by Team04 © 2023</p>
+    </div>
+</footer>

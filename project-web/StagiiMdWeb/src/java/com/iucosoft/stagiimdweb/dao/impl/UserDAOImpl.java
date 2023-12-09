@@ -138,6 +138,7 @@ public class UserDAOImpl implements UserDAOIntf {
 
     @Override
     public User findByUsername(String username) throws SQLException {
+        System.out.println("username in findByUsername = " + username);
         ResultSet rs = null;
         try (Connection conn = ds.getConnection();
                 PreparedStatement pstat = conn.prepareStatement(SQLS.FIND_USER_BY_USERNAME);) {

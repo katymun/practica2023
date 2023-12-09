@@ -1,0 +1,309 @@
+:root {
+    --BG: #FFFCF2;
+    --ACCENT: #D5FA51;
+    --TEXT: #0c0c0e;
+    --COMPONENTS: #FFFFFF;
+    --TEXT2: #AEB4C1;
+    --ACCENT2: #C2EA33;
+}
+
+
+
+body {
+    margin: 0;
+    font-family: "Onest";
+    background: var(--BG, #FFFCF2);
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1134 px;
+    top: 36px;
+    z-index: 100;
+}
+
+nav .logo {
+    color: var(--TEXT, #0C0C0E);
+    font-family: "HelveticaNeue";
+    font-size: 30px;
+    font-weight: 400;
+    padding-left: 122px;
+    padding-top: 62px;
+}
+
+.vector {
+    width: 35px;
+    height: 23.798px;
+    flex-shrink: 0;
+    transform: translate(-10%, 5%);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+    list-style: none;
+    margin: 0;
+    padding-right: 220px;
+    padding-top: 69px;
+}
+
+nav ul li a {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+
+}
+
+.logo-button {
+    text-decoration: none;
+}
+.profile-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Styles for the icon */
+  .profile-icon {
+    width: 50px;
+    height: auto;
+    border-radius: 50%;
+    cursor: pointer;
+
+  }
+  
+
+  .dropdown-content {
+    display: none;
+    width: 120px;
+    position: absolute;
+    top: 185%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2);
+    z-index: 1;
+    
+  }
+  
+  /* Styles for the dropdown items */
+  .dropdown-item {
+    padding: 10px;
+    text-decoration: none;
+    color:var(--TEXT);
+    display: block;
+  }
+  
+  /* Show the dropdown when hovering over the icon */
+  .profile-container:hover .dropdown-content {
+    display: block;
+  }
+  .personal-information-text{
+    padding-left: 122px;
+    font-size: 30px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 100px;
+  }
+  .personal-information-firstname{
+    padding-left: 122px;
+    font-size: 20px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 30px;
+  }
+  .personal-information-lastname{
+    padding-left: 122px;
+    font-size: 20px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 25px;
+  }
+  .personal-information-age{
+    padding-left: 122px;
+    font-size: 20px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 25px;
+  }
+  .personal-information-status{
+    padding-left: 122px;
+    font-size: 20px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 25px;
+  }
+  .personal-information-phone{
+    padding-left: 122px;
+    font-size: 20px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 25px;
+  }
+  .personal-information-email{
+    padding-left: 122px;
+    font-size: 20px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 25px;
+  }
+  .personal-information-cv{
+    padding-left: 122px;
+    font-size: 20px;
+    font-family: "Stolzl";
+    color: var(--TEXT);
+    padding-top: 25px;
+    margin-bottom: 50px !important;
+  }
+  .personal-information-text {
+    display: flex;
+    align-items: center;
+  }
+  
+  .button-container-general {
+    margin-left: 10px; 
+  }
+  .edit {
+    border: none;
+    background: none;
+
+}
+
+.delete {
+    border: none;
+    background: none;
+
+}
+
+.button-container-general {
+    display: flex;
+    align-items: center;
+}
+
+/* Style the button */
+.button-container-general button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.save-button{
+    background-color: var(--TEXT);
+    flex-shrink: 0;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    
+}
+.save-internship{
+    color: var(--COMPONENTS);
+    text-decoration: none;
+    font-family: Montserrat;
+
+}
+.cancel-button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 50px;
+    font-size: 15px;
+}
+.cancel-internship{
+    text-decoration: none;
+    color: var(--TEXT, #AEB4C1);
+    font-family: Montserrat;
+}
+.save{
+    display: fixed;
+    position:fixed;
+    top: 85%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+/* Assuming the text elements have class names like personal-information-firstname, personal-information-lastname, etc. */
+
+
+.personal-information-firstname-edit,
+.personal-information-lastname-edit,
+.personal-information-age-edit,
+.personal-information-status-edit,
+.personal-information-email-edit,
+.personal-information-phone-edit {
+    margin-left: 80px;
+    display: inline-block;
+    width: 250px;
+    color: var(--TEXT2, #AEB4C1);
+    font-family: Montserrat;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--TEXT2, #AEB4C1);
+    background: var(--COMPONENTS, #FFF);
+    box-sizing: border-box;
+}
+.personal-information-cv {
+    display: flex;
+    align-items: center;
+}
+
+.personal-information-attach {
+    color: var(--COMPONENTS);
+    text-decoration: none;
+    font-family: Montserrat;
+    font-size: 14px;
+}
+
+.personal-information-attach-cv {
+    background-color: var(--TEXT);
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-left: 20px; 
+}
+
+.input-personal-information-cv {
+    display: none;
+}
+.footer {
+    background-color: var(--TEXT); 
+    color: white;
+    height: 200px;
+    width: 100%;
+}
+.logo-button{
+    color:white;
+}
+.logo1 {
+    color: var(--COMPONENTS);
+    font-family: Stolzl;
+    font-size: 30px;
+    padding-left: 122px;
+    padding-top: 50px;
+}
+
+.logo3{
+    transform: translate(2%,5%);
+    color:white;
+}
+.copyright {
+    font-size: 12px;
+    font-family: "Stolzl";
+    color: var(--COMPONENTS);
+    padding-left: 122px;
+    padding-top: 30px;
+}

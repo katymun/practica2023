@@ -40,6 +40,24 @@ public class DispatcherServlet extends HttpServlet {
             case "/internship_details.html": page = "/internshipdetailsserv"; break;
             case "/companies_details.html": page = "/companydetailsserv"; break;
             case "/newaccount.html": page = "/newaccountserv"; break;
+            case "/signin.html": page = "/showloginserv"; break;
+//            case "/applicant_home.html": page = "/cmsapplicanthomeserv"; break;
+//            case "/applicant_internships.html": page = "/cmsapplicantinternshipsserv"; break;
+//            case "/applicant_companies.html": page = "/cmsapplicantcompaniesserv"; break;
+            
+            
+            case "/newaccount-applicant.html": page = "/newaccountapplserv"; break;
+            case "/recruiteraccount.html": page = "/newaccountrecrserv"; break;
+            case "/addinternship.html": page = "/addinternshipserv"; break;
+            case "/postinternship.html": page = "/postinternshipserv"; break;
+            
+            case "/logout.html": page = "/logoutserv"; break;
+            
+//            case "/seeapplicants.html": page = "/seeapplicantsserv"; break;
+//            case "/seeprofile.html": page = "/seeprofileserv"; break;
+//            case "/seeprofile-edit.html": page = "/seeprofileeditserv"; break;
+//            case "/companypage-register.html": page = "/companyregisterserv"; break;
+//            case "/generalcompany.html": page = "/generalcompanyserv"; break;
             default: page = "index.jsp";
         }
         log("page = " + page);

@@ -3,7 +3,7 @@
         <div class="logo1">
             <a href="home.html" class="logo-button">
                 <div class="logo" >
-                    ST <img class="vector" src="images/logo.svg" />GII.MD
+                    ST <img class="vector" src="../images/logo.svg" />GII.MD
                 </div>
             </a>
         </div>
